@@ -1,9 +1,9 @@
 "use client";
+
 import useDarkModeContext from "../_context/useDarkModeContext";
 import { useEffect } from "react";
-import sun from "@/public/sun.png";
-import moon from "@/public/moon.png";
-import Image from "next/image";
+import { Icon } from "@iconify/react/dist/iconify.js";
+import { motion } from "framer-motion";
 
 type DarkModeToggleTypes = {
   display?: boolean;
@@ -17,26 +17,22 @@ function DarkModeToggle({ display = true }: DarkModeToggleTypes) {
 
   return (
     <button
-      className={`h-14 w-14  cursor-pointer overflow-hidden rounded-md p-2 transition-all duration-300 ${
+      className={`fixed bottom-10 right-10 z-50 flex h-20 w-20 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[#fff0] transition-all duration-300 hover:border-gray-600 dark:border-[#fff0] dark:hover:border-gray-400 ${
         display ? "" : "hidden"
       }`}
       onClick={toggleDarkMode}
     >
       {isDarkMode ? (
-        <Image
-          src={sun}
-          placeholder="blur"
-          quality={80}
-          className="object-cover object-top"
-          alt="image of sun"
-        />
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 15, ease: "linear", repeat: Infinity }}
+        >
+          <Icon icon="noto:sun" className="h-14 w-14" />
+        </motion.div>
       ) : (
-        <Image
-          src={moon}
-          placeholder="blur"
-          quality={80}
-          className="object-cover object-top"
-          alt="image of moon"
+        <Icon
+          icon="line-md:moon-filled-loop"
+          className="text-darkTertiary h-14 w-14"
         />
       )}
     </button>

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./_components/Header";
 import { DarkModeProvider } from "./_context/DarkModeContext";
+import { ActiveSectionContextProvider } from "./_context/ActiveSectionContext";
+import DarkModeToggle from "./_components/DarkModeToggle";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,13 +16,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <DarkModeProvider>
-      <html lang="en">
-        <body className="w-full  transition-all duration-300  dark:bg-[#050816] dark:text-white">
-          <Header />
-          {children}
-        </body>
-      </html>
-    </DarkModeProvider>
+    <html lang="en" className="!scroll-smooth">
+      <body className="dark:bg-darkPrimary w-full bg-gray-100 transition-all duration-300 dark:text-white">
+        <DarkModeProvider>
+          <ActiveSectionContextProvider>
+            <DarkModeToggle />
+            <Header />
+            {children}
+          </ActiveSectionContextProvider>
+        </DarkModeProvider>
+      </body>
+    </html>
   );
 }

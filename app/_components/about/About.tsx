@@ -1,7 +1,7 @@
 import Section from "../Section";
 
 function About() {
-  return <Section idName="about">about</Section>;
+  return <Section idName="About">about</Section>;
 }
 
 export default About;

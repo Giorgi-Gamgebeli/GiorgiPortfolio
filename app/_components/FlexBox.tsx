@@ -1,6 +1,6 @@
 type FlexBoxTypes = {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 };
 
 function FlexBox({ children, className }: FlexBoxTypes) {
