@@ -8,10 +8,11 @@ type SectionTypes = {
   children: React.ReactNode;
   className?: string;
   idName: "Home" | "About" | "Skills" | "Projects" | "Contact";
+  viewThreshold?: number;
 };
 
-function Section({ children, className, idName }: SectionTypes) {
-  const { ref, inView } = useInView({ threshold: 0.5 });
+function Section({ children, className, idName, viewThreshold }: SectionTypes) {
+  const { ref, inView } = useInView({ threshold: viewThreshold || 0.5 });
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
 
   useEffect(() => {
@@ -20,11 +21,13 @@ function Section({ children, className, idName }: SectionTypes) {
 
   return (
     <section
-      className={`min-h-[40rem] w-full scroll-m-40 ${className}`}
+      className={`min-h-[40rem] w-full scroll-m-32 overflow-x-hidden ${className}`}
       id={idName}
       ref={ref}
     >
-      <div className="mx-auto w-full max-w-[90%]">{children}</div>
+      <div className="mx-auto w-full max-w-[90%] xl:max-w-[1214px]">
+        {children}
+      </div>
     </section>
   );
 }

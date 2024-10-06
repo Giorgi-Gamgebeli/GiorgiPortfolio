@@ -17,7 +17,7 @@ function DarkModeToggle({ display = true }: DarkModeToggleTypes) {
 
   return (
     <button
-      className={`fixed bottom-10 right-10 z-50 flex h-20 w-20 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[#fff0] transition-all duration-300 hover:border-gray-600 dark:border-[#fff0] dark:hover:border-gray-400 ${
+      className={`fixed bottom-4 right-4 z-50 flex h-20 w-20 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[#fff0] transition-all duration-300 hover:border-gray-600 dark:border-[#fff0] dark:hover:border-gray-400 md:bottom-10 md:right-10 ${
         display ? "" : "hidden"
       }`}
       onClick={toggleDarkMode}
@@ -32,7 +32,7 @@ function DarkModeToggle({ display = true }: DarkModeToggleTypes) {
       ) : (
         <Icon
           icon="line-md:moon-filled-loop"
-          className="text-darkTertiary h-14 w-14"
+          className="h-14 w-14 text-darkTertiary"
         />
       )}
     </button>

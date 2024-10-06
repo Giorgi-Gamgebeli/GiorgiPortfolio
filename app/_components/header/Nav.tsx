@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import clsx from "clsx";
-import useActiveSectionContext from "../_context/useActiveSectionContext";
+import useActiveSectionContext from "../../_context/useActiveSectionContext";
 import Link from "next/link";
 
 type NavLinkTypes = {
@@ -33,38 +33,48 @@ const navLinks: NavLinkTypes = [
   },
 ];
 
-function Nav() {
+type NavTypes = {
+  setIsPhoneNavOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+  phoneNav?: boolean;
+};
+
+function Nav({ setIsPhoneNavOpen, phoneNav }: NavTypes) {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
 
   return (
     <nav>
-      <ul className="flex items-center gap-5 text-gray-500 dark:text-gray-500">
+      <ul
+        className={`items-center gap-5 text-gray-500 dark:text-gray-500 ${phoneNav ? "flex flex-col" : "hidden flex-row md:flex"}`}
+      >
         {navLinks.map((link) => (
           <motion.li
             key={link.hash}
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="relative "
+            className="relative"
           >
             <Link
               href={link.hash}
               className={clsx(
-                `hover:text-gray-950 transition py-2 px-3 block dark:hover:text-white`,
+                `block px-3 py-2 transition hover:text-gray-950 dark:hover:text-white`,
                 {
                   "text-gray-950 dark:text-white": activeSection === link.name,
-                }
+                },
               )}
               onClick={() => {
                 setActiveSection(link.name);
                 setTimeOfLastClick(Date.now());
+
+                if (!setIsPhoneNavOpen) return;
+                setIsPhoneNavOpen(false);
               }}
             >
               {link.name}
 
               {link.name === activeSection && (
                 <motion.span
-                  className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-[#0b122cab]"
+                  className="absolute inset-0 -z-10 rounded-full bg-gray-100 dark:bg-[#0b122cab]"
                   layoutId="activeSection"
                   transition={{
                     type: "spring",
@@ -72,7 +82,7 @@ function Nav() {
                     damping: 30,
                     duration: 1,
                   }}
-                ></motion.span>
+                />
               )}
             </Link>
           </motion.li>

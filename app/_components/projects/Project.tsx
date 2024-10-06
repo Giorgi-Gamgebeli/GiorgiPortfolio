@@ -7,9 +7,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Modal from "./Modal";
+import MotionDiv from "../MotionDiv";
 import { motion } from "framer-motion";
+import { slideIn } from "@/app/_utils/motion";
 
-type ProjectTypes = (typeof projects)[number];
+type ProjectTypes = (typeof projects)[number] & {
+  index: number;
+};
 
 function Project({
   name,
@@ -19,18 +23,27 @@ function Project({
   sourceCodeLink,
   deployedWebLink,
   deploymentServiceImg,
+  index,
 }: ProjectTypes) {
   return (
-    <article className="dark:bg-darkTertiary group relative mb-3 w-full overflow-hidden rounded-lg border-black/5 bg-gray-200 transition last:mb-0 dark:text-gray-200 sm:mb-8 sm:h-[30rem]">
-      <div className="flex h-full flex-col gap-10 px-10 py-24 group-even:ml-auto sm:max-w-[50%] sm:pt-10">
-        <h3 className="text-6xl font-semibold">{name}</h3>
-        <p className="mt-2 leading-relaxed text-gray-700 dark:text-gray-200">
+    <motion.article
+      className="group relative mb-8 flex w-full flex-col-reverse overflow-hidden rounded-2xl border border-black/5 border-gray-300 bg-white shadow-md last:mb-0 dark:border-transparent dark:bg-darkTertiary dark:text-white dark:shadow-none md:block md:h-[22rem] md:rounded-lg lg:h-[25rem] xl:h-[30rem]"
+      initial="hidden"
+      whileInView="show"
+      variants={slideIn([index % 2 ? "left" : "right", "tween", 0.5, 0.5])}
+      viewport={{ once: true }}
+    >
+      <div className="flex h-full flex-col gap-4 p-6 xs:gap-10 xs:py-14 sm:py-20 md:max-w-[50%] md:gap-4 md:p-8 md:group-even:ml-auto lg:gap-6 lg:p-10 xl:gap-10">
+        <h3 className="text-4xl font-bold xs:text-5xl sm:text-6xl md:text-4xl lg:text-5xl xl:text-6xl">
+          {name}
+        </h3>
+        <p className="mt-2 text-sm leading-relaxed xs:text-base sm:text-lg lg:text-base">
           {description}
         </p>
-        <ul className="flex flex-wrap gap-2 text-3xl group-even:ml-auto">
+        <ul className="flex flex-wrap gap-2 text-3xl">
           {tags.map((tag) => (
             <li
-              className={`rounded-full px-3 py-1 text-lg uppercase ${tag.color} font-medium tracking-wider text-white`}
+              className={`rounded-full px-3 py-1 text-sm font-medium uppercase tracking-wider text-white xs:text-base sm:text-lg md:text-base lg:text-lg ${tag.color}`}
               key={tag.name}
             >
               #{tag.name}
@@ -41,13 +54,23 @@ function Project({
 
       <Modal>
         <Modal.Open opens="projectModal">
-          <div className="absolute -right-40 top-8 w-[47rem] transition group-even:-left-40 group-even:right-[inital] group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2 group-hover:scale-105 group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2">
+          <div className="transition md:absolute md:-right-40 md:top-8 md:w-[32rem] md:group-even:-left-40 md:group-even:right-[inital] md:group-hover:-translate-x-3 md:group-hover:translate-y-3 md:group-hover:-rotate-2 md:group-hover:scale-105 md:group-even:group-hover:translate-x-3 md:group-even:group-hover:translate-y-3 md:group-even:group-hover:rotate-2 lg:w-[38rem] xl:w-[47rem]">
             <TiltedImage image={image} />
           </div>
         </Modal.Open>
         <Modal.Window name="projectModal">
           <FlexBox className="gap-5">
-            <motion.div>
+            <MotionDiv
+              initial={{ x: -600 }}
+              animate={{ x: 0 }}
+              transition={{
+                delay: 0.5,
+                mass: 1,
+                damping: 12,
+                type: "spring",
+                stiffness: 100,
+              }}
+            >
               <Link
                 target="_blank"
                 className="flex h-14 w-14 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-black transition hover:shadow-lg"
@@ -58,9 +81,19 @@ function Project({
                   className="text-xl text-white"
                 />
               </Link>
-            </motion.div>
+            </MotionDiv>
 
-            <motion.div>
+            <MotionDiv
+              initial={{ y: -600 }}
+              animate={{ y: 0 }}
+              transition={{
+                delay: 0.5,
+                mass: 1,
+                damping: 12,
+                type: "spring",
+                stiffness: 100,
+              }}
+            >
               <Link
                 target="_blank"
                 className="flex h-14 w-14 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-black transition hover:shadow-lg"
@@ -73,11 +106,11 @@ function Project({
                   quality={95}
                 />
               </Link>
-            </motion.div>
+            </MotionDiv>
           </FlexBox>
         </Modal.Window>
       </Modal>
-    </article>
+    </motion.article>
   );
 }
 

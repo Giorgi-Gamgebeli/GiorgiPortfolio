@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "./_components/Header";
+import Header from "./_components/header/Header";
 import { DarkModeProvider } from "./_context/DarkModeContext";
 import { ActiveSectionContextProvider } from "./_context/ActiveSectionContext";
 import DarkModeToggle from "./_components/DarkModeToggle";
+import ReactQueryProvider from "./_utils/ReactQueryProvider";
+import ToastProvider from "./_utils/ToastProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,14 +19,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <body className="dark:bg-darkPrimary w-full bg-gray-100 transition-all duration-300 dark:text-white">
-        <DarkModeProvider>
-          <ActiveSectionContextProvider>
-            <DarkModeToggle />
-            <Header />
-            {children}
-          </ActiveSectionContextProvider>
-        </DarkModeProvider>
+      <body className="w-full overflow-x-hidden bg-gray-100 transition-all duration-300 dark:bg-darkPrimary dark:text-white">
+        <ReactQueryProvider>
+          <DarkModeProvider>
+            <ToastProvider>
+              <ActiveSectionContextProvider>
+                <Header />
+                {children}
+                <DarkModeToggle />
+              </ActiveSectionContextProvider>
+            </ToastProvider>
+          </DarkModeProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

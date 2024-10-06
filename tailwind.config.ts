@@ -8,6 +8,19 @@ const config: Config = {
   ],
   darkMode: "class",
   theme: {
+    screens: {
+      xs: "450px",
+
+      sm: "640px",
+
+      md: "768px",
+
+      lg: "1024px",
+
+      xl: "1280px",
+
+      "2xl": "1536px",
+    },
     extend: {
       colors: {
         darkPrimary: "#050816",
@@ -17,9 +30,7 @@ const config: Config = {
         "black-200": "#090325",
         "white-100": "#f3f3f3",
       },
-      screens: {
-        xs: "450px",
-      },
+
       backgroundImage: {
         "hero-pattern": "url('/src/assets/herobg.webp')",
       },

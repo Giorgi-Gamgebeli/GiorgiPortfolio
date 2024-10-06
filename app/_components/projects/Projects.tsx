@@ -6,6 +6,11 @@ import oasisPhoto from "@/public/Screenshot_2.png";
 import wayBackPhoto from "@/public/Screenshot_3.png";
 import React from "react";
 import Project from "./Project";
+import SectionHeadText from "../SectionHeadText";
+import SectionSubText from "../SectionSubText";
+import FlexBox from "../FlexBox";
+import MotionDiv from "../MotionDiv";
+import { textVariant } from "@/app/_utils/motion";
 
 export const projects = [
   {
@@ -81,15 +86,31 @@ export const projects = [
 
 function Projects() {
   return (
-    <Section idName="Projects">
-      <p>projects</p>
-      <div>
+    <Section idName="Projects" viewThreshold={0.2}>
+      <MotionDiv
+        initial="hidden"
+        whileInView="show"
+        variants={textVariant(0.5)}
+      >
+        <SectionSubText>MY WORK</SectionSubText>
+        <SectionHeadText>Projects.</SectionHeadText>
+
+        <p className="max-w-2xl py-6 text-sm leading-relaxed md:text-lg">
+          Following projects showcases my skills and experience through
+          real-world examples of my work. Each project is briefly described,
+          click on image to visit code repositories and live demos. They reflect
+          my abilty to solve complex problems, work with different technologies
+          and manage projects effectively.
+        </p>
+      </MotionDiv>
+
+      <FlexBox className="flex-col gap-10">
         {projects.map((project, index) => (
           <React.Fragment key={index}>
-            <Project {...project} />
+            <Project {...project} index={index} />
           </React.Fragment>
         ))}
-      </div>
+      </FlexBox>
     </Section>
   );
 }

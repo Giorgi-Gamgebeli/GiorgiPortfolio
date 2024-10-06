@@ -6,10 +6,11 @@ import {
   Dispatch,
   SetStateAction,
   useContext,
+  useEffect,
   useState,
 } from "react";
-import useCloseModal from "../../_hooks/useOutsideClick";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { motion } from "framer-motion";
 
 type ModalContextTypes = {
   openName: string;
@@ -63,27 +64,58 @@ function Open({ children, opens: opensWindowName }: OpenTypes) {
 function Window({ children, name }: WindowTypes) {
   const { openName, close } = useModalContext();
 
-  const { ref } = useCloseModal(close);
+  const [timer, setTimer] = useState(10);
+
+  useEffect(() => {
+    if (name !== openName) return;
+    const timeout = setTimeout(() => {
+      close();
+      setTimer(10);
+    }, timer * 1000);
+
+    return () => clearTimeout(timeout);
+  }, [name, openName, timer, close]);
 
   if (name !== openName) return null;
 
-  // used to avoid parent css overflow:hidden
   return (
-    <div className="absolute inset-0 z-10 h-full w-full bg-[#1510304d] backdrop-blur-md transition">
-      <div
-        ref={ref as React.RefObject<HTMLDivElement>}
-        className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 gap-5"
-      >
-        {cloneElement(children as React.ReactElement, {
-          onClick: () => close(),
-        })}
+    <div className="absolute left-0 top-0 z-10 h-full w-full bg-[rgba(229,231,235,0.3)] backdrop-blur-md dark:bg-[rgba(21,16,48,0.3)]">
+      <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 gap-5">
+        {children}
 
-        <button
-          onClick={close}
-          className="flex h-14 w-14 items-center justify-center rounded-full border-none bg-black bg-none p-2 transition"
+        <motion.div
+          initial={{
+            x: 600,
+          }}
+          animate={{
+            x: 0,
+          }}
+          transition={{
+            delay: 0.5,
+            mass: 1,
+            damping: 12,
+            type: "spring",
+            stiffness: 100,
+          }}
         >
-          <Icon icon="ep:close-bold" className="text-2xl" />
-        </button>
+          <motion.button
+            onClick={() => {
+              close();
+              setTimer(10);
+            }}
+            className="-z-20 flex h-14 w-14 items-center justify-center rounded-full"
+            initial={{
+              background: "conic-gradient(#e53e3e 100%, transparent 0)",
+            }}
+            animate={{
+              background: `conic-gradient(#e53e3e 0%, transparent 0%)`,
+            }}
+            transition={{ duration: timer }}
+          >
+            <motion.span className="absolute h-12 w-12 rounded-full bg-black" />
+            <Icon icon="ep:close-bold" className="z-10 text-2xl text-white" />
+          </motion.button>
+        </motion.div>
       </div>
     </div>
   );
