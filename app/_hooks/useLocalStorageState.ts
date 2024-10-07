@@ -16,6 +16,7 @@ function useLocalStorageState<T>(
     setIsInitialized(true);
   }, [key]);
 
+  
   useEffect(() => {
     if (isInitialized) {
       localStorage.setItem(key, JSON.stringify(value));

@@ -14,7 +14,9 @@ function DarkModeProvider({ children }: { children: React.ReactNode }) {
   const [isDarkMode, setIsDarkMode] = useLocalStorageState(false, "isDarkMode");
 
   useEffect(() => {
-    setIsDarkMode(window.matchMedia("(prefers-color-scheme: dark)").matches);
+    const localstorageValue = localStorage.getItem("isDarkMode");
+    if (localstorageValue === null)
+      setIsDarkMode(window.matchMedia("(prefers-color-scheme: dark)").matches);
   }, [setIsDarkMode]);
 
   useEffect(
