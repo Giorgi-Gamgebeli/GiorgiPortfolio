@@ -9,9 +9,16 @@ type SectionTypes = {
   className?: string;
   idName: "Home" | "About" | "Skills" | "Projects" | "Contact";
   viewThreshold?: number;
+  divClassName?: string;
 };
 
-function Section({ children, className, idName, viewThreshold }: SectionTypes) {
+function Section({
+  children,
+  className,
+  idName,
+  viewThreshold,
+  divClassName,
+}: SectionTypes) {
   const { ref, inView } = useInView({ threshold: viewThreshold || 0.5 });
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
 
@@ -25,7 +32,9 @@ function Section({ children, className, idName, viewThreshold }: SectionTypes) {
       id={idName}
       ref={ref}
     >
-      <div className="mx-auto w-full max-w-[90%] xl:max-w-[1214px]">
+      <div
+        className={`mx-auto w-full max-w-[90%] xl:max-w-[1214px] ${divClassName}`}
+      >
         {children}
       </div>
     </section>

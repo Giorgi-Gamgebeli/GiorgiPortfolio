@@ -13,7 +13,7 @@ function TiltedImage({ image }: TiltedImageTypes) {
         src={image}
         alt="Project I worked on"
         quality={70}
-        className="cursor-pointer rounded-t-lg shadow-sm md:shadow-2xl"
+        className="cursor-pointer rounded-lg md:rounded-t-lg shadow-sm md:shadow-2xl"
       />
     </Tilt>
   );

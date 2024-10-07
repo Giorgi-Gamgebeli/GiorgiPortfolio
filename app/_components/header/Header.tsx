@@ -3,20 +3,22 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Nav from "./Nav";
 import ScrollFloatingAnimation from "./ScrollFloatingEffect";
-import { motion } from "framer-motion";
 import { useState } from "react";
 import PhoneNav from "./PhoneNav";
 import Socials from "./Socials";
 import FlexBox from "../FlexBox";
+import MotionComponent from "../MotionComponent";
 
 function Header() {
   const [isPhoneNavOpen, setIsPhoneNavOpen] = useState(false);
 
   return (
-    <motion.header
+    <MotionComponent
+      as="header"
       className="fixed z-50 w-full"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
+      transition={{ delay: 0.5 }}
     >
       <ScrollFloatingAnimation>
         <FlexBox className="items-center justify-between">
@@ -39,7 +41,7 @@ function Header() {
           setIsPhoneNavOpen={setIsPhoneNavOpen}
         />
       </ScrollFloatingAnimation>
-    </motion.header>
+    </MotionComponent>
   );
 }
 

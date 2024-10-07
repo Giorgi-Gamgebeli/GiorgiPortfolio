@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import clsx from "clsx";
 import useActiveSectionContext from "../../_context/useActiveSectionContext";
 import Link from "next/link";
+import MotionComponent from "../MotionComponent";
 
 type NavLinkTypes = {
   name: "Home" | "About" | "Skills" | "Projects" | "Contact";
@@ -48,7 +48,8 @@ function Nav({ setIsPhoneNavOpen, phoneNav }: NavTypes) {
         className={`items-center gap-5 text-gray-500 dark:text-gray-500 ${phoneNav ? "flex flex-col" : "hidden flex-row md:flex"}`}
       >
         {navLinks.map((link) => (
-          <motion.li
+          <MotionComponent
+            as="li"
             key={link.hash}
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -73,9 +74,10 @@ function Nav({ setIsPhoneNavOpen, phoneNav }: NavTypes) {
               {link.name}
 
               {link.name === activeSection && (
-                <motion.span
+                <MotionComponent
+                  as="span"
                   className="absolute inset-0 -z-10 rounded-full bg-gray-100 dark:bg-[#0b122cab]"
-                  layoutId="activeSection"
+                  layoutId={`${phoneNav ? "phoneActiveSection" : "activeSection"}`}
                   transition={{
                     type: "spring",
                     stiffness: 380,
@@ -85,7 +87,7 @@ function Nav({ setIsPhoneNavOpen, phoneNav }: NavTypes) {
                 />
               )}
             </Link>
-          </motion.li>
+          </MotionComponent>
         ))}
       </ul>
     </nav>

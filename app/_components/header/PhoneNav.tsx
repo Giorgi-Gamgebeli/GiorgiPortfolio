@@ -1,4 +1,4 @@
-import MotionDiv from "../MotionDiv";
+import MotionComponent from "../MotionComponent";
 import Nav from "./Nav";
 import Socials from "./Socials";
 
@@ -9,7 +9,7 @@ type PhoneNavTypes = {
 
 function PhoneNav({ isPhoneNavOpen, setIsPhoneNavOpen }: PhoneNavTypes) {
   return (
-    <MotionDiv
+    <MotionComponent
       className={`flex items-center justify-between md:hidden ${isPhoneNavOpen ? "" : "pointer-events-none"}`}
       initial={{
         opacity: 0,
@@ -24,7 +24,7 @@ function PhoneNav({ isPhoneNavOpen, setIsPhoneNavOpen }: PhoneNavTypes) {
     >
       <Nav phoneNav={true} setIsPhoneNavOpen={setIsPhoneNavOpen} />
       <Socials phoneSocials={true} />
-    </MotionDiv>
+    </MotionComponent>
   );
 }
 

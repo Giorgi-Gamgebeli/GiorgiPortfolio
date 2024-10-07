@@ -27,7 +27,7 @@ function Form() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="mt-12 flex flex-col gap-4 font-medium md:gap-8"
+      className="mt-6 md:mt-12 flex flex-col gap-4 font-medium md:gap-8"
     >
       <FormRow label="Your Name">
         <Input

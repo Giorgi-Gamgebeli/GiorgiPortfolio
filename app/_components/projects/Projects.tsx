@@ -1,6 +1,6 @@
 import Section from "../Section";
-import netlifyLogo from "@/public/netlifyDark.webp";
-import vercelDark from "@/public/Vercel.png";
+import netlifyDark from "@/public/netlifyDark.webp";
+import vercelDark from "@/public/vercelDark.png";
 import pizzaPhoto from "@/public/Screenshot_1.png";
 import oasisPhoto from "@/public/Screenshot_2.png";
 import wayBackPhoto from "@/public/Screenshot_3.png";
@@ -9,7 +9,7 @@ import Project from "./Project";
 import SectionHeadText from "../SectionHeadText";
 import SectionSubText from "../SectionSubText";
 import FlexBox from "../FlexBox";
-import MotionDiv from "../MotionDiv";
+import MotionComponent from "../MotionComponent";
 import { textVariant } from "@/app/_utils/motion";
 
 export const projects = [
@@ -80,14 +80,14 @@ export const projects = [
     image: wayBackPhoto,
     sourceCodeLink: "https://github.com/CodingReaper1/WayBack",
     deployedWebLink: "https://waybackk.netlify.app",
-    deploymentServiceImg: netlifyLogo,
+    deploymentServiceImg: netlifyDark,
   },
 ] as const;
 
 function Projects() {
   return (
     <Section idName="Projects" viewThreshold={0.2}>
-      <MotionDiv
+      <MotionComponent
         initial="hidden"
         whileInView="show"
         variants={textVariant(0.5)}
@@ -102,7 +102,7 @@ function Projects() {
           my abilty to solve complex problems, work with different technologies
           and manage projects effectively.
         </p>
-      </MotionDiv>
+      </MotionComponent>
 
       <FlexBox className="flex-col gap-10">
         {projects.map((project, index) => (

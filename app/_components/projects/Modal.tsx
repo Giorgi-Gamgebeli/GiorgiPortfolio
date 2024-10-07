@@ -67,10 +67,11 @@ function Window({ children, name }: WindowTypes) {
   const [timer, setTimer] = useState(10);
 
   useEffect(() => {
-    if (name !== openName) return;
+    if (name !== openName || timer !== 10) return;
+    console.log(timer);
     const timeout = setTimeout(() => {
       close();
-      setTimer(10);
+      // setTimer(10);
     }, timer * 1000);
 
     return () => clearTimeout(timeout);
@@ -108,12 +109,15 @@ function Window({ children, name }: WindowTypes) {
               background: "conic-gradient(#e53e3e 100%, transparent 0)",
             }}
             animate={{
-              background: `conic-gradient(#e53e3e 0%, transparent 0%)`,
+              background: `conic-gradient(#e53e3e 0%, transparent 0)`,
             }}
             transition={{ duration: timer }}
           >
-            <motion.span className="absolute h-12 w-12 rounded-full bg-black" />
-            <Icon icon="ep:close-bold" className="z-10 text-2xl text-white" />
+            <motion.span className="absolute h-12 w-12 rounded-full bg-white dark:bg-black" />
+            <Icon
+              icon="ep:close-bold"
+              className="z-10 text-2xl dark:text-white"
+            />
           </motion.button>
         </motion.div>
       </div>
