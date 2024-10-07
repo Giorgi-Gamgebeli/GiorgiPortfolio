@@ -14,18 +14,25 @@ function TextSide() {
         <p className="text-gray-700 dark:text-white/60">Hey, there</p>
 
         <MotionComponent
+          // transition={{
+          //   duration: 2,
+          //   delay: 3,
+          //   mass: 1,
+          //   damping: 8,
+          //   type: "spring",
+          //   stiffness: 100,
+          // }}
+
           initial={{ rotate: 0 }}
           animate={{
-            rotate: [-25, 0, -25, 0, -25, 0, -25, 0, -25, 0, -25, 0],
+            rotate: [0, 15, -10, 15, -10, 15, -10, 15, -10, 15, 0],
           }}
           transition={{
             duration: 2,
-            delay: 3,
-            mass: 1,
-            damping: 8,
-            type: "spring",
-            stiffness: 100,
+            delay: 1,
+            ease: "easeInOut",
           }}
+          style={{ transformOrigin: "bottom right" }}
         >
           <Image
             src={handwave}
@@ -40,15 +47,20 @@ function TextSide() {
       <MotionComponent
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 2 }}
-        className="flex flex-col gap-5 leading-relaxed"
+        transition={{ duration: 1, delay: 3 }}
+        className="flex flex-col gap-5 text-gray-700 dark:text-white/60"
       >
         <h1 className="text-6xl font-extrabold">
-          I&apos;m <span className="pb-3">Giorgi Gamgebeli</span>
+          I&apos;m{" "}
+          <span className="bg-gradient-to-b from-purple-500 to-[#151070] bg-clip-text text-transparent">
+            Giorgi Gamgebeli
+          </span>
           <br />
-          <span>Front-end Developer</span>
+          <span className="text-gray-950 dark:text-white">
+            Front-end Developer
+          </span>
         </h1>
-        <p className="text-4xl text-gray-700 dark:text-white/60">
+        <p className="text-4xl">
           React/NextJs focused <span className="font-bold">UI</span> developer,
           <br /> currently learning NextJs.
         </p>
