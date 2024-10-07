@@ -19,7 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <body className="w-full overflow-x-hidden bg-gray-100 transition-all duration-300 dark:bg-darkPrimary dark:text-white">
+      <head>
+        <title>Giorgi | Portfolio</title>
+        <link rel="icon" href="/gFavicon.png" />
+      </head>
+      <body className="w-full overflow-x-hidden bg-gray-100 text-gray-950 transition-all duration-300 dark:bg-darkPrimary dark:text-white">
         <ReactQueryProvider>
           <DarkModeProvider>
             <ToastProvider>

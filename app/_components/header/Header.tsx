@@ -8,6 +8,9 @@ import PhoneNav from "./PhoneNav";
 import Socials from "./Socials";
 import FlexBox from "../FlexBox";
 import MotionComponent from "../MotionComponent";
+import gIcon from "@/public/gIcon.png";
+import gIconGray from "@/public/gIconGray.png";
+import Image from "next/image";
 
 function Header() {
   const [isPhoneNavOpen, setIsPhoneNavOpen] = useState(false);
@@ -22,8 +25,16 @@ function Header() {
     >
       <ScrollFloatingAnimation>
         <FlexBox className="items-center justify-between">
-          <p className="flex items-center justify-center text-5xl">G</p>
-          {/* <Icon icon="token-branded:gai" className="size-10 text-white" /> */}
+          <Image
+            src={gIcon}
+            alt="icon letter G"
+            className="hidden size-12 dark:block"
+          />
+          <Image
+            src={gIconGray}
+            alt="gray icon letter G"
+            className="block size-12 dark:hidden"
+          />
 
           <Nav />
 

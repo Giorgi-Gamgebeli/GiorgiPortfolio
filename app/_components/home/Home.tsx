@@ -29,7 +29,7 @@ function Home() {
           transition={{ delay: 0.5 }}
           className="flex items-center gap-2"
         >
-          <p className="dark:text-white/60">Hey, there</p>
+          <p className="text-gray-700 dark:text-white/60">Hey, there</p>
 
           <MotionComponent
             initial={{ rotate: 0 }}
@@ -66,7 +66,7 @@ function Home() {
             <br />
             <span>Front-end Developer</span>
           </h1>
-          <p className="text-4xl dark:text-white/60">
+          <p className="text-4xl text-gray-700 dark:text-white/60">
             React/NextJs focused <span className="font-bold">UI</span>{" "}
             developer,
             <br /> currently learning NextJs.
