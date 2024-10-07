@@ -1,21 +1,28 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 function useLocalStorageState<T>(
-  initalState: T,
+  initialState: T,
   key: string,
-): [T, React.Dispatch<React.SetStateAction<T>>] {
-  const [value, setValue] = useState<T>(() => {
-    const storedValue = localStorage.getItem(key);
-    return storedValue ? JSON.parse(storedValue) : initalState;
-  });
+): [T, Dispatch<SetStateAction<T>>] {
+  const [value, setValue] = useState<T>(initialState);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value));
-  }, [value, key]);
+    const localstorageValue = localStorage.getItem(key);
 
-  return [value, setValue];
+    if (localstorageValue !== null) {
+      setValue(JSON.parse(localstorageValue) as T);
+    }
+    setIsInitialized(true);
+  }, [key]);
+
+  useEffect(() => {
+    if (isInitialized) {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
+  }, [isInitialized, key, value]);
+
+  return [value, setValue] as const;
 }
 
 export default useLocalStorageState;
