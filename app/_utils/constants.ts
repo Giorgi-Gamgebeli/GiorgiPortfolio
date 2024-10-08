@@ -168,3 +168,17 @@ export const projects = [
     deploymentServiceImg: netlifyDark,
   },
 ] as const;
+
+// i know this doesnt belong here but not that big deal
+export const getRandomNumber = () => Math.floor(Math.random() * 2);
+
+export const floatVariants = [
+  {
+    y: [0, -5, 0, 10, 0, -5, -10, -5, 0],
+    rotate: [0, -5, 0, 10, 0, -5, -10, -5, 0],
+  },
+  {
+    y: [0, 5, 0, -10, 0, 5, 10, 5, 0],
+    rotate: [0, 5, 0, -10, 0, 5, 10, 5, 0],
+  },
+];
