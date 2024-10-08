@@ -11,8 +11,8 @@ import SectionSubText from "../SectionSubText";
 
 function Contact() {
   return (
-    <Section idName="Contact">
-      <FlexBox className="relative z-20 flex-col-reverse gap-10 overflow-hidden py-20 dark:text-white xl:mt-12 xl:grid xl:grid-cols-[45fr_55fr]">
+    <Section idName="Contact" className="relative">
+      <FlexBox className="z-20 flex-col-reverse gap-10 overflow-hidden py-20 dark:text-white xl:mt-12 xl:grid xl:grid-cols-[45fr_55fr]">
         <MotionComponent
           initial="hidden"
           whileInView="show"
@@ -33,9 +33,9 @@ function Contact() {
         >
           <EarthCanvas />
         </MotionComponent>
-
-        <StarsCanvas />
       </FlexBox>
+
+      <StarsCanvas />
     </Section>
   );
 }

@@ -28,12 +28,12 @@ function Section({
 
   return (
     <section
-      className={`min-h-[40rem] w-full scroll-m-32 overflow-x-hidden ${className}`}
+      className={`h-full min-h-[40rem] w-full scroll-mt-24 py-10 ${className}`}
       id={idName}
       ref={ref}
     >
       <div
-        className={`mx-auto w-full max-w-[90%] xl:max-w-[1214px] ${divClassName}`}
+        className={`mx-auto h-full min-h-[40rem] w-full max-w-[90%] overflow-hidden xl:max-w-[1214px] ${divClassName}`}
       >
         {children}
       </div>

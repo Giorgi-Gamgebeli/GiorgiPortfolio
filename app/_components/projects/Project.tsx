@@ -1,6 +1,5 @@
 "use client";
 
-import { projects } from "./Projects";
 import TiltedImage from "./TiltedImage";
 import FlexBox from "../FlexBox";
 import Link from "next/link";
@@ -10,6 +9,7 @@ import Modal from "./Modal";
 import { motion } from "framer-motion";
 import { slideIn } from "@/app/_utils/motion";
 import MotionComponent from "../MotionComponent";
+import { projects } from "@/app/_utils/constants";
 
 type ProjectTypes = (typeof projects)[number] & {
   index: number;

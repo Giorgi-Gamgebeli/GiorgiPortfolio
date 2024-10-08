@@ -3,7 +3,7 @@ type FadeSlideInTypes = [string, string, number, number];
 export function textVariant(delay?: number) {
   return {
     hidden: {
-      y: -50,
+      y: 50,
       opacity: 0,
     },
     show: {
@@ -89,6 +89,23 @@ export function staggerContainer(
       transition: {
         staggerChildren: staggerChildren,
         delayChildren: delayChildren || 0,
+      },
+    },
+  };
+}
+
+export function staggerChild(delay: number) {
+  return {
+    hidden: {
+      opacity: 0,
+      y: 100,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+
+      transition: {
+        delay: delay || 0,
       },
     },
   };
