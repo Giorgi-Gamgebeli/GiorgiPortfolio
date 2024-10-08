@@ -6,6 +6,8 @@ import FormRow from "./FormRow";
 import Input from "./Input";
 import Textarea from "./Textarea";
 import useSendEmail from "@/app/_hooks/useSendEmail";
+import ContactButton from "./ContactButton";
+import FlexBox from "../FlexBox";
 
 export type OnSubmitTypes = {
   name: string;
@@ -27,7 +29,7 @@ function Form() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="mt-6 md:mt-12 flex flex-col gap-4 font-medium md:gap-8"
+      className="mt-6 flex flex-col gap-4 font-medium md:mt-12 md:gap-8"
     >
       <FormRow label="Your Name">
         <Input
@@ -55,12 +57,14 @@ function Form() {
         />
       </FormRow>
 
-      <button
-        type="submit"
-        className="w-fit rounded-xl border border-transparent bg-gray-200 px-8 py-3 font-bold shadow-md outline-none transition hover:border-gray-400 dark:border-none dark:bg-darkTertiary dark:text-white dark:shadow-sm dark:shadow-darkPrimary dark:hover:shadow-md hover:dark:shadow-darkPrimary"
-      >
-        {loading ? "Sending..." : "Send"}
-      </button>
+      <FlexBox className="xss:text-sm gap-2 text-xs xs:gap-5 xs:text-base">
+        <ContactButton type="submit">
+          {loading ? "Sending..." : "Send"}
+        </ContactButton>
+        <a href="/GiorgiCV.pdf" download>
+          <ContactButton type="button">{"Download CV"}</ContactButton>
+        </a>
+      </FlexBox>
     </form>
   );
 }

@@ -9,7 +9,7 @@ function Home() {
   return (
     <Section
       className="relative overflow-hidden pt-44"
-      divClassName="grid grid-cols-1 xs:gap-10 md:gap-5 lg:gap-0 md:grid-cols-[60fr_40fr] md:grid-cols-[61fr_40fr]"
+      divClassName="grid grid-cols-1 xs:gap-10 md:gap-5 lg:gap-0 md:grid-cols-[62fr_38fr] lg:grid-cols-[61fr_40fr]"
       idName="Home"
     >
       <div className="absolute inset-0 -z-10 hidden dark:block">
@@ -20,6 +20,7 @@ function Home() {
           alt="background img of white waves"
           fill
           className="object-cover"
+          sizes="100vw"
         />
       </div>
 
