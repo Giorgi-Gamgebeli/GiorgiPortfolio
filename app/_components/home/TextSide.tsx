@@ -4,31 +4,22 @@ import handwave from "@/public/handwave.svg";
 
 function TextSide() {
   return (
-    <div className="row-span-1 flex flex-col gap-5 text-3xl font-medium tracking-wider">
+    <div className="row-span-1 flex flex-col gap-3 text-xl font-medium tracking-wider text-gray-950/80 dark:text-white/50 xs:text-3xl sm:gap-5 sm:text-4xl md:text-2xl lg:text-3xl xl:text-4xl">
       <MotionComponent
         initial={{ x: -300 }}
         animate={{ x: 0 }}
         transition={{ delay: 0.5 }}
         className="flex items-center gap-2"
       >
-        <p className="text-gray-700 dark:text-white/60">Hey, there</p>
+        <p>Hey, there</p>
 
         <MotionComponent
-          // transition={{
-          //   duration: 2,
-          //   delay: 3,
-          //   mass: 1,
-          //   damping: 8,
-          //   type: "spring",
-          //   stiffness: 100,
-          // }}
-
           initial={{ rotate: 0 }}
-          animate={{
+          whileInView={{
             rotate: [0, 15, -10, 15, -10, 15, -10, 15, -10, 15, 0],
           }}
           transition={{
-            duration: 2,
+            duration: 1.5,
             delay: 1,
             ease: "easeInOut",
           }}
@@ -47,10 +38,10 @@ function TextSide() {
       <MotionComponent
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 3 }}
-        className="flex flex-col gap-5 text-gray-700 dark:text-white/60"
+        transition={{ duration: 1, delay: 2.5 }}
+        className="flex flex-col gap-5"
       >
-        <h1 className="text-6xl font-extrabold">
+        <h1 className="text-2xl font-extrabold xs:text-4xl sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
           I&apos;m{" "}
           <span className="bg-gradient-to-b from-purple-500 to-[#151070] bg-clip-text text-transparent">
             Giorgi Gamgebeli
@@ -60,8 +51,9 @@ function TextSide() {
             Front-end Developer
           </span>
         </h1>
-        <p className="text-4xl">
-          React/NextJs focused <span className="font-bold">UI</span> developer,
+
+        <p>
+          React/NextJs focused <br className="block lg:hidden" /> web developer,
           <br /> currently learning NextJs.
         </p>
       </MotionComponent>
