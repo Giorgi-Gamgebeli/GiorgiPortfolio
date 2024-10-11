@@ -11,7 +11,7 @@ import { projects } from "@/app/_utils/constants";
 
 function Projects() {
   return (
-    <Section idName="Projects" viewThreshold={0.2}>
+    <Section divClassName="overflow-hidden" idName="Projects" viewThreshold={0.2}>
       <MotionComponent
         initial="hidden"
         whileInView="show"

@@ -4,34 +4,7 @@ import clsx from "clsx";
 import useActiveSectionContext from "../../_context/useActiveSectionContext";
 import Link from "next/link";
 import MotionComponent from "../MotionComponent";
-
-type NavLinkTypes = {
-  name: "Home" | "About" | "Skills" | "Projects" | "Contact";
-  hash: string;
-}[];
-
-const navLinks: NavLinkTypes = [
-  {
-    name: "Home",
-    hash: "#Home",
-  },
-  {
-    name: "About",
-    hash: "#About",
-  },
-  {
-    name: "Skills",
-    hash: "#Skills",
-  },
-  {
-    name: "Projects",
-    hash: "#Projects",
-  },
-  {
-    name: "Contact",
-    hash: "#Contact",
-  },
-];
+import { navLinks } from "@/app/_utils/constants";
 
 type NavTypes = {
   setIsPhoneNavOpen?: React.Dispatch<React.SetStateAction<boolean>>;
@@ -76,7 +49,7 @@ function Nav({ setIsPhoneNavOpen, phoneNav }: NavTypes) {
               {link.name === activeSection && (
                 <MotionComponent
                   as="span"
-                  className="absolute inset-0 -z-10 rounded-full bg-gray-100 dark:bg-[#0b122cab]"
+                  className="absolute inset-0 -z-10 h-full rounded-full bg-gray-100 dark:bg-[#0b122cab]"
                   layoutId={`${phoneNav ? "phoneActiveSection" : "activeSection"}`}
                   transition={{
                     type: "spring",

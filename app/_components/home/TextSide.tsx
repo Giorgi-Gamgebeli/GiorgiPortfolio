@@ -6,8 +6,8 @@ function TextSide() {
   return (
     <div className="row-span-1 flex flex-col gap-3 text-xl font-medium tracking-wider text-gray-950/80 dark:text-white/50 xs:text-3xl sm:gap-5 sm:text-4xl md:text-2xl lg:text-3xl">
       <MotionComponent
-        initial={{ x: -300 }}
-        animate={{ x: 0 }}
+        initial={{ x: -300, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
         transition={{ delay: 0.5 }}
         className="flex items-center gap-2"
       >

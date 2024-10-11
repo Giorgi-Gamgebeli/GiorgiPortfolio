@@ -8,8 +8,8 @@ import TextSide from "./TextSide";
 function Home() {
   return (
     <Section
-      className="relative overflow-hidden pt-44"
-      divClassName="grid grid-cols-1 xs:gap-10 md:gap-5 lg:gap-0 md:grid-cols-[62fr_38fr] lg:grid-cols-[61fr_40fr]"
+      className="relative pt-44"
+      divClassName="grid overflow-hidden grid-cols-1 xs:gap-10 md:gap-5 lg:gap-0 md:grid-cols-[62fr_38fr] lg:grid-cols-[61fr_40fr]"
       idName="Home"
     >
       <div className="absolute inset-0 -z-10 hidden dark:block">

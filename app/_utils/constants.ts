@@ -4,6 +4,29 @@ import pizzaPhoto from "@/public/Screenshot_1.png";
 import oasisPhoto from "@/public/Screenshot_2.png";
 import wayBackPhoto from "@/public/Screenshot_3.png";
 
+export const navLinks = [
+  {
+    name: "Home",
+    hash: "#Home",
+  },
+  {
+    name: "About",
+    hash: "#About",
+  },
+  {
+    name: "Skills",
+    hash: "#Skills",
+  },
+  {
+    name: "Projects",
+    hash: "#Projects",
+  },
+  {
+    name: "Contact",
+    hash: "#Contact",
+  },
+] as const;
+
 export const technologies = [
   {
     name: "HTML 5",
