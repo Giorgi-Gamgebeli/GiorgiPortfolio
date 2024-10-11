@@ -6,16 +6,18 @@ import SectionHeadText from "../SectionHeadText";
 import SectionSubText from "../SectionSubText";
 import BentoGridItems from "./BentoGridItems";
 import { useAnimate, useInView } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function About() {
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope);
+  const [animationHasHappend, setAnimationHasHappend] = useState(false);
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || animationHasHappend) return;
     initialAnimation();
-  }, [animate, isInView, scope]);
+    setAnimationHasHappend(true);
+  }, [animate, isInView, animationHasHappend, scope]);
 
   return (
     <Section idName="About">

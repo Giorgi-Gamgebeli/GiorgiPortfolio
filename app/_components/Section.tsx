@@ -28,6 +28,7 @@ function Section({
 
   return (
     <>
+      {/*span is needed it wouldnt work on section or on div if i had overflow-hidden on them if i remove overflow hidden other bugs happen */}
       <span className="scroll-mt-24" id={idName} />
 
       <section
