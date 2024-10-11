@@ -202,6 +202,13 @@ export async function initialAnimation() {
 
 // bento grid animation
 async function loopAnimation1() {
+  // animate(
+  //   "#cell-2-3-4-parent",
+  //   {
+  //     opacity: 0,
+  //   },
+  //   { duration: 1 },
+  // );
   await animate("#cell-3-2-4", {
     position: "absolute",
     right: 0,
@@ -383,4 +390,5 @@ async function loopAnimation4() {
     { duration: 1 },
   );
   await animate("#cell-1-1-3", { width: "100%" }, { duration: 1 });
+  loopAnimation1();
 }

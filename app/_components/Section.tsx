@@ -27,17 +27,20 @@ function Section({
   }, [inView, setActiveSection, idName, timeOfLastClick]);
 
   return (
-    <section
-      className={`h-full min-h-[40rem] w-full scroll-mt-24 py-10 ${className}`}
-      ref={ref}
-    >
-      <div
-        className={`mx-auto h-full min-h-[40rem] w-full max-w-[90%] xl:max-w-[1214px] ${divClassName}`}
-        id={idName}
+    <>
+      <span className="scroll-mt-24" id={idName} />
+
+      <section
+        className={`h-full min-h-[40rem] w-full overflow-hidden py-10 ${className}`}
+        ref={ref}
       >
-        {children}
-      </div>
-    </section>
+        <div
+          className={`mx-auto h-full min-h-[40rem] w-full max-w-[90%] xl:max-w-[1214px] ${divClassName}`}
+        >
+          {children}
+        </div>
+      </section>
+    </>
   );
 }
 
