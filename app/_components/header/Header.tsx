@@ -28,12 +28,16 @@ function Header() {
           <Image
             src={gIcon}
             alt="icon letter G"
-            className="hidden size-12 dark:block"
+            className="hidden dark:block"
+            height={48}
+            width={48}
           />
           <Image
             src={gIconGray}
             alt="gray icon letter G"
-            className="block size-12 dark:hidden"
+            className="block dark:hidden"
+            height={48}
+            width={48}
           />
 
           <Nav />

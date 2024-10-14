@@ -18,9 +18,10 @@ function Home() {
           quality={90}
           alt="background img of white waves"
           fill
+          priority
           className="object-cover"
           sizes="100vw"
-          loading="eager"
+          // loading="eager"
         />
       </div>
 
@@ -39,7 +40,7 @@ function Home() {
           priority
           // className=" rounded-xl xs:max-w-[80%] sm:max-w-[70%] md:max-w-[90%]"
           sizes="100vw"
-          loading="eager"
+          // loading="eager"
         />
       </MotionComponent>
     </Section>
