@@ -49,7 +49,7 @@ function Nav({ setIsPhoneNavOpen, phoneNav }: NavTypes) {
               {link.name === activeSection && (
                 <MotionComponent
                   as="span"
-                  className="absolute inset-0 -z-10 h-full rounded-full bg-gray-100 dark:bg-[#0b122cab]"
+                  className="absolute inset-0 -z-10 h-full rounded-full bg-gray-100 dark:bg-[#0b122cde]"
                   layoutId={`${phoneNav ? "phoneActiveSection" : "activeSection"}`}
                   transition={{
                     type: "spring",

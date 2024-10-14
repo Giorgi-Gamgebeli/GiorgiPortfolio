@@ -1,4 +1,5 @@
 import { animate } from "framer-motion";
+import { delay } from "./smallUtils";
 
 type FadeSlideInTypes = [string, string, number, number];
 
@@ -113,18 +114,43 @@ export function staggerChild(delay: number) {
   };
 }
 
+export const skillsFloatVariants = [
+  {
+    y: [0, -5, 0, 10, 0, -5, -10, -5, 0],
+    rotate: [0, -5, 0, 10, 0, -5, -10, -5, 0],
+  },
+  {
+    y: [0, 5, 0, -10, 0, 5, 10, 5, 0],
+    rotate: [0, 5, 0, -10, 0, 5, 10, 5, 0],
+  },
+];
+
+export async function skipInitialBentoGridAnimation() {
+  const animationDefenitions = { x: 0, opacity: 1, y: 0 } as const;
+  const options = { delay: 0, duration: 0, type: "tween" } as const;
+
+  await animate("#cell-1-1-3-parent", animationDefenitions, options);
+  await animate("#cell-1-3-4-parent", animationDefenitions, options);
+  await animate("#cell-1-3-4-parent", animationDefenitions, options);
+  await animate("#cell-2-3-4-parent", animationDefenitions, options);
+  await animate("#cell-3-2-4-parent", animationDefenitions, options);
+  await animate("#cell-3-1-2-parent", animationDefenitions, options);
+  await animate("#cell-2-1-2-parent", animationDefenitions, options);
+  await animate("#cell-2-2-3-parent", animationDefenitions, options);
+}
+
 // bento grid animation
-export async function initialAnimation() {
-  await animate("#cell-1-1-3", { x: 0, opacity: 1 }, { delay: 1 });
-  await animate("#cell-1-3-4", { y: 0, opacity: 1 });
-  await animate("#cell-1-3-4", { y: 0, opacity: 1 });
-  await animate("#cell-2-3-4", { x: 0, opacity: 1 });
-  await animate("#cell-3-2-4", { y: 0, opacity: 1 });
-  await animate("#cell-3-1-2", { y: 0, opacity: 1 });
-  await animate("#cell-2-1-2", { x: 0, opacity: 1 });
+export async function initialBentoGridAnimation() {
+  await animate("#cell-1-1-3-parent", { x: 0, opacity: 1 }, { delay: 0.5 });
+  await animate("#cell-1-3-4-parent", { y: 0, opacity: 1 });
+  await animate("#cell-1-3-4-parent", { y: 0, opacity: 1 });
+  await animate("#cell-2-3-4-parent", { x: 0, opacity: 1 });
+  await animate("#cell-3-2-4-parent", { y: 0, opacity: 1 });
+  await animate("#cell-3-1-2-parent", { y: 0, opacity: 1 });
+  await animate("#cell-2-1-2-parent", { x: 0, opacity: 1 });
   await animate(
-    "#cell-2-2-3",
-    { x: -550, opacity: 1 },
+    "#cell-2-2-3-parent",
+    { x: "-210%", opacity: 1 },
     {
       duration: 0.5,
       mass: 0.5,
@@ -135,80 +161,74 @@ export async function initialAnimation() {
     },
   );
   await animate(
-    "#cell-2-2-3",
+    "#cell-2-2-3-parent",
     { rotate: 5 },
     {
       duration: 1,
     },
   );
   await animate(
-    "#cell-2-2-3",
+    "#cell-2-2-3-parent",
     { y: [0, -10, 0, -10, 0, -10, 0, -10, 0] },
     {
       duration: 1,
     },
   );
   await animate(
-    "#cell-2-2-3",
+    "#cell-2-2-3-parent",
     { y: "-105%", rotate: 0 },
     {
       duration: 1,
     },
   );
   await animate(
-    "#cell-2-1-2",
+    "#cell-2-1-2-parent",
     { x: "-105%" },
     {
       duration: 1,
     },
   );
   await animate(
-    "#cell-2-1-2",
-    { y: "105%" },
+    "#cell-2-1-2-parent",
+    { y: "103%" },
     {
       duration: 1,
     },
   );
   await animate(
-    "#cell-2-2-3",
+    "#cell-2-2-3-parent",
     { y: 0, rotate: 0 },
     {
       duration: 1,
     },
   );
   await animate(
-    "#cell-2-2-3",
+    "#cell-2-2-3-parent",
     { x: 0, rotate: 0 },
     {
       duration: 1,
     },
   );
   await animate(
-    "#cell-2-1-2",
+    "#cell-2-1-2-parent",
     { y: 0 },
     {
       duration: 1,
     },
   );
   await animate(
-    "#cell-2-1-2",
+    "#cell-2-1-2-parent",
     { x: 0 },
     {
       duration: 1,
     },
   );
-  loopAnimation1();
+  BentoGridCell324Animation();
 }
 
 // bento grid animation
-async function loopAnimation1() {
-  // animate(
-  //   "#cell-2-3-4-parent",
-  //   {
-  //     opacity: 0,
-  //   },
-  //   { duration: 1 },
-  // );
+async function BentoGridCell324Animation() {
+  await delay();
   await animate("#cell-3-2-4", {
     position: "absolute",
     right: 0,
@@ -257,10 +277,11 @@ async function loopAnimation1() {
   await animate("#cell-3-2-4", { height: "49.1%" }, { duration: 0 });
   await animate("#cell-3-2-4", { height: "100%" }, { duration: 1 });
 
-  loopAnimation2();
+  BentoGridCell113Animation();
 }
 
-async function loopAnimation2() {
+async function BentoGridCell113Animation() {
+  await delay();
   await animate("#cell-1-1-3", {
     position: "absolute",
     left: 0,
@@ -306,10 +327,11 @@ async function loopAnimation2() {
   await animate("#cell-1-1-3", { height: "49.1%" }, { duration: 0 });
   await animate("#cell-1-1-3", { height: "100%" }, { duration: 1 });
 
-  loopAnimation3();
+  BentoGridCell324ReverseAnimation();
 }
 
-async function loopAnimation3() {
+async function BentoGridCell324ReverseAnimation() {
+  await delay();
   animate(
     "#cell-2-3-4-parent",
     {
@@ -348,10 +370,11 @@ async function loopAnimation3() {
   );
   await animate("#cell-3-2-4", { width: "49.1%" }, { duration: 0 });
   await animate("#cell-3-2-4", { width: "100%" }, { duration: 1 });
-  loopAnimation4();
+  BentoGridCell113ReverseAnimation();
 }
 
-async function loopAnimation4() {
+async function BentoGridCell113ReverseAnimation() {
+  await delay();
   animate(
     "#cell-2-1-2-parent",
     {
@@ -390,5 +413,5 @@ async function loopAnimation4() {
     { duration: 1 },
   );
   await animate("#cell-1-1-3", { width: "100%" }, { duration: 1 });
-  loopAnimation1();
+  BentoGridCell324Animation();
 }

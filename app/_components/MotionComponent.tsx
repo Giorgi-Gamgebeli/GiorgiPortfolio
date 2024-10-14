@@ -8,6 +8,7 @@ type MotionDivTypes = {
   children?: React.ReactNode;
   className?: string;
   reactRef?: AnimationScope;
+  id?: string;
 } & MotionProps;
 
 // To return motion.anyHtmlTag, becouse i dont want to make something like entire home page client side + its flexible, i know it hurts your eyes but it works :D
@@ -16,6 +17,7 @@ function MotionComponent({
   children,
   className,
   reactRef,
+  id,
   ...rest
 }: MotionDivTypes) {
   const MotionComponent = motion[
@@ -24,6 +26,7 @@ function MotionComponent({
 
   return (
     <MotionComponent
+      id={id}
       ref={reactRef}
       className={className}
       {...rest}

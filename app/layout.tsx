@@ -6,7 +6,8 @@ import { ActiveSectionContextProvider } from "./_context/ActiveSectionContext";
 import DarkModeToggle from "./_components/DarkModeToggle";
 import ReactQueryProvider from "./_utils/ReactQueryProvider";
 import ToastProvider from "./_utils/ToastProvider";
-import { Poppins } from "@next/font/google";
+import { Poppins } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -33,17 +34,21 @@ export default function RootLayout({
       <body
         className={`${poppins.className} w-full overflow-x-hidden bg-gray-100 text-gray-950 transition-all duration-300 dark:bg-darkPrimary dark:text-white`}
       >
-        <ReactQueryProvider>
-          <DarkModeProvider>
-            <ToastProvider>
-              <ActiveSectionContextProvider>
-                <Header />
-                {children}
-                <DarkModeToggle />
-              </ActiveSectionContextProvider>
-            </ToastProvider>
-          </DarkModeProvider>
-        </ReactQueryProvider>
+        <>
+          <ReactQueryProvider>
+            <DarkModeProvider>
+              <ToastProvider>
+                <ActiveSectionContextProvider>
+                  <Header />
+                  {children}
+
+                  <DarkModeToggle />
+                </ActiveSectionContextProvider>
+              </ToastProvider>
+            </DarkModeProvider>
+          </ReactQueryProvider>
+          <Analytics />
+        </>
       </body>
     </html>
   );
