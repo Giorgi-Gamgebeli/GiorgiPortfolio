@@ -8,7 +8,7 @@ function useSendEmail(
   const { mutate: sendEmail } = useMutation({
     mutationFn: sendEmailApi,
     onSuccess: () => {
-      toast.success("I have received your message, will contact you soon!");
+      toast.success("I received your message, will contact you soon!");
       setLoading(false);
     },
     onError: (err) => {

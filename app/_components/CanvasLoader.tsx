@@ -13,7 +13,6 @@ const CanvasLoader = () => {
     //   alignItems: "center",
     // }}
     >
-      {/* <span className="canvas-load"></span> */}
       <p
         style={{
           fontSize: 14,
@@ -22,8 +21,7 @@ const CanvasLoader = () => {
           marginTop: 40,
         }}
       >
-        {/* {progress !== 0 ? `${progress.toFixed(2)}%` : "Loading..."} */}
-        {progress}
+        {progress !== 0 ? `${progress.toFixed(2)}%` : "Loading..."}
       </p>
     </Html>
   );
