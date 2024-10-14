@@ -1,11 +1,11 @@
-import EarthCanvas from "./EarthCanvas";
+// import EarthCanvas from "./EarthCanvas";
 import { slideIn } from "../../_utils/motion";
 import Section from "../Section";
 import FlexBox from "../FlexBox";
 import MotionComponent from "../MotionComponent";
 
 import Form from "./Form";
-import StarsCanvas from "./StarsCanvas";
+// import StarsCanvas from "./StarsCanvas";
 import SectionHeadText from "../SectionHeadText";
 import SectionSubText from "../SectionSubText";
 
