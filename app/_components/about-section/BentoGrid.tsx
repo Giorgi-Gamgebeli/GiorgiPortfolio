@@ -4,7 +4,7 @@ import GridBox from "../GridBox";
 import BentoGridItem from "./BentoGridItem";
 import { useAnimate, useInView } from "framer-motion";
 import { useEffect, useState } from "react";
-import ComputerCanvas from "./ComputerCanvas";
+// import ComputerCanvas from "./ComputerCanvas";
 import useIsMobile from "../../_hooks/useIsMobile";
 import {
   initialBentoGridAnimation,
