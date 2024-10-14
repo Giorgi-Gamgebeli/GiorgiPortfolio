@@ -31,7 +31,6 @@ function Stars(props: object) {
   });
 
   return (
-    // <group rotation={[0, 0, Math.PI / 4]}>
     <group>
       <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial

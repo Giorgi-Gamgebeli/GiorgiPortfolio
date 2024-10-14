@@ -2,23 +2,14 @@
 
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import {
-  OrbitControls,
-  PerspectiveCamera,
-  //  Preload
-} from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 
 import CanvasLoader from "../CanvasLoader";
 import Earth from "./Earth";
 
 function EarthCanvas() {
   return (
-    <Canvas
-      frameloop="demand"
-      shadows
-      // camera={{ fov: 45 }}
-      gl={{ preserveDrawingBuffer: true }}
-    >
+    <Canvas frameloop="demand" shadows gl={{ preserveDrawingBuffer: true }}>
       <PerspectiveCamera
         makeDefault
         fov={45}
@@ -36,8 +27,6 @@ function EarthCanvas() {
 
         <Earth />
       </Suspense>
-
-      {/* <Preload all /> */}
     </Canvas>
   );
 }

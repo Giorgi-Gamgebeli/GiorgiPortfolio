@@ -31,11 +31,11 @@ function Contact() {
           variants={slideIn(["right", "tween", 0.2, 1])}
           className="z-10 h-[350px] cursor-grab md:h-[550px] xl:h-auto"
         >
-          <EarthCanvas />
+          {/* <EarthCanvas /> */}
         </MotionComponent>
       </FlexBox>
 
-      <StarsCanvas />
+      {/* <StarsCanvas /> */}
     </Section>
   );
 }
