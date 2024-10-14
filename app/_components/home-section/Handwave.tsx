@@ -30,7 +30,7 @@ function Handwave() {
           quality={0}
           width={40}
           height={40}
-          loading="eager"
+          // loading="eager"
         />
       </MotionComponent>
     </MotionComponent>
