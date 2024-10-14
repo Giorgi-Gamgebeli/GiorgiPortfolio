@@ -1,7 +1,7 @@
-import Image from "next/image";
+// import Image from "next/image";
 import Section from "../Section";
-import homebg from "@/public/homebg.png";
-import hacker from "@/public/hacker.png";
+// import homebg from "@/public/homebg.png";
+// import hacker from "@/public/hacker.png";
 import MotionComponent from "../MotionComponent";
 import TextSide from "./TextSide";
 
