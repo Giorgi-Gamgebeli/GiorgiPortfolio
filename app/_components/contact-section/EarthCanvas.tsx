@@ -2,7 +2,11 @@
 
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, PerspectiveCamera, Preload } from "@react-three/drei";
+import {
+  OrbitControls,
+  PerspectiveCamera,
+  //  Preload
+} from "@react-three/drei";
 
 import CanvasLoader from "../CanvasLoader";
 import Earth from "./Earth";
@@ -33,7 +37,7 @@ function EarthCanvas() {
         <Earth />
       </Suspense>
 
-      <Preload all />
+      {/* <Preload all /> */}
     </Canvas>
   );
 }

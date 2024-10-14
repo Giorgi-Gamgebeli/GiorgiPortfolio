@@ -2,7 +2,10 @@
 
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Preload, PerspectiveCamera } from "@react-three/drei";
+import {
+  // Preload,
+  PerspectiveCamera,
+} from "@react-three/drei";
 import Stars from "./Stars";
 import useDarkModeContext from "@/app/_context/useDarkModeContext";
 
@@ -27,7 +30,7 @@ function StarsCanvas() {
           <Stars />
         </Suspense>
 
-        <Preload all />
+        {/* <Preload all /> */}
       </Canvas>
     </div>
   );
