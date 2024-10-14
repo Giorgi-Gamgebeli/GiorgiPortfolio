@@ -27,9 +27,11 @@ function Handwave() {
         <Image
           src={handwave}
           alt="hand waving"
-          quality={60}
+          quality={0}
           priority
-          className="size-10"
+          width={40}
+          height={40}
+          loading="eager"
         />
       </MotionComponent>
     </MotionComponent>
