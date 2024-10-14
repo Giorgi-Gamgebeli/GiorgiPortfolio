@@ -89,7 +89,7 @@ function BentoGrid() {
         }}
         id="cell-2-2-3"
       >
-        <ComputerCanvas />
+        {/* <ComputerCanvas /> */}reeee
       </BentoGridItem>
 
       <BentoGridItem
