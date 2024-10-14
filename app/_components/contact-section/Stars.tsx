@@ -13,21 +13,9 @@ function Stars(props: object) {
     radius: 1.2,
   }) as Float32Array;
 
-  // let wobbleX = 0.01;
-  // let wobbleY = 0.015;
-
   useFrame((_state, delta) => {
     if (!ref.current) return;
     ref.current.rotation.y += delta / 15;
-
-    // ref.current.rotation.x += wobbleX * delta;
-    // if (Math.random() > 0.98) {
-    //   wobbleX = -wobbleX;
-    // }
-    // ref.current.rotation.y += wobbleY * delta;
-    // if (Math.random() > 0.99) {
-    //   wobbleY = -wobbleY;
-    // }
   });
 
   return (

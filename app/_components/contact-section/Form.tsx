@@ -1,29 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { useForm } from "react-hook-form";
 import FormRow from "./FormRow";
 import Input from "./Input";
 import Textarea from "./Textarea";
-import useSendEmail from "@/app/_hooks/useSendEmail";
 import ContactButton from "./ContactButton";
 import FlexBox from "../FlexBox";
+import { sendEmailApi } from "@/app/_lib/EmailJs";
 
 export type OnSubmitTypes = {
   name: string;
   email: string;
   message: string;
+  setLoading: Dispatch<SetStateAction<boolean>>;
 };
 
 function Form() {
   const { register, handleSubmit } = useForm<OnSubmitTypes>();
-
   const [loading, setLoading] = useState(false);
-  const { sendEmail } = useSendEmail(setLoading);
 
   function onSubmit(FormValues: OnSubmitTypes) {
     setLoading(true);
-    sendEmail(FormValues);
+    sendEmailApi({ ...FormValues, setLoading });
   }
 
   return (
@@ -57,7 +56,7 @@ function Form() {
         />
       </FormRow>
 
-      <FlexBox className="xss:text-sm gap-2 text-xs xs:gap-5 xs:text-base">
+      <FlexBox className="gap-2 text-xs xss:text-sm xs:gap-5 xs:text-base">
         <ContactButton type="submit">
           {loading ? "Sending..." : "Send"}
         </ContactButton>
