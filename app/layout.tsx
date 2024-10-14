@@ -4,7 +4,6 @@ import Header from "./_components/header/Header";
 import { DarkModeProvider } from "./_context/DarkModeContext";
 import { ActiveSectionContextProvider } from "./_context/ActiveSectionContext";
 import DarkModeToggle from "./_components/DarkModeToggle";
-import ReactQueryProvider from "./_utils/ReactQueryProvider";
 import ToastProvider from "./_utils/ToastProvider";
 import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
@@ -36,18 +35,15 @@ export default function RootLayout({
         className={`${poppins.className} w-full overflow-x-hidden bg-gray-100 text-gray-950 transition-all duration-300 dark:bg-darkPrimary dark:text-white`}
       >
         <>
-          <ReactQueryProvider>
-            <DarkModeProvider>
-              <ToastProvider>
-                <ActiveSectionContextProvider>
-                  <Header />
-                  {children}
-
-                  <DarkModeToggle />
-                </ActiveSectionContextProvider>
-              </ToastProvider>
-            </DarkModeProvider>
-          </ReactQueryProvider>
+          <DarkModeProvider>
+            <ToastProvider>
+              <ActiveSectionContextProvider>
+                <Header />
+                {children}
+                <DarkModeToggle />
+              </ActiveSectionContextProvider>
+            </ToastProvider>
+          </DarkModeProvider>
           <Analytics />
           <SpeedInsights />
         </>
