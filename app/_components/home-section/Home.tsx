@@ -15,8 +15,7 @@ function Home() {
       <div className="absolute inset-0 -z-10 hidden dark:block">
         <Image
           src={homebg}
-          quality={95}
-          priority
+          quality={90}
           alt="background img of white waves"
           fill
           className="object-cover"
@@ -35,7 +34,7 @@ function Home() {
         <Image
           src={hacker}
           alt="Image of hacker on computer"
-          quality={80}
+          quality={40}
           priority
           className="w-full rounded-xl xs:max-w-[80%] sm:max-w-[70%] md:max-w-[90%]"
         />

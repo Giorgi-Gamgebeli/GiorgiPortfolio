@@ -5,8 +5,8 @@ import handwave from "@/public/handwave.svg";
 function Handwave() {
   return (
     <MotionComponent
-      initial={{ x: -300, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
+      initial={{ x: -300 }}
+      animate={{ x: 0 }}
       transition={{ delay: 0.5 }}
       className="flex items-center gap-2"
     >
@@ -14,13 +14,12 @@ function Handwave() {
 
       <MotionComponent
         initial={{ rotate: 0 }}
-        whileInView={{
+        animate={{
           rotate: [0, 15, -10, 15, -10, 15, -10, 15, -10, 15, 0],
         }}
         transition={{
           duration: 1.5,
           delay: 1,
-          type: "spring",
           ease: "easeInOut",
         }}
         style={{ transformOrigin: "bottom right" }}

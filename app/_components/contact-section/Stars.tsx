@@ -9,7 +9,7 @@ import { Points as ThreePoints } from "three";
 function Stars(props: object) {
   const ref = useRef<ThreePoints>(null);
 
-  const sphere = random.inSphere(new Float32Array(10000), {
+  const sphere = random.inSphere(new Float32Array(5000), {
     radius: 1.2,
   }) as Float32Array;
 
