@@ -28,7 +28,6 @@ function Handwave() {
           src={handwave}
           alt="hand waving"
           quality={0}
-          priority
           width={40}
           height={40}
           loading="eager"

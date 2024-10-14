@@ -18,7 +18,6 @@ function Home() {
           quality={90}
           alt="background img of white waves"
           fill
-          priority
           className="object-cover"
           sizes="100vw"
           loading="eager"
@@ -38,8 +37,8 @@ function Home() {
           alt="Image of hacker on computer"
           quality={40}
           priority
-          className="w-full rounded-xl xs:max-w-[80%] sm:max-w-[70%] md:max-w-[90%]"
-          sizes=""
+          // className=" rounded-xl xs:max-w-[80%] sm:max-w-[70%] md:max-w-[90%]"
+          sizes="100vw"
           loading="eager"
         />
       </MotionComponent>
