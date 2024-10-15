@@ -4,12 +4,13 @@ import GridBox from "../GridBox";
 import BentoGridItem from "./BentoGridItem";
 import { useAnimate, useInView } from "framer-motion";
 import { useEffect, useState } from "react";
-import ComputerCanvas from "./ComputerCanvas";
 import useIsMobile from "../../_hooks/useIsMobile";
 import {
   initialBentoGridAnimation,
   skipInitialBentoGridAnimation,
 } from "@/app/_utils/motion";
+import dynamic from "next/dynamic";
+const DynamicComputerCanvas = dynamic(() => import("./ComputerCanvas"));
 
 function BentoGrid() {
   const [scope, animate] = useAnimate();
@@ -88,7 +89,7 @@ function BentoGrid() {
         }}
         id="cell-2-2-3"
       >
-        <ComputerCanvas />
+        <DynamicComputerCanvas />
       </BentoGridItem>
 
       <BentoGridItem
