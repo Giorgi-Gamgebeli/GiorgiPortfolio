@@ -20,6 +20,7 @@ function Home() {
           fill
           priority
           className="object-cover"
+          // sizes="(max-width: 450px) 80vw, (max-width: 768px) 40vw, 50vw"
           sizes="100vw"
           // loading="eager"
         />
@@ -38,8 +39,8 @@ function Home() {
           alt="Image of hacker on computer"
           quality={40}
           priority
-          // className=" rounded-xl xs:max-w-[80%] sm:max-w-[70%] md:max-w-[90%]"
-          sizes="100vw"
+          className="rounded-xl xs:max-w-[80%] sm:max-w-[70%] md:max-w-[90%]"
+          sizes="(max-width: 450px) 80vw, (max-width: 768px) 40vw, 50vw"
         />
       </MotionComponent>
     </Section>
