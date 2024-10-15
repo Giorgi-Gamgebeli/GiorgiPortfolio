@@ -10,7 +10,7 @@ import {
   useState,
 } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { motion } from "framer-motion";
+import MotionComponent from "../MotionComponent";
 
 type ModalContextTypes = {
   openName: string;
@@ -84,7 +84,7 @@ function Window({ children, name }: WindowTypes) {
       <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 gap-5">
         {children}
 
-        <motion.div
+        <MotionComponent
           initial={{
             x: 600,
           }}
@@ -99,7 +99,8 @@ function Window({ children, name }: WindowTypes) {
             stiffness: 100,
           }}
         >
-          <motion.button
+          <MotionComponent
+            as="button"
             onClick={() => {
               close();
               setTimer(10);
@@ -113,13 +114,16 @@ function Window({ children, name }: WindowTypes) {
             }}
             transition={{ duration: timer }}
           >
-            <motion.span className="absolute h-12 w-12 rounded-full bg-white dark:bg-black" />
+            <MotionComponent
+              as="span"
+              className="absolute h-12 w-12 rounded-full bg-white dark:bg-black"
+            />
             <Icon
               icon="ep:close-bold"
               className="z-10 text-2xl dark:text-white"
             />
-          </motion.button>
-        </motion.div>
+          </MotionComponent>
+        </MotionComponent>
       </div>
     </div>
   );

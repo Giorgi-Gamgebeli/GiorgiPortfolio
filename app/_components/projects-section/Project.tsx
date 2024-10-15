@@ -6,7 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Modal from "./Modal";
-import { motion } from "framer-motion";
 import { slideIn } from "@/app/_utils/motion";
 import MotionComponent from "../MotionComponent";
 import { projects } from "@/app/_utils/constants";
@@ -28,7 +27,8 @@ function Project({
   const isServiceNetlify = `${deploymentServiceImg.src}`.includes("netlify");
 
   return (
-    <motion.article
+    <MotionComponent
+      as="article"
       className="group relative mb-8 flex w-full flex-col-reverse overflow-hidden rounded-2xl border border-black/5 border-gray-300 bg-white shadow-md last:mb-0 dark:border-transparent dark:bg-darkTertiary dark:text-white dark:shadow-none md:block md:h-[22rem] md:rounded-lg lg:h-[25rem] xl:h-[30rem]"
       initial="hidden"
       whileInView="show"
@@ -119,7 +119,7 @@ function Project({
           </FlexBox>
         </Modal.Window>
       </Modal>
-    </motion.article>
+    </MotionComponent>
   );
 }
 
