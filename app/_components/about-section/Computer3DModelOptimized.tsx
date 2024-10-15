@@ -7,8 +7,12 @@ Title: Gaming Desktop PC
 */
 
 import { Mesh, MeshStandardMaterial } from "three";
-import { useGLTF } from "@react-three/drei";
+import {
+  useGLTF,
+  //  useVideoTexture
+} from "@react-three/drei";
 import { GLTF } from "three-stdlib";
+// import { useFrame, useThree } from "@react-three/fiber";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -122,6 +126,17 @@ type GLTFResult = GLTF & {
 
 export default function Model(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("/desktopPcOptimized.glb") as GLTFResult;
+
+  // const txt = useVideoTexture("./avengersVidEdit.mp4", {
+  //   loop: true,
+  //   muted: true,
+  // });
+  // const { invalidate } = useThree();
+
+  // useFrame(() => {
+  //   invalidate();
+  // });
+
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -458,6 +473,17 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
         rotation={[-Math.PI / 2, 1.50098311, Math.PI / 2]}
         scale={[3.31621178, 3.48065239, 3.31621178]}
       />
+      {/* <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.MY_SCREEN_MY_SCREEN_0.geometry}
+          material={materials["Material.074_30"]}
+          position={[-136.17652893, 300.13247681, 300.40536499]}
+          rotation={[-Math.PI / 2, 1.50098311, Math.PI / 2]}
+          scale={[331.6211853, 348.06524658, 331.6211853]}
+        >
+          <meshBasicMaterial map={txt} />
+        </mesh> */}
       <mesh
         castShadow
         receiveShadow

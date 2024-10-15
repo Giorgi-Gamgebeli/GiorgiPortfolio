@@ -29,15 +29,15 @@ function Header() {
             src={gIcon}
             alt="icon letter G"
             className="hidden dark:block"
-            height={48}
-            width={48}
+            height={45}
+            width={45}
           />
           <Image
             src={gIconGray}
             alt="gray icon letter G"
             className="block dark:hidden"
-            height={48}
-            width={48}
+            height={45}
+            width={45}
           />
 
           <Nav />
