@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimationScope, MotionProps, m } from "framer-motion";
+import { AnimationScope, MotionProps, motion } from "framer-motion";
 import React from "react";
 
 type MotionDivTypes = {
@@ -22,7 +22,9 @@ function MotionComponent({
   onClick,
   ...rest
 }: MotionDivTypes) {
-  const MotionComponent = m[component as keyof typeof m] as React.ElementType;
+  const MotionComponent = motion[
+    component as keyof typeof motion
+  ] as React.ElementType;
 
   return (
     <MotionComponent
