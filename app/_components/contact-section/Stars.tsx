@@ -1,15 +1,13 @@
-"use client";
-
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
-import * as random from "maath/random/dist/maath-random.cjs";
+import { inSphere } from "maath/random";
 import { Points as ThreePoints } from "three";
 
 function Stars(props: object) {
   const ref = useRef<ThreePoints>(null);
 
-  const sphere = random.inSphere(new Float32Array(5000), {
+  const sphere = inSphere(new Float32Array(5000), {
     radius: 1.2,
   }) as Float32Array;
 
