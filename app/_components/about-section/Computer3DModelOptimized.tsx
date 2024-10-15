@@ -125,7 +125,9 @@ type GLTFResult = GLTF & {
 };
 
 export default function Model(props: JSX.IntrinsicElements["group"]) {
-  const { nodes, materials } = useGLTF("/desktopPcOptimized.glb") as GLTFResult;
+  const { nodes, materials } = useGLTF(
+    "/desktopPcOptimized1.glb",
+  ) as GLTFResult;
 
   // const txt = useVideoTexture("./avengersVidEdit.mp4", {
   //   loop: true,
@@ -596,4 +598,4 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/desktopPcOptimized.glb");
+useGLTF.preload("/desktopPcOptimized1.glb");
