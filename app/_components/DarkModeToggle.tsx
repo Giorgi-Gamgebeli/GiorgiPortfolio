@@ -3,7 +3,6 @@
 import useDarkModeContext from "../_context/useDarkModeContext";
 import { useEffect } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { motion } from "framer-motion";
 import MotionComponent from "./MotionComponent";
 
 type DarkModeToggleTypes = {
@@ -17,7 +16,8 @@ function DarkModeToggle({ display = true }: DarkModeToggleTypes) {
   }, [isDarkMode]);
 
   return (
-    <motion.button
+    <MotionComponent
+      as="button"
       className={`fixed bottom-4 right-4 z-50 flex h-20 w-20 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-[#fff0] hover:border-gray-600 dark:border-[#fff0] dark:hover:border-gray-400 md:bottom-10 md:right-10 ${
         display ? "" : "hidden"
       }`}
@@ -39,7 +39,7 @@ function DarkModeToggle({ display = true }: DarkModeToggleTypes) {
           className="h-14 w-14 text-darkTertiary"
         />
       )}
-    </motion.button>
+    </MotionComponent>
   );
 }
 

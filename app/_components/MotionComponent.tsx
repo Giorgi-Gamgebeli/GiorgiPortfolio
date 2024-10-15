@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimationScope, motion, MotionProps } from "framer-motion";
+import { AnimationScope, MotionProps, m } from "framer-motion";
 import React from "react";
 
 type MotionDivTypes = {
@@ -9,6 +9,7 @@ type MotionDivTypes = {
   className?: string;
   reactRef?: AnimationScope;
   id?: string;
+  onClick?: () => void;
 } & MotionProps;
 
 // To return motion.anyHtmlTag, becouse i dont want to make something like entire home page client side + its flexible, i know it hurts your eyes but it works :D
@@ -18,19 +19,19 @@ function MotionComponent({
   className,
   reactRef,
   id,
+  onClick,
   ...rest
 }: MotionDivTypes) {
-  const MotionComponent = motion[
-    component as keyof typeof motion
-  ] as React.ElementType;
+  const MotionComponent = m[component as keyof typeof m] as React.ElementType;
 
   return (
     <MotionComponent
       id={id}
+      onClick={onClick}
       ref={reactRef}
       className={className}
-      {...rest}
       viewport={{ once: true }}
+      {...rest}
     >
       {children}
     </MotionComponent>
