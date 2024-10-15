@@ -9,8 +9,8 @@ import {
   initialBentoGridAnimation,
   skipInitialBentoGridAnimation,
 } from "@/app/_utils/motion";
-// import dynamic from "next/dynamic";
-// const DynamicComputerCanvas = dynamic(() => import("./ComputerCanvas"));
+import dynamic from "next/dynamic";
+const DynamicComputerCanvas = dynamic(() => import("./ComputerCanvas"));
 
 function BentoGrid() {
   const [scope, animate] = useAnimate();
@@ -89,7 +89,7 @@ function BentoGrid() {
         }}
         id="cell-2-2-3"
       >
-        {/* <DynamicComputerCanvas /> */}ree
+        <DynamicComputerCanvas />
       </BentoGridItem>
 
       <BentoGridItem

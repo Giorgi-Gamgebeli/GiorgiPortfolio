@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import React, { useEffect, useRef } from "react";
+import { useInView } from "framer-motion";
 import useActiveSectionContext from "../_context/useActiveSectionContext";
 
 type SectionTypes = {
@@ -19,7 +19,8 @@ function Section({
   viewThreshold,
   divClassName,
 }: SectionTypes) {
-  const { ref, inView } = useInView({ threshold: viewThreshold || 0.5 });
+  const ref = useRef<HTMLTableSectionElement | null>(null);
+  const inView = useInView(ref, { amount: viewThreshold || 0.5 });
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
 
   useEffect(() => {

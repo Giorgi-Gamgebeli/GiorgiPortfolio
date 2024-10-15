@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, Preload } from "@react-three/drei";
 import CanvasLoader from "../CanvasLoader";
-import Computer3DModel from "./Computer3DModel";
+import Computer3DModelOptimized from "./Computer3DModelOptimized";
 
 function ComputerCanvas() {
   return (
@@ -28,7 +28,7 @@ function ComputerCanvas() {
           minPolarAngle={Math.PI / 2}
         />
         <group position={[0, -2.25, -1.5]} rotation={[-0.01, -0.2, -0.1]}>
-          <Computer3DModel />
+          <Computer3DModelOptimized />
         </group>
       </Suspense>
 
