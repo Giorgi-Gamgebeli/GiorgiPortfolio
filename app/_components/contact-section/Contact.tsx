@@ -1,13 +1,14 @@
-// import EarthCanvas from "./EarthCanvas";
 import { slideIn } from "../../_utils/motion";
 import Section from "../Section";
 import FlexBox from "../FlexBox";
 import MotionComponent from "../MotionComponent";
 
 import Form from "./Form";
-// import StarsCanvas from "./StarsCanvas";
 import SectionHeadText from "../SectionHeadText";
 import SectionSubText from "../SectionSubText";
+import dynamic from "next/dynamic";
+const DynamicStarsCanvas = dynamic(() => import("./StarsCanvas"));
+const DynamicEarthCanvas = dynamic(() => import("./EarthCanvas"));
 
 function Contact() {
   return (
@@ -31,11 +32,11 @@ function Contact() {
           variants={slideIn(["right", "tween", 0.2, 1])}
           className="z-10 h-[350px] cursor-grab md:h-[550px] xl:h-auto"
         >
-          {/* <EarthCanvas /> */}
+          <DynamicEarthCanvas />
         </MotionComponent>
       </FlexBox>
 
-      {/* <StarsCanvas /> */}
+      <DynamicStarsCanvas />
     </Section>
   );
 }
