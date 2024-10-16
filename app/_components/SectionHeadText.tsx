@@ -1,8 +1,6 @@
 function SectionHeadText({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="text-4xl font-black xs:text-[40px] sm:text-[50px] md:text-[60px]">
-      {children}
-    </h3>
+    <h3 className="text-4xl font-black sm:text-5xl md:text-6xl">{children}</h3>
   );
 }
 

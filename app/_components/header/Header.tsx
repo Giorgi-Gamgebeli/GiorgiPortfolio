@@ -36,7 +36,7 @@ function Header() {
             src={gIconGray}
             alt="gray icon letter G"
             className="block dark:hidden"
-            height={45}
+            height={48}
             width={45}
           />
 
