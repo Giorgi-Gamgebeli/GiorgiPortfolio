@@ -1,10 +1,18 @@
 "use client";
 
+import { KTX2Loader } from "three-stdlib";
+
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, Preload } from "@react-three/drei";
 import CanvasLoader from "../CanvasLoader";
 import Computer3DModelOptimized from "./Computer3DModelOptimized";
+import { REVISION } from "three";
+
+const ktx2Loader = new KTX2Loader();
+ktx2Loader.setTranscoderPath(
+  `https://unpkg.com/three@0.${REVISION}.x/examples/jsm/libs/basis/`,
+);
 
 function ComputerCanvas() {
   return (
@@ -28,7 +36,7 @@ function ComputerCanvas() {
           minPolarAngle={Math.PI / 2}
         />
         <group position={[0, -2.25, -1.5]} rotation={[-0.01, -0.2, -0.1]}>
-          <Computer3DModelOptimized />
+          <Computer3DModelOptimized ktx2Loader={ktx2Loader} />;
         </group>
       </Suspense>
 

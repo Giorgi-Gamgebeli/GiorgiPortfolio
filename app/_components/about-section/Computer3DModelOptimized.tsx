@@ -6,77 +6,7582 @@ Source: https://sketchfab.com/3d-models/gaming-desktop-pc-d1d8282c9916438091f11a
 Title: Gaming Desktop PC
 */
 
+import { useGLTF } from "@react-three/drei";
+import { useThree } from "@react-three/fiber";
 import { Mesh, MeshStandardMaterial } from "three";
-import {
-  useGLTF,
-  //  useVideoTexture
-} from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-// import { useFrame, useThree } from "@react-three/fiber";
+import { KTX2Loader } from "three-stdlib";
+
+export default function Model({ ktx2Loader }: { ktx2Loader: KTX2Loader }) {
+  const { gl } = useThree();
+
+  const { nodes, materials } = useGLTF(
+    "/desktopPcOptimized1.glb",
+    true,
+    true,
+    (loader) => {
+      loader.setKTX2Loader(ktx2Loader.detectSupport(gl));
+    },
+  ) as GLTFResult;
+
+  return (
+    <group dispose={null}>
+      <group scale={0.01}>
+        <group
+          position={[101.600815, 40.6220779, 244.007446]}
+          rotation={[-Math.PI / 2, 0.0776536, Math.PI / 2]}
+          scale={[21.8925858, 21.89258829, 21.89258829]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes["Object_782_OnTheFly-bg_0"].geometry}
+            material={materials["Material.074_40"]}
+            position={[0, 0, 6e-8]}
+            scale={0.99999994}
+          />
+        </group>
+        <group
+          position={[159.017548, 47.3195267, 359.9361]}
+          rotation={[-Math.PI / 2, 1.5e-7, -Math.PI]}
+          scale={[19.6082077, 19.6082039, 19.6082039]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_788_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, -0.00000191, 1.4e-7]}
+            scale={[1.00000012, 1, 1]}
+          />
+        </group>
+        <group
+          position={[122.701248, 53.5329361, 358.45636]}
+          rotation={[-Math.PI / 2, 0.16312638, -Math.PI]}
+          scale={[19.60820406, 19.608202, 19.60820406]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_798_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[9.5e-7, -0.00000191, 0]}
+            scale={[1, 1.00000012, 1]}
+          />
+        </group>
+        <group
+          position={[190.985519, 44.57742, 567.4793]}
+          rotation={[-Math.PI / 2, -0.08910624, -Math.PI]}
+          scale={[8.87175321, 8.871754, 8.87175321]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_800_Material005_0.geometry}
+            material={materials["Material.074_32"]}
+            position={[-0.00000191, 0.00000381, 2.4e-7]}
+            rotation={[0, -1e-8, 0]}
+            scale={[1, 1.00000012, 1]}
+          />
+        </group>
+        <group
+          position={[190.868027, 44.62822, 565.2546]}
+          rotation={[-Math.PI / 2, -0.08910624, -Math.PI]}
+          scale={[8.87175321, 8.871754, 8.87175321]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_802_Material005_0.geometry}
+            material={materials["Material.074_32"]}
+            position={[-0.00000191, 0.00000381, -1.2e-7]}
+            rotation={[0, -1e-8, 0]}
+            scale={[1, 1.00000012, 1]}
+          />
+        </group>
+        <group
+          position={[192.490433, 44.4195023, 565.412048]}
+          rotation={[-Math.PI / 2, -0.08910624, -Math.PI]}
+          scale={[8.87175321, 8.871754, 8.87175321]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_804_Material005_0.geometry}
+            material={materials["Material.074_32"]}
+            position={[0.00000191, 0, -3.6e-7]}
+            rotation={[0, -1e-8, 0]}
+            scale={[1, 1.00000012, 1]}
+          />
+        </group>
+        <group
+          position={[192.402786, 44.4012833, 567.471863]}
+          rotation={[-Math.PI / 2, -0.08910624, -Math.PI]}
+          scale={[8.87175321, 8.871754, 8.87175321]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_806_Material005_0.geometry}
+            material={materials["Material.074_32"]}
+            position={[0, 0.00000381, 1.2e-7]}
+            rotation={[0, -1e-8, 0]}
+            scale={[1, 1.00000012, 1]}
+          />
+        </group>
+        <group
+          position={[140.8444, 50.58173, 568.869751]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={[6.414326, 6.414327, 6.414327]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_808_Material005_0.geometry}
+            material={materials["Material.074_32"]}
+            position={[0, -0.00000191, 9e-8]}
+            scale={1.00000012}
+          />
+        </group>
+        <group
+          position={[141.038, 50.58173, 552.0099]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={5.712558}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_810_Material005_0.geometry}
+            material={materials["Material.074_32"]}
+            position={[-0.00000763, 0, -5e-7]}
+          />
+        </group>
+        <group
+          position={[141.038, 50.58173, 532.0256]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={5.712558}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_812_Material068_0.geometry}
+            material={materials["Material.074_37"]}
+            position={[0, 0, -5e-7]}
+          />
+        </group>
+        <group
+          position={[141.038, 50.58173, 514.783752]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={5.712558}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_814_Material068_0.geometry}
+            material={materials["Material.074_37"]}
+            position={[-0.00000763, 0, -5e-7]}
+          />
+        </group>
+        <group
+          position={[141.038, 50.58173, 498.138275]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={5.712558}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_816_Material068_0.geometry}
+            material={materials["Material.074_37"]}
+            position={[-0.00000763, 0, -5e-7]}
+          />
+        </group>
+        <group
+          position={[141.038, 50.58173, 480.752319]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={5.712558}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_818_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[-0.00000763, 0, -5e-7]}
+          />
+        </group>
+        <group
+          position={[141.038, 50.58173, 463.6155]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={5.712558}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_820_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[0, 0, -5e-7]}
+          />
+        </group>
+        <group
+          position={[141.038, 50.58173, 443.745667]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={5.712558}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_822_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[-0.00000763, 0, -5e-7]}
+          />
+        </group>
+        <group
+          position={[141.6489, 50.8845749, 427.9777]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={6.15839672}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_824_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[0.00000763, 0, 2.3e-7]}
+          />
+        </group>
+        <group
+          position={[142.094559, 50.9551163, 409.215942]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={6.15839672}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_826_Material060_0.geometry}
+            material={materials["Material.074_34"]}
+            position={[0, 0, 2.4e-7]}
+          />
+        </group>
+        <group
+          position={[158.0304, 48.5490074, 561.971436]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={[6.414326, 6.414327, 6.414327]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_828_Material005_0.geometry}
+            material={materials["Material.074_32"]}
+            position={[0, 0, -5e-7]}
+            scale={1.00000012}
+          />
+        </group>
+        <group
+          position={[158.0304, 48.43692, 543.8752]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={[6.414326, 6.414327, 6.414327]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_830_Material069_0.geometry}
+            material={materials["Material.074_38"]}
+            position={[0.00000763, 0, -3e-8]}
+            scale={1.00000012}
+          />
+        </group>
+        <group
+          position={[158.0304, 48.43692, 528.2267]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={[6.414326, 6.414327, 6.414327]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_832_Material068_0.geometry}
+            material={materials["Material.074_37"]}
+            position={[-0.00000763, 0, -3e-8]}
+            scale={1.00000012}
+          />
+        </group>
+        <group
+          position={[158.0304, 48.43692, 509.5636]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={[6.414326, 6.414327, 6.414327]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_834_Material068_0.geometry}
+            material={materials["Material.074_37"]}
+            position={[0, 0, -3e-8]}
+            scale={1.00000012}
+          />
+        </group>
+        <group
+          position={[158.0304, 48.35331, 494.305328]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={[6.414326, 6.414327, 6.414327]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_836_Material068_0.geometry}
+            material={materials["Material.074_37"]}
+            position={[-0.00000763, 0, -3e-8]}
+            scale={1.00000012}
+          />
+        </group>
+        <group
+          position={[156.65712, 48.6359253, 594.0031]}
+          rotation={[-1.58771241, 8.5e-7, Math.PI / 2]}
+          scale={[2.69176012, 2.69176, 2.69176012]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_838_Material070_0.geometry}
+            material={materials["Material.074_39"]}
+            position={[-0.00003052, 0.00000763, -0.00000167]}
+            scale={[1, 1, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[192.64386, 45.6498032, 594.7985]}
+          rotation={[-Math.PI / 2, -0.11956088, Math.PI / 2]}
+          scale={[3.12313223, 3.12313245, 3.12313245]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_840_Material070_0.geometry}
+            material={materials["Material.074_39"]}
+            scale={0.99999994}
+          />
+        </group>
+        <group
+          position={[158.0304, 48.43692, 475.9764]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={[6.414326, 6.414327, 6.414327]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_842_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[-0.00000763, 0, -3e-8]}
+            scale={1.00000012}
+          />
+        </group>
+        <group
+          position={[157.211441, 48.43692, 455.6252]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={[6.414326, 5.271878, 6.414327]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_844_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[-0.00000763, -0.00000191, 4.3e-7]}
+            scale={[1, 1, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[158.0304, 48.43692, 441.259918]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={[6.414326, 6.414327, 6.414327]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_846_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[-0.00000763, 0, -3e-8]}
+            scale={1.00000012}
+          />
+        </group>
+        <group
+          position={[159.027344, 48.6389656, 422.0706]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={[6.91493654, 6.9149375, 6.9149375]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_848_Material060_0.geometry}
+            material={materials["Material.074_34"]}
+            position={[0, 0, 2.3e-7]}
+          />
+        </group>
+        <group
+          position={[122.029152, 53.8866272, 594.9239]}
+          rotation={[-Math.PI / 2, 0.16447469, Math.PI / 2]}
+          scale={[4.98051262, 4.98051249, 4.98051249]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_850_Material070_0.geometry}
+            material={materials["Material.074_39"]}
+            position={[0.00001526, 0, 9.5e-7]}
+            rotation={[1e-8, 0, 0]}
+            scale={[0.99999994, 1, 1]}
+          />
+        </group>
+        <group
+          position={[175.486908, 47.2692947, 483.9069]}
+          rotation={[-Math.PI / 2, -0.09949677, Math.PI / 2]}
+          scale={[6.414326, 6.41432616, 6.41432616]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_852_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[-0.00000763, 0.00000191, -7.2e-7]}
+            rotation={[1e-8, 0, 0]}
+            scale={[1.00000012, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[175.4869, 47.2692947, 501.8875]}
+          rotation={[-Math.PI / 2, -0.09949677, Math.PI / 2]}
+          scale={[6.414326, 6.41432616, 6.41432616]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_854_Material068_0.geometry}
+            material={materials["Material.074_37"]}
+            position={[-0.00000763, 0.00000191, -4.8e-7]}
+            rotation={[1e-8, 0, 0]}
+            scale={[1.00000012, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[175.486908, 47.2692947, 519.0947]}
+          rotation={[-Math.PI / 2, -0.09949677, Math.PI / 2]}
+          scale={[6.414326, 6.41432616, 6.41432616]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_856_Material068_0.geometry}
+            material={materials["Material.074_37"]}
+            position={[0, 0.00000191, -7.2e-7]}
+            rotation={[1e-8, 0, 0]}
+            scale={[1.00000012, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[175.486908, 47.2692947, 537.0141]}
+          rotation={[-Math.PI / 2, -0.09949677, Math.PI / 2]}
+          scale={[6.414326, 6.41432616, 6.41432616]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_858_Material069_0.geometry}
+            material={materials["Material.074_38"]}
+            position={[0, 0.00000191, -7.2e-7]}
+            rotation={[1e-8, 0, 0]}
+            scale={[1.00000012, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[175.486908, 47.16626, 554.6594]}
+          rotation={[-Math.PI / 2, -0.09949677, Math.PI / 2]}
+          scale={[6.414326, 6.41432616, 6.41432616]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_860_Material005_0.geometry}
+            material={materials["Material.074_32"]}
+            position={[0, 0.00000191, -2.4e-7]}
+            rotation={[1e-8, 0, 0]}
+            scale={[1.00000012, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[175.486908, 47.2692947, 467.9829]}
+          rotation={[-Math.PI / 2, -0.09949677, Math.PI / 2]}
+          scale={[6.414326, 6.41432616, 6.41432616]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_862_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[0, 0.00000191, -7.2e-7]}
+            rotation={[1e-8, 0, 0]}
+            scale={[1.00000012, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[175.486908, 47.2692947, 450.283325]}
+          rotation={[-Math.PI / 2, -0.09949677, Math.PI / 2]}
+          scale={[6.414326, 6.41432616, 6.41432616]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_864_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[-0.00000763, 0.00000191, -7.2e-7]}
+            rotation={[1e-8, 0, 0]}
+            scale={[1.00000012, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[122.444328, 53.9313545, 578.061462]}
+          rotation={[-Math.PI / 2, 0.16447468, Math.PI / 2]}
+          scale={[4.32622337, 4.32622353, 4.32622353]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_866_Material070_0.geometry}
+            material={materials["Material.074_39"]}
+            position={[0, 0.00000191, 9.5e-7]}
+          />
+        </group>
+        <group
+          position={[122.057571, 53.850544, 561.225769]}
+          rotation={[-Math.PI / 2, 0.16447481, Math.PI / 2]}
+          scale={[3.16979074, 3.16979118, 3.16979118]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_868_Material005_0.geometry}
+            material={materials["Material.074_32"]}
+            position={[0, 0, 9.5e-7]}
+            rotation={[-1e-8, 0, 0]}
+            scale={0.99999994}
+          />
+        </group>
+        <group
+          position={[127.007935, 53.0288925, 560.640259]}
+          rotation={[-Math.PI / 2, 0.16447468, Math.PI / 2]}
+          scale={[4.32622337, 4.32622353, 4.32622353]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_870_Material005_0.geometry}
+            material={materials["Material.074_32"]}
+            position={[0, 0.00000191, 0]}
+          />
+        </group>
+        <group
+          position={[192.64386, 45.6498032, 359.945618]}
+          rotation={[-Math.PI / 2, -0.11956088, Math.PI / 2]}
+          scale={[3.12313223, 3.12313245, 3.12313245]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_872_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0.00000763, 0, 0]}
+            scale={0.99999994}
+          />
+        </group>
+        <group
+          position={[156.285019, 46.9368629, 363.379272]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={4.006036}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_874_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, 0.00000381, -4.8e-7]}
+          />
+        </group>
+        <group
+          position={[122.4838, 53.9046936, 543.3729]}
+          rotation={[-Math.PI / 2, 0.1644748, Math.PI / 2]}
+          scale={[3.82158232, 3.82158183, 3.82158183]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_876_Material069_0.geometry}
+            material={materials["Material.074_38"]}
+            position={[0, -0.00000191, 9.5e-7]}
+          />
+        </group>
+        <group
+          position={[127.434174, 53.0830574, 543.258362]}
+          rotation={[-Math.PI / 2, 0.16447468, Math.PI / 2]}
+          scale={[4.32622337, 4.32622353, 4.32622353]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_878_Material069_0.geometry}
+            material={materials["Material.074_38"]}
+            position={[-0.00000763, 0.00000191, -0.00000143]}
+          />
+        </group>
+        <group
+          position={[122.4838, 53.7446136, 525.7684]}
+          rotation={[-Math.PI / 2, 0.1644748, Math.PI / 2]}
+          scale={[3.82158232, 3.82158183, 3.82158183]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_880_Material068_0.geometry}
+            material={materials["Material.074_37"]}
+            position={[0.00001526, -0.00000381, 9.5e-7]}
+          />
+        </group>
+        <group
+          position={[127.434158, 52.92297, 525.6515]}
+          rotation={[-Math.PI / 2, 0.16447468, Math.PI / 2]}
+          scale={[4.32622337, 4.32622353, 4.32622353]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_882_Material068_0.geometry}
+            material={materials["Material.074_37"]}
+            position={[-0.00000763, 0, 9.5e-7]}
+          />
+        </group>
+        <group
+          position={[101.738914, 56.42401, 595.2724]}
+          rotation={[-Math.PI / 2, 0.14062244, Math.PI / 2]}
+          scale={[4.18351364, 4.18351428, 4.18351428]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_884_Material070_0.geometry}
+            material={materials["Material.074_39"]}
+            position={[0.00001526, 0, -4.8e-7]}
+          />
+        </group>
+        <group
+          position={[122.4838, 53.85219, 509.284882]}
+          rotation={[-Math.PI / 2, 0.1644748, Math.PI / 2]}
+          scale={[3.82158232, 3.82158183, 3.82158183]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_886_Material068_0.geometry}
+            material={materials["Material.074_37"]}
+            position={[0, -0.00000381, 9.5e-7]}
+          />
+        </group>
+        <group
+          position={[127.434158, 53.03054, 508.7717]}
+          rotation={[-Math.PI / 2, 0.16447468, Math.PI / 2]}
+          scale={[4.32622337, 4.32622353, 4.32622353]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_888_Material068_0.geometry}
+            material={materials["Material.074_37"]}
+            position={[-0.00001526, 0, -9.5e-7]}
+          />
+        </group>
+        <group
+          position={[101.366722, 56.13206, 484.3406]}
+          rotation={[-Math.PI / 2, 0.15088733, Math.PI / 2]}
+          scale={[4.531781, 4.5317817, 4.5317817]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_890_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[0.00001526, -0.00000191, 0]}
+            rotation={[1e-8, 0, 0]}
+            scale={[0.9999999, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[101.205078, 56.9417877, 513.089844]}
+          rotation={[-Math.PI / 2, 0.105316, Math.PI / 2]}
+          scale={[4.450528, 4.45052905, 4.45052905]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_892_Material068_0.geometry}
+            material={materials["Material.074_37"]}
+            position={[-0.00000763, 0.00000191, -7.2e-7]}
+            rotation={[-1e-8, 0, 0]}
+            scale={[1.00000012, 1, 1]}
+          />
+        </group>
+        <group
+          position={[101.205078, 56.9417877, 530.4553]}
+          rotation={[-Math.PI / 2, 0.105316, Math.PI / 2]}
+          scale={[4.450528, 4.45052905, 4.45052905]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_894_Material069_0.geometry}
+            material={materials["Material.074_38"]}
+            position={[-0.00000763, 0.00000191, -7.2e-7]}
+            rotation={[-1e-8, 0, 0]}
+            scale={[1.00000012, 1, 1]}
+          />
+        </group>
+        <group
+          position={[101.205078, 56.9417877, 548.2025]}
+          rotation={[-Math.PI / 2, 0.105316, Math.PI / 2]}
+          scale={[4.450528, 4.45052905, 4.45052905]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_896_Material005_0.geometry}
+            material={materials["Material.074_32"]}
+            position={[-0.00001526, 0.00000191, -7.2e-7]}
+            rotation={[-1e-8, 0, 0]}
+            scale={[1.00000012, 1, 1]}
+          />
+        </group>
+        <group
+          position={[101.205078, 56.9417877, 565.1781]}
+          rotation={[-Math.PI / 2, 0.105316, Math.PI / 2]}
+          scale={[4.450528, 4.45052905, 4.45052905]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_898_Material005_0.geometry}
+            material={materials["Material.074_32"]}
+            position={[0, 0.00000191, -7.2e-7]}
+            rotation={[-1e-8, 0, 0]}
+            scale={[1.00000012, 1, 1]}
+          />
+        </group>
+        <group
+          position={[101.366722, 56.15393, 466.894348]}
+          rotation={[-Math.PI / 2, 0.15088733, Math.PI / 2]}
+          scale={[4.531781, 4.5317817, 4.5317817]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_900_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[0.00000763, 0, 0]}
+            rotation={[1e-8, 0, 0]}
+            scale={[0.9999999, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[101.366722, 56.15393, 449.367462]}
+          rotation={[-Math.PI / 2, 0.15088733, Math.PI / 2]}
+          scale={[4.531781, 4.5317817, 4.5317817]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_902_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[0.00000763, 0, 0]}
+            rotation={[1e-8, 0, 0]}
+            scale={[0.9999999, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[101.366722, 56.15393, 431.9488]}
+          rotation={[-Math.PI / 2, 0.15088733, Math.PI / 2]}
+          scale={[4.531781, 4.5317817, 4.5317817]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_904_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[0.00000763, 0, 0]}
+            rotation={[1e-8, 0, 0]}
+            scale={[0.9999999, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[101.473167, 56.1211281, 402.973236]}
+          rotation={[-Math.PI / 2, 0.16055258, Math.PI / 2]}
+          scale={[4.50132751, 4.50132815, 4.50132815]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_906_Material060_0.geometry}
+            material={materials["Material.074_34"]}
+            position={[-0.00000763, 0, 7.2e-7]}
+            scale={[1, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[101.35199, 56.184, 386.4811]}
+          rotation={[-Math.PI / 2, 0.19630915, Math.PI / 2]}
+          scale={[4.189315, 4.18931552, 4.18931552]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_908_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, 0.00000191, 4.8e-7]}
+            rotation={[-1e-8, 0, 0]}
+            scale={[1.00000012, 1, 1]}
+          />
+        </group>
+        <group
+          position={[101.35199, 56.184, 368.472473]}
+          rotation={[-Math.PI / 2, 0.19630915, Math.PI / 2]}
+          scale={[4.189315, 4.18931552, 4.18931552]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_910_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0.00000763, 0.00000191, 4.8e-7]}
+            rotation={[-1e-8, 0, 0]}
+            scale={[1.00000012, 1, 1]}
+          />
+        </group>
+        <group
+          position={[101.351967, 56.184, 351.349]}
+          rotation={[-Math.PI / 2, 0.19630915, Math.PI / 2]}
+          scale={[4.189315, 4.18931552, 4.18931552]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_912_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0.00000763, 0, -9.5e-7]}
+            rotation={[-1e-8, 0, 0]}
+            scale={[1.00000012, 1, 1]}
+          />
+        </group>
+        <group
+          position={[122.4838, 53.8517761, 491.651]}
+          rotation={[-Math.PI / 2, 0.1644748, Math.PI / 2]}
+          scale={[3.82158232, 3.82158183, 3.82158183]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_914_Material068_0.geometry}
+            material={materials["Material.074_37"]}
+            position={[-0.00001526, -0.00000381, -9.5e-7]}
+          />
+        </group>
+        <group
+          position={[127.434158, 53.0301323, 491.824]}
+          rotation={[-Math.PI / 2, 0.16447468, Math.PI / 2]}
+          scale={[4.32622337, 4.32622353, 4.32622353]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_916_Material068_0.geometry}
+            material={materials["Material.074_37"]}
+            position={[0, -0.00000191, 0]}
+          />
+        </group>
+        <group
+          position={[122.4838, 53.8207779, 473.66394]}
+          rotation={[-Math.PI / 2, 0.1644748, Math.PI / 2]}
+          scale={[3.82158232, 3.82158183, 3.82158183]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_918_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[-0.00000763, -0.00000381, 0.00000191]}
+          />
+        </group>
+        <group
+          position={[127.434158, 52.9991264, 473.404846]}
+          rotation={[-Math.PI / 2, 0.16447468, Math.PI / 2]}
+          scale={[4.32622337, 4.32622353, 4.32622353]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_920_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[-0.00000763, 0.00000191, 0]}
+          />
+        </group>
+        <group
+          position={[122.4838, 53.8514481, 456.473022]}
+          rotation={[-Math.PI / 2, 0.1644748, Math.PI / 2]}
+          scale={[3.82158232, 3.82158183, 3.82158183]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_922_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[0, -0.00000381, 9.5e-7]}
+          />
+        </group>
+        <group
+          position={[127.434158, 53.0298, 456.746246]}
+          rotation={[-Math.PI / 2, 0.16447468, Math.PI / 2]}
+          scale={[4.32622337, 4.32622353, 4.32622353]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_924_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[-0.00001526, 0.00000191, 0]}
+          />
+        </group>
+        <group
+          position={[121.672714, 54.09599, 439.122]}
+          rotation={[-Math.PI / 2, 0.16447468, Math.PI / 2]}
+          scale={[3.82158232, 3.1416361, 3.82158175]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_926_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[-0.00000763, 0, 4.8e-7]}
+            rotation={[-1e-8, 0, 0]}
+          />
+        </group>
+        <group
+          position={[120.3128, 54.2115936, 419.6874]}
+          rotation={[-Math.PI / 2, 0.16447489, -Math.PI / 2]}
+          scale={[3.82158232, 3.14163621, 3.82158188]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_928_Material060_0.geometry}
+            material={materials["Material.074_34"]}
+            position={[0, 0, -4.8e-7]}
+            scale={0.9999999}
+          />
+        </group>
+        <group
+          position={[127.434158, 53.0343666, 439.3608]}
+          rotation={[-Math.PI / 2, 0.16447468, Math.PI / 2]}
+          scale={[4.32622337, 4.32622353, 4.32622353]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_930_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[-0.00000763, 0, 0]}
+          />
+        </group>
+        <group
+          position={[127.434158, 53.02962, 421.5912]}
+          rotation={[-Math.PI / 2, 0.16447468, Math.PI / 2]}
+          scale={[4.32622337, 4.32622353, 4.32622353]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_932_Material060_0.geometry}
+            material={materials["Material.074_34"]}
+            position={[-0.00000763, 0, 0]}
+          />
+        </group>
+        <group
+          position={[186.13475, 46.5747528, 219.3963]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={4.006036}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_934_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[0, 0, -4.3e-7]}
+          />
+        </group>
+        <group
+          position={[173.519592, 46.9993935, 585.524231]}
+          rotation={[-1.63978039, 0.0000475, -0.00068554]}
+          scale={[6.19664815, 8.41984624, 6.20915087]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_936_Material070_0.geometry}
+            material={materials["Material.074_39"]}
+            position={[-0.00000381, -0.00000763, 9.5e-7]}
+          />
+        </group>
+        <group
+          position={[175.033829, 47.0359726, 400.008881]}
+          rotation={[-1.57084382, -0.07850803, 1.57010835]}
+          scale={[6.67205681, 4.93107948, 2.74238381]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_938_Material060_0.geometry}
+            material={materials["Material.074_34"]}
+            position={[0, -0.00000381, 4.8e-7]}
+          />
+        </group>
+        <group
+          position={[175.033829, 47.0359726, 434.8533]}
+          rotation={[-1.57084382, -0.07850803, 1.57010836]}
+          scale={[4.239908, 4.93107874, 2.74238302]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_940_Material060_0.geometry}
+            material={materials["Material.074_34"]}
+            position={[-0.00000763, 0, 0.00000191]}
+            rotation={[1e-8, 0, 0]}
+            scale={[1, 1, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[176.051544, 46.78772, 584.429932]}
+          rotation={[-Math.PI / 2, -0.06898384, Math.PI / 2]}
+          scale={[1.86133146, 6.96778547, 6.96778547]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_942_Material070_0.geometry}
+            material={materials["Material.074_39"]}
+            position={[0, 0, -4.8e-7]}
+            scale={1.00000012}
+          />
+        </group>
+        <group
+          position={[175.033829, 47.0359726, 417.3249]}
+          rotation={[-1.57084382, -0.07850803, 1.57010836]}
+          scale={[4.239908, 4.93107874, 2.74238302]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_944_Material060_0.geometry}
+            material={materials["Material.074_34"]}
+            position={[-0.00000763, -0.00000763, 0.00000143]}
+            rotation={[1e-8, 0, 0]}
+            scale={[1, 1, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[126.210091, 53.6651535, 253.133347]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={5.449371}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_946_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[0, 0, 2.5e-7]}
+            scale={[1.00000012, 1, 1]}
+          />
+        </group>
+        <group
+          position={[122.218704, 53.8930054, 271.172241]}
+          rotation={[-Math.PI / 2, 0.21444698, Math.PI / 2]}
+          scale={[2.70006943, 2.70006963, 2.70006963]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_948_Material067_0.geometry}
+            material={materials["Material.074_36"]}
+            position={[0, 0.00000381, 9.5e-7]}
+            rotation={[1e-8, 0, 0]}
+          />
+        </group>
+        <group
+          position={[192.323837, 45.4518852, 259.966553]}
+          rotation={[-Math.PI / 2, -0.06898384, Math.PI / 2]}
+          scale={[4.419086, 4.41908607, 4.41908607]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_950_Material067_0.geometry}
+            material={materials["Material.074_36"]}
+            position={[0, 0, -2.4e-7]}
+          />
+        </group>
+        <group
+          position={[197.023041, 45.61363, 260.98996]}
+          rotation={[-Math.PI / 2, -0.06898384, Math.PI / 2]}
+          scale={[3.79220581, 3.79220693, 3.79220693]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_952_Material067_0.geometry}
+            material={materials["Material.074_36"]}
+            position={[0.00000763, -0.00000763, 0.00000143]}
+            rotation={[-1e-8, 0, 0]}
+            scale={[0.99999994, 1, 1]}
+          />
+        </group>
+        <group
+          position={[184.777176, 33.3195343, 601.2343]}
+          rotation={[-Math.PI / 2, 0.08985749, -Math.PI]}
+          scale={[5.01155396, 3.8755064, 5.01155295]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_954_Material072_0.geometry}
+            material={materials["Material.025"]}
+            position={[0, 0.00001526, -2.4e-7]}
+            scale={[0.99999994, 1, 0.9999999]}
+          />
+        </group>
+        <group
+          position={[164.619629, 35.1322746, 204.966919]}
+          rotation={[-Math.PI / 2, 0.08911201, 8e-8]}
+          scale={[3.12935516, 3.12935519, 3.12935516]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_956_Material072_0.geometry}
+            material={materials["Material.025"]}
+            position={[0, 0, -0.00000143]}
+            scale={[1, 1.00000012, 1]}
+          />
+        </group>
+        <group
+          position={[189.418365, 46.7569962, 488.892365]}
+          rotation={[-Math.PI / 2, -0.07038705, Math.PI / 2]}
+          scale={[4.950764, 15.56542637, 11.58833621]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_958_Material066_0.geometry}
+            material={materials["Material.074_35"]}
+            position={[-0.00000763, 0, 0]}
+            scale={[0.99999994, 0.99999994, 0.9999999]}
+          />
+        </group>
+        <group
+          position={[140.392715, 50.3228531, 267.745026]}
+          rotation={[-Math.PI / 2, 0.07711967, Math.PI / 2]}
+          scale={[4.079345, 4.07934552, 4.07934552]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_960_Material067_0.geometry}
+            material={materials["Material.074_36"]}
+            position={[0, 0, 2.4e-7]}
+          />
+        </group>
+        <group
+          position={[145.186325, 50.3228531, 270.0337]}
+          rotation={[-Math.PI / 2, 0.07711966, Math.PI / 2]}
+          scale={[2.49061966, 2.49062074, 2.49062074]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_962_Material067_0.geometry}
+            material={materials["Material.074_36"]}
+            position={[0, 0.00000381, 0.00000191]}
+          />
+        </group>
+        <group
+          position={[145.186325, 50.3228531, 234.870575]}
+          rotation={[-Math.PI / 2, 0.07711966, Math.PI / 2]}
+          scale={[2.49061966, 2.49062074, 2.49062074]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_964_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[0, 0.00000381, 0.00000191]}
+          />
+        </group>
+        <group
+          position={[157.086487, 48.5457535, 408.618317]}
+          rotation={[-1.57084382, -0.07850803, 1.57010835]}
+          scale={[6.67205681, 4.93107948, 2.74238381]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_966_Material060_0.geometry}
+            material={materials["Material.074_34"]}
+            position={[-0.00000381, -0.00000381, 4.8e-7]}
+          />
+        </group>
+        <group
+          position={[158.954788, 48.54575, 391.269653]}
+          rotation={[-1.57084364, -0.04317683, 1.57011015]}
+          scale={[6.67205681, 4.93107948, 2.7423837]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_968_Material060_0.geometry}
+            material={materials["Material.074_34"]}
+            position={[-0.00000381, 0, 0.00000167]}
+            scale={[1, 1.00000012, 1.00000012]}
+          />
+        </group>
+        <group
+          position={[140.392715, 50.3692322, 250.492569]}
+          rotation={[-Math.PI / 2, 0.07711967, Math.PI / 2]}
+          scale={[4.079345, 4.07934552, 4.07934552]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_970_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[0.00000381, 0, -7.2e-7]}
+          />
+        </group>
+        <group
+          position={[158.805374, 47.35289, 358.080963]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={[3.74894285, 1.6588192, 5.449371]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_972_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, 0.00001526, 1e-7]}
+            scale={[1.00000012, 1, 1]}
+          />
+        </group>
+        <group
+          position={[158.5287, 47.3528976, 360.20517]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={5.449371}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_974_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, 0.00000381, 0.00000105]}
+            scale={[1.00000012, 1, 1]}
+          />
+        </group>
+        <group
+          position={[138.806381, 50.5096321, 591.899]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={[5.56814146, 5.56814241, 5.56814241]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_976_Material070_0.geometry}
+            material={materials["Material.074_39"]}
+            position={[-0.00000763, 0, -4.7e-7]}
+          />
+        </group>
+        <group
+          position={[140.392715, 50.3692322, 233.010147]}
+          rotation={[-Math.PI / 2, 0.07711967, Math.PI / 2]}
+          scale={[4.079345, 4.07934552, 4.07934552]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_978_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[0, 0, -7.2e-7]}
+          />
+        </group>
+        <group
+          position={[143.950363, 50.1216278, 251.215942]}
+          rotation={[-1.4936769, 1.4e-7, -5e-8]}
+          scale={[2.49062, 4.5771467, 2.50823605]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_980_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[-0.00000763, -0.00000381, -0.00000191]}
+            scale={[1, 1, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[100.210739, 56.3252258, 328.505]}
+          rotation={[-Math.PI / 2, 0.1631264, Math.PI / 2]}
+          scale={[2.521844, 2.52184408, 2.52184408]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_982_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, 0.00000381, 4.8e-7]}
+          />
+        </group>
+        <group
+          position={[100.210739, 56.3252258, 310.7624]}
+          rotation={[-Math.PI / 2, 0.1631264, Math.PI / 2]}
+          scale={[2.521844, 2.52184408, 2.52184408]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_984_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, 0.00000381, 4.8e-7]}
+          />
+        </group>
+        <group
+          position={[100.210739, 56.3252258, 293.444153]}
+          rotation={[-Math.PI / 2, 0.1631264, Math.PI / 2]}
+          scale={[2.521844, 2.52184408, 2.52184408]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_986_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[-0.00000763, 0.00000381, 4.8e-7]}
+          />
+        </group>
+        <group
+          position={[158.196457, 48.5457535, 268.3175]}
+          rotation={[-1.5708437, -0.0432181, 1.57011015]}
+          scale={[5.11876274, 4.44418809, 2.47160243]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_988_Material067_0.geometry}
+            material={materials["Material.074_36"]}
+            position={[0.00000381, 0.00000763, 0.00000143]}
+            scale={[0.9999999, 1, 1]}
+          />
+        </group>
+        <group
+          position={[162.3119, 48.54575, 268.011749]}
+          rotation={[-1.5708437, -0.0432181, 1.57011015]}
+          scale={[3.2128685, 4.44418684, 2.47160243]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_990_Material067_0.geometry}
+            material={materials["Material.074_36"]}
+            position={[0, 0.00000381, 0]}
+          />
+        </group>
+        <group
+          position={[158.196457, 48.5457535, 250.901886]}
+          rotation={[-1.5708437, -0.0432181, 1.57011015]}
+          scale={[5.11876274, 4.44418809, 2.47160243]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_992_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[0.00000381, 0, 9.5e-7]}
+            scale={[0.9999999, 1, 1]}
+          />
+        </group>
+        <group
+          position={[158.196457, 48.5457535, 233.223633]}
+          rotation={[-1.5708437, -0.0432181, 1.57011015]}
+          scale={[5.11876274, 4.44418809, 2.47160243]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_994_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[0.00000381, 0, 0.00000167]}
+            scale={[0.9999999, 1, 1]}
+          />
+        </group>
+        <group
+          position={[162.3119, 48.54575, 232.693237]}
+          rotation={[-1.5708437, -0.0432181, 1.57011015]}
+          scale={[3.2128685, 4.44418684, 2.47160243]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_996_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[0, 0.00000381, 0.00000238]}
+          />
+        </group>
+        <group
+          position={[191.768982, 45.4518852, 235.882614]}
+          rotation={[-Math.PI / 2, -0.06898384, Math.PI / 2]}
+          scale={[3.251558, 3.25155931, 3.25155931]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_998_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[0, -0.00000381, 9.5e-7]}
+          />
+        </group>
+        <group
+          position={[139.973862, 50.53957, 592.7052]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={2.458576}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1000_Material070_0.geometry}
+            material={materials["Material.074_39"]}
+            position={[0, 0, 2e-8]}
+          />
+        </group>
+        <group
+          position={[141.682861, 50.5096321, 585.65094]}
+          rotation={[-Math.PI / 2, 1.6e-7, -Math.PI / 2]}
+          scale={[5.56814146, 5.56814241, 5.56814241]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1002_Material070_0.geometry}
+            material={materials["Material.074_39"]}
+            position={[0, 0.00000191, -4e-7]}
+          />
+        </group>
+        <group
+          position={[140.515381, 50.53957, 584.8448]}
+          rotation={[-Math.PI / 2, 1.6e-7, -Math.PI / 2]}
+          scale={2.458576}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1004_Material070_0.geometry}
+            material={materials["Material.074_39"]}
+            position={[0, -0.00000381, 5e-8]}
+          />
+        </group>
+        <group
+          position={[192.323837, 45.4518852, 402.258972]}
+          rotation={[-Math.PI / 2, -0.06898384, Math.PI / 2]}
+          scale={[2.69837785, 2.69837779, 2.69837779]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1006_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, 0, 9.5e-7]}
+            scale={[1, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[192.323837, 45.4518852, 377.974579]}
+          rotation={[-Math.PI / 2, -0.06898384, Math.PI / 2]}
+          scale={[2.69837785, 2.69837779, 2.69837779]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1008_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, 0, 9.5e-7]}
+            scale={[1, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[192.114716, 45.4518852, 422.373962]}
+          rotation={[-Math.PI / 2, -0.06898384, Math.PI / 2]}
+          scale={[2.69837785, 2.69837779, 2.69837779]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1010_Material060_0.geometry}
+            material={materials["Material.074_34"]}
+            position={[-0.00001526, 0, 4.8e-7]}
+            scale={[1, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[176.051544, 46.78772, 581.642456]}
+          rotation={[-Math.PI / 2, -0.06898384, Math.PI / 2]}
+          scale={[1.86133146, 6.96778547, 6.96778547]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1012_Material070_0.geometry}
+            material={materials["Material.074_39"]}
+            position={[-0.00003052, 0, -4.8e-7]}
+            scale={1.00000012}
+          />
+        </group>
+        <group
+          position={[178.056259, 46.78772, 584.429932]}
+          rotation={[-1.50181234, 2.1e-7, -Math.PI]}
+          scale={[2.69266844, 9.46765636, 6.98184698]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1014_Material070_0.geometry}
+            material={materials["Material.074_39"]}
+            position={[0, 0, -4.8e-7]}
+            scale={[0.99999994, 1, 1]}
+          />
+        </group>
+        <group
+          position={[178.056259, 46.78772, 582.626465]}
+          rotation={[-1.50181234, 2.1e-7, -Math.PI]}
+          scale={[2.69266844, 9.46765636, 6.98184698]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1016_Material070_0.geometry}
+            material={materials["Material.074_39"]}
+            position={[0, 0, 9.5e-7]}
+            scale={[0.99999994, 1, 1]}
+          />
+        </group>
+        <group
+          position={[177.222961, 46.78772, 583.3387]}
+          rotation={[-Math.PI / 2, -0.06898384, Math.PI / 2]}
+          scale={[3.57236981, 6.96778547, 6.96778547]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1018_Material070_0.geometry}
+            material={materials["Material.074_39"]}
+            position={[-0.00001526, 0, -1.2e-7]}
+            scale={[1.00000012, 1, 1]}
+          />
+        </group>
+        <group
+          position={[173.519592, 47.0359726, 367.415]}
+          rotation={[-1.56354642, 0.00004748, -0.00068522]}
+          scale={[6.1966491, 11.14282775, 6.19700887]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1020_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, -0.00000381, 3.6e-7]}
+          />
+        </group>
+        <group
+          position={[176.257156, 47.09311, 365.527679]}
+          rotation={[-Math.PI / 2, -0.06898385, Math.PI / 2]}
+          scale={[2.18831682, 6.19664436, 6.19664436]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1022_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0.00001526, -0.00000191, 4.8e-7]}
+            scale={[0.9999999, 1, 1]}
+          />
+        </group>
+        <group
+          position={[176.257156, 47.09311, 362.250519]}
+          rotation={[-Math.PI / 2, -0.06898385, Math.PI / 2]}
+          scale={[2.18831682, 6.19664436, 6.19664436]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1024_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, -0.00000191, 4.8e-7]}
+            scale={[0.9999999, 1, 1]}
+          />
+        </group>
+        <group
+          position={[178.040009, 47.09311, 365.527679]}
+          rotation={[-1.50181234, 2.1e-7, -Math.PI]}
+          scale={[2.39466548, 11.12473294, 6.22944179]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1026_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, 0, -4.8e-7]}
+            rotation={[1e-8, 0, 0]}
+            scale={[1, 1, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[178.040009, 47.09311, 363.4074]}
+          rotation={[-1.50181234, 2.1e-7, -Math.PI]}
+          scale={[2.39466548, 11.12473294, 6.22944179]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1028_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, 0, -9.5e-7]}
+            rotation={[1e-8, 0, 0]}
+            scale={[1, 1, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[177.29892, 47.09311, 364.24472]}
+          rotation={[-Math.PI / 2, -0.06898385, Math.PI / 2]}
+          scale={[4.199938, 6.19664436, 6.19664436]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1030_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, 0, 8.3e-7]}
+            scale={[0.99999994, 1, 1]}
+          />
+        </group>
+        <group
+          position={[122.224304, 53.64525, 358.725433]}
+          rotation={[-Math.PI / 2, 0.16312642, Math.PI / 2]}
+          scale={[5.449371, 5.44937087, 5.44937087]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1032_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0.00000763, 0, -7.2e-7]}
+          />
+        </group>
+        <group
+          position={[122.224304, 53.7822838, 328.505]}
+          rotation={[-Math.PI / 2, 0.1631264, Math.PI / 2]}
+          scale={[2.521844, 2.52184408, 2.52184408]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1034_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, -0.00000381, 0]}
+          />
+        </group>
+        <group
+          position={[122.224304, 53.7822838, 311.134247]}
+          rotation={[-Math.PI / 2, 0.1631264, Math.PI / 2]}
+          scale={[2.521844, 2.52184408, 2.52184408]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1036_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[-0.00000763, -0.00000381, 0]}
+          />
+        </group>
+        <group
+          position={[122.224304, 53.7822838, 292.767853]}
+          rotation={[-Math.PI / 2, 0.1631264, Math.PI / 2]}
+          scale={[2.521844, 2.52184408, 2.52184408]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1038_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0.00000763, -0.00000381, 0]}
+          />
+        </group>
+        <group
+          position={[152.1119, 49.61494, 217.7752]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={5.449371}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1040_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[0, 0.00000381, -0.00000102]}
+            scale={[1.00000012, 1, 1]}
+          />
+        </group>
+        <group
+          position={[123.409805, 53.5094872, 217.7752]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={5.449371}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1042_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[0, 0, 1.8e-7]}
+            scale={[1.00000012, 1, 1]}
+          />
+        </group>
+        <group
+          position={[140.392715, 50.557785, 328.600525]}
+          rotation={[-Math.PI / 2, 0.1631264, Math.PI / 2]}
+          scale={[2.521844, 2.52184408, 2.52184408]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1044_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, -0.00000763, 0]}
+          />
+        </group>
+        <group
+          position={[140.392715, 50.557785, 310.08902]}
+          rotation={[-Math.PI / 2, 0.1631264, Math.PI / 2]}
+          scale={[2.521844, 2.52184408, 2.52184408]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1046_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, -0.00000763, 0]}
+          />
+        </group>
+        <group
+          position={[140.392715, 50.557785, 293.0292]}
+          rotation={[-Math.PI / 2, 0.1631264, Math.PI / 2]}
+          scale={[2.521844, 2.52184408, 2.52184408]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1048_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0.00000763, -0.00000763, 0]}
+          />
+        </group>
+        <group
+          position={[126.58976, 53.6651535, 235.64444]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={5.449371}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1050_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[0, 0, 2.6e-7]}
+            scale={[1.00000012, 1, 1]}
+          />
+        </group>
+        <group
+          position={[138.83165, 50.656086, 360.8417]}
+          rotation={[-Math.PI / 2, 0.1631263, Math.PI / 2]}
+          scale={[2.98967171, 2.98967214, 2.98967214]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1052_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[-0.00000763, 0, 0.00000143]}
+            scale={[1, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[138.83165, 50.51897, 377.705139]}
+          rotation={[-Math.PI / 2, 0.04323847, Math.PI / 2]}
+          scale={[2.98967171, 2.98967226, 2.98967226]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1054_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[-0.00000763, 0.00000381, -0.00000119]}
+          />
+        </group>
+        <group
+          position={[138.83165, 50.62509, 395.7713]}
+          rotation={[-Math.PI / 2, 0.04323847, Math.PI / 2]}
+          scale={[2.98967171, 2.98967226, 2.98967226]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1056_Material073_0.geometry}
+            material={materials["Material.073"]}
+            position={[0, 0.00000763, 7.2e-7]}
+          />
+        </group>
+        <group
+          position={[122.224304, 53.899147, 387.2456]}
+          rotation={[-Math.PI / 2, 0.16312642, Math.PI / 2]}
+          scale={[4.683077, 4.68307885, 4.68307885]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1058_Material057_0.geometry}
+            material={materials["Material.074_33"]}
+            position={[0, -0.00000191, -0.00000191]}
+            scale={[0.99999994, 0.9999999, 0.9999999]}
+          />
+        </group>
+        <group
+          position={[118.87957, 54.4136772, 404.726227]}
+          rotation={[-Math.PI / 2, 0.16312642, Math.PI / 2]}
+          scale={[4.683077, 4.68307885, 4.68307885]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1060_Material060_0.geometry}
+            material={materials["Material.074_34"]}
+            position={[0, 0, -9.5e-7]}
+            scale={[0.99999994, 0.9999999, 0.9999999]}
+          />
+        </group>
+        <group
+          position={[178.586182, 47.2229156, 251.215942]}
+          rotation={[-1.49361683, -0.03929846, 0.00303814]}
+          scale={[2.49062031, 4.57714646, 2.50823589]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1062_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[0.00000763, 0.00000381, -9.5e-7]}
+            scale={[1.00000012, 1.00000012, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[175.033829, 47.0359726, 250.748535]}
+          rotation={[-1.57084382, -0.07855004, 1.57010836]}
+          scale={[4.7230827, 4.03809328, 2.73959666]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1064_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[0.00000763, -0.00000381, 0]}
+            scale={[0.9999999, 1, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[175.033829, 47.0359726, 267.898]}
+          rotation={[-1.57084382, -0.07855004, 1.57010836]}
+          scale={[4.7230827, 4.03809328, 2.73959666]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1066_Material067_0.geometry}
+            material={materials["Material.074_36"]}
+            position={[0.00000763, 0, 4.8e-7]}
+            scale={[0.9999999, 1, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[180.145157, 47.4360428, 269.1224]}
+          rotation={[-1.57084382, -0.07855004, 1.57010835]}
+          scale={[3.03014871, 2.59068559, 1.75761994]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1068_Material067_0.geometry}
+            material={materials["Material.074_36"]}
+            position={[-0.00000763, 0, -9.5e-7]}
+            scale={[1, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[175.033829, 47.0359726, 233.446075]}
+          rotation={[-1.57084382, -0.07855004, 1.57010836]}
+          scale={[4.7230827, 4.03809328, 2.73959666]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1070_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[0.00000763, 0.00000381, 4.8e-7]}
+            scale={[0.9999999, 1, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[180.145157, 47.58257, 235.554932]}
+          rotation={[-1.57084382, -0.07855004, 1.57010835]}
+          scale={[3.03014871, 2.59068559, 1.75761994]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1072_Tasten_2_0.geometry}
+            material={materials.Tasten_2}
+            position={[0, 0.00000763, 0]}
+            scale={[1, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <group
+          position={[192.114716, 45.4518852, 545.462341]}
+          rotation={[-Math.PI / 2, -0.06898384, Math.PI / 2]}
+          scale={[2.69837785, 2.69837779, 2.69837779]}
+        >
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_1074_Material069_0.geometry}
+            material={materials["Material.074_38"]}
+            position={[-0.00001526, 0, 4.8e-7]}
+            scale={[1, 0.99999994, 0.99999994]}
+          />
+        </group>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube_Material_0.geometry}
+          material={materials.Material}
+          position={[-61.0237045, -0.5557102, 156.090164]}
+          rotation={[-Math.PI / 2, -9e-8, -Math.PI]}
+          scale={[-368.949524, 731.636353, 25.9760971]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube011_Material010_0.geometry}
+          material={materials["Material.074"]}
+          position={[-85.93536, 199.699921, -353.7202]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[173.489441, 89.9706039, 157.347427]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube012_Material011_0.geometry}
+          material={materials["Material.074"]}
+          position={[-85.93536, 199.699921, -353.7202]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[173.489441, 89.9706039, 157.347427]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube013_Material015_0.geometry}
+          material={materials["Material.074"]}
+          position={[82.76553, 33.2278366, -353.608551]}
+          rotation={[-Math.PI / 2, -0.2371594, Math.PI]}
+          scale={[-5.98584066, 88.36328, 12.1377162]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube014_Material014_0.geometry}
+          material={materials["Material.074"]}
+          position={[-253.445221, 33.2278366, -353.608551]}
+          rotation={[-Math.PI / 2, 0.13556853, -Math.PI]}
+          scale={[-5.97856946, 88.36328, 12.15162892]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder_Material009_0.geometry}
+          material={materials["Material.025"]}
+          position={[74.2091446, 51.21781, -262.894135]}
+          rotation={[4e-8, 0, 0]}
+          scale={[6.0775, 6.27478647, 2.277239]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube018_Material017_0.geometry}
+          material={materials["Material.017"]}
+          position={[79.29447, 288.428162, -355.561981]}
+          rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+          scale={[50.6738319, 50.6738319, 9.999817]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.aorus_case_fans_aorus_case_fans_0.geometry}
+          material={materials["Material.074_0"]}
+          position={[89.5886154, 288.681122, -355.4232]}
+          rotation={[0, Math.PI / 2, 0]}
+          scale={108.516609}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.aorus_case_fans001_aorus_case_fans_0.geometry}
+          material={materials["Material.074_0"]}
+          position={[69.01843, 288.681122, -355.4232]}
+          rotation={[0, -Math.PI / 2, 0]}
+          scale={108.516609}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube015_Material016_0.geometry}
+          material={materials["Material.074_1"]}
+          position={[-165.450287, 224.122757, -440.839569]}
+          rotation={[-Math.PI / 2, -9e-8, -Math.PI]}
+          scale={[-89.37417, 0.6989011, 106.434464]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube016_Material017_0.geometry}
+          material={materials["Material.017"]}
+          position={[79.29447, 177.861267, -355.561981]}
+          rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+          scale={[50.6738319, 50.6738319, 9.999817]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.aorus_case_fans002_aorus_case_fans_0.geometry}
+          material={materials["Material.074_0"]}
+          position={[89.5886154, 178.114243, -355.4232]}
+          rotation={[0, Math.PI / 2, 0]}
+          scale={108.516609}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.aorus_case_fans003_aorus_case_fans_0.geometry}
+          material={materials["Material.074_0"]}
+          position={[69.01843, 178.114243, -355.4232]}
+          rotation={[0, -Math.PI / 2, 0]}
+          scale={108.516609}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube017_Material017_0.geometry}
+          material={materials["Material.017"]}
+          position={[-251.377075, 292.348633, -334.898682]}
+          rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+          scale={[50.6738319, 50.6738319, 9.999817]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.aorus_case_fans004_aorus_case_fans_0.geometry}
+          material={materials["Material.074_0"]}
+          position={[-241.082932, 292.6016, -334.7599]}
+          rotation={[0, Math.PI / 2, 0]}
+          scale={108.516609}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.aorus_case_fans005_aorus_case_fans_0.geometry}
+          material={materials["Material.074_0"]}
+          position={[-261.6531, 292.6016, -334.7599]}
+          rotation={[0, -Math.PI / 2, 0]}
+          scale={108.516609}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube019_Material017_0.geometry}
+          material={materials["Material.017"]}
+          position={[-171.544357, 344.358765, -355.4301]}
+          rotation={[Math.PI / 2, 3.9e-7, Math.PI]}
+          scale={[51.51338, 51.51338, 10.1654911]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.aorus_case_fans006_aorus_case_fans_0.geometry}
+          material={materials["Material.074_0"]}
+          position={[-171.287216, 333.894073, -355.289032]}
+          rotation={[Math.PI / 2, -4e-7, -Math.PI / 2]}
+          scale={110.314476}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.aorus_case_fans007_aorus_case_fans_0.geometry}
+          material={materials["Material.074_0"]}
+          position={[-171.287216, 354.805054, -355.289032]}
+          rotation={[Math.PI / 2, -4e-7, -Math.PI / 2]}
+          scale={110.314476}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube020_Material020_0.geometry}
+          material={materials["Material.074_2"]}
+          position={[-96.1067, 78.8255, -363.397766]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[160.681091, 73.93255, 34.3119774]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube021_Material018_0.geometry}
+          material={materials["Material.074"]}
+          position={[-108.064041, 346.352844, -354.981049]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[7.187482, 57.5420074, 10.7854776]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube022_Material017_0.geometry}
+          material={materials["Material.017"]}
+          position={[-44.54793, 344.358765, -355.4301]}
+          rotation={[Math.PI / 2, 3.9e-7, Math.PI]}
+          scale={[51.51338, 51.51338, 10.1654911]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.aorus_case_fans008_aorus_case_fans_0.geometry}
+          material={materials["Material.074_0"]}
+          position={[-44.2907867, 333.894073, -355.289032]}
+          rotation={[Math.PI / 2, -4e-7, -Math.PI / 2]}
+          scale={110.314476}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.aorus_case_fans009_aorus_case_fans_0.geometry}
+          material={materials["Material.074_0"]}
+          position={[-44.2907867, 354.805054, -355.289032]}
+          rotation={[Math.PI / 2, -4e-7, -Math.PI / 2]}
+          scale={110.314476}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Sphere_Material019_0.geometry}
+          material={materials["Material.025"]}
+          position={[-277.54422, 457.860474, -407.854462]}
+          rotation={[-1.51444376, 0, 0]}
+          scale={[4.8596406, 4.85964045, 4.85964045]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Sphere001_Material019_0.geometry}
+          material={materials["Material.025"]}
+          position={[-277.54422, 457.860474, -439.7315]}
+          rotation={[-1.61992872, 0, 0]}
+          scale={[4.8596406, 4.85963989, 4.85963989]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.IOSHIELD_IOSHIELD_0.geometry}
+          material={materials["Material.074_3"]}
+          position={[-259.688629, 284.799347, -422.490967]}
+          rotation={[Math.PI / 2, -Math.PI / 2, 0]}
+          scale={[26.4753513, 30.8550529, 31.8324986]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube023_Material021_0.geometry}
+          material={materials["Material.074"]}
+          position={[93.7810745, 228.590012, -355.282]}
+          rotation={[-Math.PI / 2, -9e-8, -Math.PI]}
+          scale={[-11.9911823, 59.264576, 117.810043]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube024_Material022_0.geometry}
+          material={materials["Material.074"]}
+          position={[-265.095734, 291.702057, -335.0899]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[6.37821341, 55.4582672, 55.4582672]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.MOBOAORUSORANGETRANS_MOBOAORUSORANGETRANS_0.geometry}
+          material={materials["Material.074_4"]}
+          position={[-235.590912, 287.746948, -423.919067]}
+          rotation={[-3.4e-7, 8.7e-7, 0.65059585]}
+          scale={[6.34325876, 6.34325876, 6.343259]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube025_Material023_0.geometry}
+          material={materials["Material.023"]}
+          position={[-165.450287, 224.122757, -440.839569]}
+          rotation={[-Math.PI / 2, -9e-8, -Math.PI]}
+          scale={[-89.37417, 0.6989011, 106.434464]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube026_Material024_0.geometry}
+          material={materials["Material.024"]}
+          position={[-165.450287, 224.122757, -440.839569]}
+          rotation={[-Math.PI / 2, -9e-8, -Math.PI]}
+          scale={[-89.37417, 0.6989011, 106.434464]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["metal-mesh-500x500_metal-mesh-500x500_0"].geometry}
+          material={materials["Material.074_5"]}
+          position={[-42.3123856, 356.983643, -354.1635]}
+          rotation={[Math.PI / 2, -1.5e-7, Math.PI]}
+          scale={[100, 133.704514, 100]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={
+            nodes["metal-mesh-500x500001_metal-mesh-500x500_0"].geometry
+          }
+          material={materials["Material.074_5"]}
+          position={[-174.205261, 356.983643, -354.1635]}
+          rotation={[Math.PI / 2, 8.8e-7, Math.PI / 2]}
+          scale={[100, 133.704514, 100]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={
+            nodes["metal-mesh-500x500002_metal-mesh-500x500_0"].geometry
+          }
+          material={materials["Material.074_5"]}
+          position={[-270.8999, 291.5139, -335.3282]}
+          rotation={[0, -Math.PI / 2, 0]}
+          scale={[79.55539, 106.369148, 79.55539]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube027_Material008_0.geometry}
+          material={materials["Material.074_6"]}
+          position={[-96.40648, 270.962952, -430.927124]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[-1.51289129, 10.9163847, 44.2895241]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube028_Material026_0.geometry}
+          material={materials["Material.074_7"]}
+          position={[-95.70954, 270.962952, -432.409058]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[-1.05112779, 9.73474, 44.4110374]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube029_Material025_0.geometry}
+          material={materials["Material.025"]}
+          position={[-96.38716, 270.962952, -432.409058]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[-0.24975339, 9.338524, 46.66292]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube030_Material026_0.geometry}
+          material={materials["Material.074_7"]}
+          position={[-96.9960251, 270.962952, -451.701019]}
+          rotation={[-Math.PI / 2, 0, -Math.PI]}
+          scale={[-1.05112779, 9.73474, 44.4110374]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube031_Material008_0.geometry}
+          material={materials["Material.074_6"]}
+          position={[-103.6868, 270.962952, -430.927124]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[-1.51289129, 10.9163847, 44.2895241]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube032_Material026_0.geometry}
+          material={materials["Material.074_7"]}
+          position={[-102.989868, 270.962952, -432.409058]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[-1.05112779, 9.73474, 44.4110374]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube033_Material025_0.geometry}
+          material={materials["Material.025"]}
+          position={[-103.667473, 270.962952, -432.409058]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[-0.24975339, 9.338524, 46.66292]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube034_Material026_0.geometry}
+          material={materials["Material.074_7"]}
+          position={[-104.276344, 270.962952, -451.701019]}
+          rotation={[-Math.PI / 2, 0, -Math.PI]}
+          scale={[-1.05112779, 9.73474, 44.4110374]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube035_Material008_0.geometry}
+          material={materials["Material.074_6"]}
+          position={[-110.550842, 270.962952, -430.927124]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[-1.51289129, 10.9163847, 44.2895241]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube036_Material026_0.geometry}
+          material={materials["Material.074_7"]}
+          position={[-109.853912, 270.962952, -432.409058]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[-1.05112779, 9.73474, 44.4110374]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube037_Material025_0.geometry}
+          material={materials["Material.025"]}
+          position={[-110.531525, 270.962952, -432.409058]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[-0.24975339, 9.338524, 46.66292]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube038_Material026_0.geometry}
+          material={materials["Material.074_7"]}
+          position={[-111.140396, 270.962952, -451.701019]}
+          rotation={[-Math.PI / 2, 0, -Math.PI]}
+          scale={[-1.05112779, 9.73474, 44.4110374]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube039_Material008_0.geometry}
+          material={materials["Material.074_6"]}
+          position={[-117.501953, 270.962952, -430.927124]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[-1.51289129, 10.9163847, 44.2895241]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube040_Material026_0.geometry}
+          material={materials["Material.074_7"]}
+          position={[-116.805016, 270.962952, -432.409058]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[-1.05112779, 9.73474, 44.4110374]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube041_Material025_0.geometry}
+          material={materials["Material.025"]}
+          position={[-117.482628, 270.962952, -432.409058]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[-0.24975339, 9.338524, 46.66292]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube042_Material026_0.geometry}
+          material={materials["Material.074_7"]}
+          position={[-118.0915, 270.962952, -451.701019]}
+          rotation={[-Math.PI / 2, 0, -Math.PI]}
+          scale={[-1.05112779, 9.73474, 44.4110374]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={
+            nodes["metal-mesh-500x500003_metal-mesh-500x500_0"].geometry
+          }
+          material={materials["Material.074_5"]}
+          position={[-257.9773, 182.0394, -359.0495]}
+          rotation={[0, -Math.PI / 2, 0]}
+          scale={[109.081696, 106.369148, 79.55539]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube043_Material012_0.geometry}
+          material={materials["Material.025"]}
+          position={[-219.485519, 85.3385544, -71.14894]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[49.1770439, 29.277647, 59.6581154]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube045_Material027_0.geometry}
+          material={materials["Material.074_8"]}
+          position={[-212.139542, 79.398735, -298.227966]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[35.47594, 5.165806, 20.56838]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={
+            nodes["rgb-hdd-cover-aorus-v1_rgb-hdd-cover-aorus-v1_0"].geometry
+          }
+          material={materials["Material.074_9"]}
+          position={[-93.4769058, 83.1672, -288.795837]}
+          rotation={[4e-8, 6.5e-7, 0]}
+          scale={36.9422455}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["maxresdefault_(1)_maxresdefault_(1)_0"].geometry}
+          material={materials["Material.074_10"]}
+          position={[87.7141342, 83.61499, -355.311554]}
+          rotation={[0, Math.PI / 2, 0]}
+          scale={39.41071}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder001_Material028_0.geometry}
+          material={materials["Material.074_11"]}
+          position={[-169.225128, 114.406113, -71.64432]}
+          rotation={[-1.57079191, 1.55365669, -0.00000432]}
+          scale={[19.39973243, 19.3997326, 2.50632144]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder002_Material029_0.geometry}
+          material={materials["Material.074_11"]}
+          position={[-166.369049, 70.6470642, -71.64432]}
+          rotation={[-Math.PI / 2, 1.53621426, 0.00000132]}
+          scale={[10.29806642, 10.2980661, 1.33044432]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube044_Material012_0.geometry}
+          material={materials["Material.025"]}
+          position={[-219.485519, 85.3385544, 671.4327]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[49.1770439, 29.277647, 59.6581154]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder003_Material031_0.geometry}
+          material={materials["Material.074_11"]}
+          position={[-169.225128, 114.406113, 670.9373]}
+          rotation={[-1.57079191, 1.55365669, -0.00000432]}
+          scale={[19.39973243, 19.3997326, 2.50632144]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder004_Material030_0.geometry}
+          material={materials["Material.074_11"]}
+          position={[-166.369049, 70.6470642, 670.9373]}
+          rotation={[-Math.PI / 2, 1.53621426, 0.00000132]}
+          scale={[10.29806642, 10.2980661, 1.33044432]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.NVIDIA_LOGO_NVIDIA_LOGO_0.geometry}
+          material={materials["Material.074_12"]}
+          position={[0.5859144, 70.4280853, -289.065674]}
+          rotation={[4e-8, 6.5e-7, 6.5e-7]}
+          scale={45.18876}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.psuback_psuback_0.geometry}
+          material={materials["Material.074_13"]}
+          position={[-260.266174, 77.97002, -352.752441]}
+          rotation={[0, Math.PI / 2, 0]}
+          scale={59.4886436}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.usb_usb_0.geometry}
+          material={materials["Material.074_14"]}
+          position={[70.47293, 357.1499, -289.694733]}
+          rotation={[-Math.PI / 2, 6.7e-7, Math.PI / 2]}
+          scale={7.34210443}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.usb001_usb_0.geometry}
+          material={materials["Material.074_14"]}
+          position={[70.47293, 357.1499, -321.0027]}
+          rotation={[-Math.PI / 2, 6.7e-7, Math.PI / 2]}
+          scale={7.34210443}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.usb002_usb_0.geometry}
+          material={materials["Material.074_14"]}
+          position={[70.47293, 357.1499, -352.590179]}
+          rotation={[-Math.PI / 2, 6.7e-7, Math.PI / 2]}
+          scale={7.34210443}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Torus_Material013_0.geometry}
+          material={materials["Material.013"]}
+          position={[69.92598, 356.741272, -407.0055]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={3.29706478}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Torus001_Material032_0.geometry}
+          material={materials["Material.032"]}
+          position={[69.92598, 356.741272, -423.7292]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={3.29706478}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.usb003_usb_0.geometry}
+          material={materials["Material.074_14"]}
+          position={[70.47293, 357.1499, -384.890717]}
+          rotation={[-Math.PI / 2, 6.7e-7, Math.PI / 2]}
+          scale={7.34210443}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube046_Material034_0.geometry}
+          material={materials["Material.034"]}
+          position={[-188.1602, 268.516052, -368.194244]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[9.278203, 42.44594, 42.44594]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube047_Material033_0.geometry}
+          material={materials["Material.034"]}
+          position={[-134.6637, 268.516052, -368.194244]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[9.278203, 42.44594, 42.44594]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube048_Material035_0.geometry}
+          material={materials["Material.074_15"]}
+          position={[-161.353745, 268.242065, -368.171]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[17.4362831, 39.4052849, 40.0747223]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube049_Material040_0.geometry}
+          material={materials["Material.074_16"]}
+          position={[-161.353745, 268.242065, -368.171]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[17.4362831, 39.4052849, 40.0747223]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube050_Material038_0.geometry}
+          material={materials["Material.074_16"]}
+          position={[-161.353745, 268.242065, -368.171]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[17.4362831, 39.4052849, 40.0747223]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube051_Material042_0.geometry}
+          material={materials["Material.042"]}
+          position={[-161.353745, 268.242065, -368.171]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[17.4362831, 39.4052849, 40.0747223]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder005_Material041_0.geometry}
+          material={materials["Material.074_17"]}
+          position={[-161.138977, 268.658, -369.024384]}
+          rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+          scale={[32.71004, 32.71004, 34.21257]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder011_Material045_0.geometry}
+          material={materials["Material.045"]}
+          position={[-173.934357, 242.500732, -421.740051]}
+          rotation={[0.47362568, -1.8e-7, Math.PI]}
+          scale={[2.05494046, 2.0549407, 16.97274387]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={
+            nodes["metal-mesh-500x500004_metal-mesh-500x500_0"].geometry
+          }
+          material={materials["Material.074_5"]}
+          position={[-257.9773, 220.723465, -359.0495]}
+          rotation={[0, -Math.PI / 2, 0]}
+          scale={[109.081696, 106.369148, 79.55539]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Text_Material046_0.geometry}
+          material={materials["Material.046"]}
+          position={[-143.803986, 250.193268, -325.7239]}
+          rotation={[0, 4e-8, Math.PI / 2]}
+          scale={2.43557787}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube052_Material047_0.geometry}
+          material={materials["Material.025"]}
+          position={[83.51469, 83.27585, -355.598724]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[5.7498374, 46.28051, 28.86748]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={
+            nodes[
+              "test-aorus-m2-souris-aorus-rgb2_test-aorus-m2-souris-aorus-rgb2_0"
+            ].geometry
+          }
+          material={materials["Material.074_18"]}
+          position={[-115.854027, 150.748291, -435.2227]}
+          rotation={[4e-8, 0, 0]}
+          scale={35.1936836}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube053_Material048_0.geometry}
+          material={materials["Material.048"]}
+          position={[-165.450287, 224.122757, -440.839569]}
+          rotation={[-Math.PI / 2, -9e-8, -Math.PI]}
+          scale={[-89.37417, 0.6989011, 106.434464]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube054_Material049_0.geometry}
+          material={materials["Material.049"]}
+          position={[-165.450287, 224.122757, -440.839569]}
+          rotation={[-Math.PI / 2, -9e-8, -Math.PI]}
+          scale={[-89.37417, 0.6989011, 106.434464]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube055_Material054_0.geometry}
+          material={materials["Material.054"]}
+          position={[-122.28582, 185.076263, -370.5586]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[133.163071, 54.5335121, 13.1743851]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube056_Material061_0.geometry}
+          material={materials["Material.061"]}
+          position={[-127.222061, 200.080872, -370.5586]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[128.058945, 52.44325, 12.66941]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder006_Material050_0.geometry}
+          material={materials["Material.074_19"]}
+          position={[-209.451431, 184.616028, -370.096069]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[36.35369, 38.2215347, 10.5746555]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder007_Material051_0.geometry}
+          material={materials["Material.074_20"]}
+          position={[-124.43911, 184.616028, -370.096069]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[36.35369, 38.2215347, 10.5746555]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder008_Material052_0.geometry}
+          material={materials["Material.074_19"]}
+          position={[-37.77697, 184.616028, -370.096069]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[36.35369, 38.2215347, 10.5746555]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane_Material053_0.geometry}
+          material={materials["Material.074_21"]}
+          position={[117.182053, 25.60488, -29.1653576]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[124.42672, 154.111389, 119.910576]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.geforcertx_Material056_0.geometry}
+          material={materials["Material.056"]}
+          position={[-229.2711, 204.825775, -315.9566]}
+          rotation={[4e-8, 0, 0]}
+          scale={[10.3766155, 10.3766155, 10.9097643]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube057_Material059_0.geometry}
+          material={materials["Material.074_22"]}
+          position={[-127.222061, 200.080872, -370.5586]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[128.058945, 52.44325, 12.66941]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube059_Material058_0.geometry}
+          material={materials["Material.058"]}
+          position={[-127.222061, 200.080872, -370.5586]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[128.058945, 52.44325, 12.66941]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube060_Material062_0.geometry}
+          material={materials["Material.062"]}
+          position={[-123.744247, 264.276733, -316.7952]}
+          rotation={[4e-8, 0, 0]}
+          scale={[133.256653, 53.2202072, 0.8242829]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube058_Material063_0.geometry}
+          material={materials["Material.074_23"]}
+          position={[-122.59111, 213.708618, -370.4294]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[133.259033, 54.50398, 0.80946386]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.aorus_logotranspa_aorus_logotranspa_0.geometry}
+          material={materials["Material.074_24"]}
+          position={[-182.427612, 181.699234, -315.846649]}
+          rotation={[4e-8, 0, 0]}
+          scale={[8.645501, 8.645501, 9.089705]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube061_Material064_0.geometry}
+          material={materials["Material.025"]}
+          position={[-122.28582, 185.076263, -370.5586]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[133.163071, 54.5335121, 13.1743851]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube062_Material065_0.geometry}
+          material={materials["Material.025"]}
+          position={[-165.450287, 224.122757, -440.839569]}
+          rotation={[-Math.PI / 2, -9e-8, -Math.PI]}
+          scale={[-89.37417, 0.6989011, 106.434464]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube064_Material074_0.geometry}
+          material={materials["Material.074_25"]}
+          position={[111.412552, 32.4466629, -27.40592]}
+          rotation={[Math.PI / 2, 9e-8, -Math.PI]}
+          scale={[-42.8870125, 42.8870125, 22.9022465]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube067_Material075_0.geometry}
+          material={materials["Material.075"]}
+          position={[111.412552, 32.4466629, -27.40592]}
+          rotation={[Math.PI / 2, 9e-8, -Math.PI]}
+          scale={[-42.8870125, 42.8870125, 22.9022465]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube063_Material074_0.geometry}
+          material={materials["Material.074_25"]}
+          position={[111.412552, 32.49509, -27.40592]}
+          rotation={[Math.PI / 2, 9e-8, -Math.PI]}
+          scale={[-42.8870125, 42.8870125, 22.9022465]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube065_Material074_0.geometry}
+          material={materials["Material.074_25"]}
+          position={[111.412552, 32.49509, -27.40592]}
+          rotation={[Math.PI / 2, -0.0109047, Math.PI]}
+          scale={[-42.88701988, 42.8870125, 22.90225167]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube066_Material076_0.geometry}
+          material={materials["Material.076"]}
+          position={[111.460564, 32.2869759, -27.2916946]}
+          rotation={[Math.PI / 2, -0.0109047, Math.PI]}
+          scale={[-42.88701988, 42.8870125, 22.90225167]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube072_Material078_0.geometry}
+          material={materials["Material.025"]}
+          position={[111.412552, 32.4466629, -27.40592]}
+          rotation={[Math.PI / 2, 9e-8, -Math.PI]}
+          scale={[-42.8870125, 42.8870125, 22.9022465]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube073_Material079_0.geometry}
+          material={materials["Material.074_6"]}
+          position={[111.412552, 32.4466629, -27.40592]}
+          rotation={[Math.PI / 2, 9e-8, -Math.PI]}
+          scale={[-42.8870125, 42.8870125, 22.9022465]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube076_Material080_0.geometry}
+          material={materials["Material.074_25"]}
+          position={[65.92594, 34.46109, -27.34622]}
+          rotation={[Math.PI / 2, -0.234337, -Math.PI]}
+          scale={[-42.88701634, 42.8870125, 22.90225525]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder009_Material081_0.geometry}
+          material={materials["Material.025"]}
+          position={[77.22225, 34.5245857, -28.4818916]}
+          rotation={[4e-8, -0.00111956, 0]}
+          scale={[11.57417255, 11.574172, 2.50102757]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder010_Material077_0.geometry}
+          material={materials["Material.077"]}
+          position={[77.22154, 34.5245857, -27.8578377]}
+          rotation={[4e-8, -0.00111956, 0]}
+          scale={[11.89139155, 11.8913889, 0.39316935]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder012_Material082_0.geometry}
+          material={materials["Material.082"]}
+          position={[77.2225, 34.5245857, -28.7094975]}
+          rotation={[4e-8, -0.00111956, 0]}
+          scale={[10.43813884, 10.4381371, 2.86763896]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.BezierCurve001_Material085_0.geometry}
+          material={materials["Material.085"]}
+          position={[-57.6633453, 118.320251, -315.5951]}
+          rotation={[1.57079466, -1.23387096, -0.00000156]}
+          scale={[100.00000012, 100, 100.00000012]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube074_Material084_0.geometry}
+          material={materials["Material.025"]}
+          position={[-92.943924, 206.719, -314.862]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[5.64184952, 5.400277, 4.23397255]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube075_Material086_0.geometry}
+          material={materials["Material.074_26"]}
+          position={[-258.0068, 195.51239, -371.5108]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[1.16333556, 52.43508, 17.742754]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.BezierCurve002_Material087_0.geometry}
+          material={materials["Material.087"]}
+          position={[-31.43789, 183.785324, -440.15564]}
+          rotation={[1.57079466, -1.23387096, -0.00000156]}
+          scale={[100.00000012, 100, 100.00000012]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube077_Material083_0.geometry}
+          material={materials["Material.025"]}
+          position={[-81.678215, 266.5056, -437.410553]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[2.84893036, 4.87202072, 17.376915]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube078_Material083_0.geometry}
+          material={materials["Material.025"]}
+          position={[70.3521042, 334.374634, -437.410553]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[2.84893036, 4.87202072, 12.0459185]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.BezierCurve_Material088_0.geometry}
+          material={materials["Material.088"]}
+          position={[73.03351, 238.195709, -437.388184]}
+          rotation={[Math.PI, -1.5e-7, Math.PI / 2]}
+          scale={100}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube079_Material089_0.geometry}
+          material={materials["Material.025"]}
+          position={[-269.839569, 182.609634, -338.408417]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[16.0379944, 9.162007, 4.32624245]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube080_Material089_0.geometry}
+          material={materials["Material.025"]}
+          position={[-158.493408, 199.974564, 375.163422]}
+          rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+          scale={[16.0379944, 9.162007, 4.32624245]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.BezierCurve003_Material091_0.geometry}
+          material={materials["Material.025"]}
+          position={[-158.898132, 127.660927, 299.394379]}
+          rotation={[2.46375052, -Math.PI / 2, 0]}
+          scale={[100.00000552, 100.00000552, 100]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube081_Material090_0.geometry}
+          material={materials["Material.090"]}
+          position={[93.21507, 47.65833, -27.7467461]}
+          rotation={[-1.54407858, -0.23347464, -2e-8]}
+          scale={[2.6234922, 1.33410253, 2.23680645]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube068_Material092_0.geometry}
+          material={materials["Material.092"]}
+          position={[129.118637, 44.5004272, -27.6069851]}
+          rotation={[-Math.PI / 2, 0.28377547, 1e-8]}
+          scale={[5.9641067, 5.96410656, 2.08078336]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={
+            nodes["Color-PewDiePie-Logo_Color-PewDiePie-Logo_0"].geometry
+          }
+          material={materials["Material.074_27"]}
+          position={[129.5412, 46.5521965, -27.4758968]}
+          rotation={[-Math.PI / 2, 0.28377553, Math.PI / 2]}
+          scale={[12.4111042, 12.41110691, 12.41110691]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube069_Material093_0.geometry}
+          material={materials["Material.025"]}
+          position={[111.412552, 32.4466629, -27.40592]}
+          rotation={[Math.PI / 2, 9e-8, -Math.PI]}
+          scale={[-42.8870125, 44.8206, 22.9022465]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder013_Material094_0.geometry}
+          material={materials["Material.094"]}
+          position={[83.0269852, 308.2251, -282.193146]}
+          rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+          scale={[9.85619, 9.85619, 4.8788743]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder014_Material095_0.geometry}
+          material={materials["Material.088"]}
+          position={[84.519516, 280.423737, -282.193146]}
+          rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+          scale={[6.54355431, 6.54355431, 3.23909974]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder015_Material096_0.geometry}
+          material={materials["Material.088"]}
+          position={[84.519516, 254.3073, -282.193146]}
+          rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+          scale={[6.67004061, 6.67004061, 3.301711]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Text001_Material097_0.geometry}
+          material={materials["Material.025"]}
+          position={[87.58583, 202.482178, -275.485718]}
+          rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+          scale={[10.3254251, 8.383706, 9.717717]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube088_Material098_0.geometry}
+          material={materials["Material.098"]}
+          position={[98.9575653, 38.3515854, -8.161567]}
+          rotation={[-Math.PI / 2, -0.1286833, 2e-8]}
+          scale={[5.45257701, 4.94627142, 1.90907721]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.BezierCurve004_Material099_0.geometry}
+          material={materials["Material.025"]}
+          position={[-33.3933334, 29.8261433, -26.833725]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={100}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube070_Material100_0.geometry}
+          material={materials["Material.025"]}
+          position={[-266.848724, 260.335327, -432.750854]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[7.66781664, 2.323634, 5.236332]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube071_Material101_0.geometry}
+          material={materials["Material.025"]}
+          position={[-266.848724, 260.335327, -426.842834]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[7.66781664, 2.323634, 5.236332]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube082_Material101_0.geometry}
+          material={materials["Material.025"]}
+          position={[-266.848724, 274.042267, -426.641]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[7.66781664, 2.323634, 5.236332]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder016_Material102_0.geometry}
+          material={materials["Material.025"]}
+          position={[-263.632721, 248.736755, -421.760376]}
+          rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+          scale={[3.07049751, 3.07049751, 5.45383072]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.BezierCircle_Material104_0.geometry}
+          material={materials["Material.104"]}
+          position={[87.65416, 308.1877, -282.266479]}
+          rotation={[-Math.PI / 2, Math.PI / 2, 0]}
+          scale={5.70255947}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.BezierCurve005_Material103_0.geometry}
+          material={materials["Material.025"]}
+          position={[83.41278, 25.96631, 360.6961]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={100}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.BezierCurve006_Material106_0.geometry}
+          material={materials["Material.025"]}
+          position={[-275.73, 25.96631, 569.7455]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={100}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.BezierCurve007_Material105_0.geometry}
+          material={materials["Material.025"]}
+          position={[-271.339325, 25.96631, 569.7455]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={100}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.BezierCurve008_Material107_0.geometry}
+          material={materials["Material.025"]}
+          position={[-280.430817, 25.96631, 28.4983578]}
+          rotation={[Math.PI / 2, -1.9e-7, Math.PI / 2]}
+          scale={100}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube001_Material055_0.geometry}
+          material={materials["Material.055"]}
+          position={[-138.594482, 295.653931, 300.405365]}
+          rotation={[-Math.PI / 2, -0.06981318, Math.PI / 2]}
+          scale={[325.341553, 4.05081932, 184.0906938]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube002_Material044_0.geometry}
+          material={materials["Material.044"]}
+          position={[-146.705643, 263.6781, 300.405365]}
+          rotation={[-Math.PI / 2, -0.12217291, Math.PI / 2]}
+          scale={[-325.3415, 14.74692308, 152.8532242]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.gallerymodel_gallerymodel_0.geometry}
+          material={materials["Material.074_28"]}
+          position={[-142.040466, 164.812653, 596.0805]}
+          rotation={[0.4411691, -1.28418154, 0.44080625]}
+          scale={[80.68906932, 80.68905921, 80.68906838]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube003_Material001_0.geometry}
+          material={materials["Material.025"]}
+          position={[-157.131226, 447.651581, 300.405365]}
+          rotation={[-Math.PI / 2, -0.06981318, Math.PI / 2]}
+          scale={[325.341553, 4.05081932, 31.03391958]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.bg2_bg2_0.geometry}
+          material={materials["Material.074_29"]}
+          position={[-153.705261, 194.91658, 83.0273361]}
+          rotation={[1.57199344, -1.44152906, 1.56678481]}
+          scale={[113.03370976, 113.03370479, 113.03368358]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.MY_SCREEN_MY_SCREEN_0.geometry}
+          material={materials["Material.074_30"]}
+          position={[-136.176529, 300.132477, 300.405365]}
+          rotation={[-Math.PI / 2, 1.50098311, Math.PI / 2]}
+          scale={[331.6212, 348.06524764, 331.62121369]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["gigabyte-logo_gigabyte-logo_0"].geometry}
+          material={materials["Material.074_31"]}
+          position={[-161.542648, 449.446625, 82.08215]}
+          rotation={[1.57078843, -1.50098318, 1.57078841]}
+          scale={[23.6886, 23.68860551, 23.68860551]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes["gigabyte-logo001_gigabyte-logo_0"].geometry}
+          material={materials["Material.074_31"]}
+          position={[-122.0594, 122.823624, 301.598419]}
+          rotation={[-Math.PI / 2, 1.50098311, Math.PI / 2]}
+          scale={[17.8398037, 17.83980363, 17.83980363]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube004_Material002_0.geometry}
+          material={materials["Material.002"]}
+          position={[-148.740982, 180.969833, 299.246124]}
+          rotation={[-Math.PI / 2, -0.06981317, Math.PI / 2]}
+          scale={[167.598923, 17.79328064, 193.49797837]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube005_Material003_0.geometry}
+          material={materials["Material.003"]}
+          position={[-186.532471, 291.5637, 297.4251]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={[16.3199387, 28.81182, 12.9358921]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube006_Material043_0.geometry}
+          material={materials["Material.043"]}
+          position={[-202.955933, -64.82244, 300.405365]}
+          rotation={[-Math.PI / 2, -0.06981318, Math.PI / 2]}
+          scale={[40.5877266, 16.64016692, 531.6082713]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube007_Material037_0.geometry}
+          material={materials["Material.037"]}
+          position={[-213.017822, 35.33296, 296.055084]}
+          rotation={[-Math.PI / 2, 4e-8, Math.PI / 2]}
+          scale={[-193.8496, 54.11582, 9.320832]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube008_Material036_0.geometry}
+          material={materials["Material.039"]}
+          position={[-80.1987457, 31.6480942, 453.1489]}
+          rotation={[-Math.PI / 2, -3.4e-7, 1.24923491]}
+          scale={[49.07019653, 108.77943309, 5.64813375]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube009_Material039_0.geometry}
+          material={materials["Material.039"]}
+          position={[-80.1987839, 31.6480942, 163.79451]}
+          rotation={[-Math.PI / 2, -9e-8, 1.86104262]}
+          scale={[49.07019865, 108.77944024, 5.64813375]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube010_Material006_0.geometry}
+          material={materials["Material.006"]}
+          position={[-181.145554, 31.6368828, 295.795837]}
+          rotation={[-Math.PI / 2, 0, 3.13555169]}
+          scale={[43.41202792, 96.23632168, 4.99686]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_8_Tastatur_Seite_0.geometry}
+          material={materials.Tastatur_Seite}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_10_Tastatur_Unterseite_0.geometry}
+          material={materials.Tastatur_Unterseite}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_12_Tastatur_Unterseite_0.geometry}
+          material={materials.Tastatur_Unterseite}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_14_Material004_0.geometry}
+          material={materials["Material.004"]}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_16_Material004_0.geometry}
+          material={materials["Material.004"]}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_18_Material004_0.geometry}
+          material={materials["Material.004"]}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_20_Material004_0.geometry}
+          material={materials["Material.004"]}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_22_Material004_0.geometry}
+          material={materials["Material.004"]}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_24_Tastatur_Seite_0.geometry}
+          material={materials.Tastatur_Seite}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_26_Material004_0.geometry}
+          material={materials["Material.004"]}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_28_Material004_0.geometry}
+          material={materials["Material.004"]}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_30_Material007_0.geometry}
+          material={materials["Material.007"]}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_32_Material004_0.geometry}
+          material={materials["Material.004"]}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_34_Material004_0.geometry}
+          material={materials["Material.004"]}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_36_Tastatur_Seite_0.geometry}
+          material={materials.Tastatur_Seite}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_38_Tastatur_Seite_0.geometry}
+          material={materials.Tastatur_Seite}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_40_Tastatur_Seite_0.geometry}
+          material={materials.Tastatur_Seite}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_42_Tastatur_Seite_0.geometry}
+          material={materials.Tastatur_Seite}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_44_Tastatur_Seite_0.geometry}
+          material={materials.Tastatur_Seite}
+          position={[147.708542, 33.24464, 403.086365]}
+          rotation={[-Math.PI, -Math.PI / 2, 0]}
+          scale={[91.41485, 91.41488, 91.41488]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_47_Material005_0.geometry}
+          material={materials["Material.074_32"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_49_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_51_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_53_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_55_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_57_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_59_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_61_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_63_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_65_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_67_Material067_0.geometry}
+          material={materials["Material.074_36"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_69_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_71_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_73_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_75_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_77_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_79_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_81_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_83_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_85_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_87_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_89_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_91_Material067_0.geometry}
+          material={materials["Material.074_36"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_93_Material069_0.geometry}
+          material={materials["Material.074_38"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_95_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_97_Material005_0.geometry}
+          material={materials["Material.074_32"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_99_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_101_Material067_0.geometry}
+          material={materials["Material.074_36"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_103_Material070_0.geometry}
+          material={materials["Material.074_39"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_105_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_107_Material070_0.geometry}
+          material={materials["Material.074_39"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_109_Material069_0.geometry}
+          material={materials["Material.074_38"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_111_Material067_0.geometry}
+          material={materials["Material.074_36"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_113_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_115_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_117_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_119_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_121_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_123_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_125_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_127_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708511, 32.6011353, 400.7703]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[154.134628, 91.41490633, 91.41490633]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_129_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 385.791626]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_131_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_133_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_135_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_137_Material005_0.geometry}
+          material={materials["Material.074_32"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_139_Material005_0.geometry}
+          material={materials["Material.074_32"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_141_Material069_0.geometry}
+          material={materials["Material.074_38"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_143_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_145_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_147_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_149_Material005_0.geometry}
+          material={materials["Material.074_32"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_151_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_153_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_155_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_157_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_159_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_161_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_163_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_165_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_167_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_169_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_171_Material005_0.geometry}
+          material={materials["Material.074_32"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_173_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_175_Material069_0.geometry}
+          material={materials["Material.074_38"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_177_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_179_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_181_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_183_Material070_0.geometry}
+          material={materials["Material.074_39"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_185_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_187_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_189_Material069_0.geometry}
+          material={materials["Material.074_38"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_191_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_193_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_195_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_197_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_199_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_201_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_203_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_205_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708527, 32.57766, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_207_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_209_Material070_0.geometry}
+          material={materials["Material.074_39"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_211_Material067_0.geometry}
+          material={materials["Material.074_36"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_213_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_215_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_217_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_219_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_221_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708511, 32.6011353, 400.7703]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[154.134628, 91.41490633, 91.41490633]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_223_Material005_0.geometry}
+          material={materials["Material.074_32"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_225_Material005_0.geometry}
+          material={materials["Material.074_32"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_227_Material069_0.geometry}
+          material={materials["Material.074_38"]}
+          position={[147.708527, 32.4315338, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_229_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_231_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_233_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_235_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_237_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_239_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_241_Material070_0.geometry}
+          material={materials["Material.074_39"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_243_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_245_Material070_0.geometry}
+          material={materials["Material.074_39"]}
+          position={[147.708527, 32.6011353, 289.9411]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[142.889832, 91.41490633, 91.41490633]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_247_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_249_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_251_Material070_0.geometry}
+          material={materials["Material.074_39"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_253_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_255_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[129.141373, 32.6011467, 395.1337]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[79.31445, 91.41490633, 91.41490633]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_257_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[129.141373, 32.6011467, 395.1337]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[79.31445, 91.41490633, 91.41490633]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_259_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 385.748566]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_261_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 385.717773]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_263_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 385.526]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_265_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[125.985161, 34.79241, 402.7314]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_267_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_269_Material070_0.geometry}
+          material={materials["Material.074_39"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_271_Material070_0.geometry}
+          material={materials["Material.074_39"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_273_Material067_0.geometry}
+          material={materials["Material.074_36"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_275_Material005_0.geometry}
+          material={materials["Material.074_32"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_277_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_279_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_281_Material069_0.geometry}
+          material={materials["Material.074_38"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_283_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_285_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_287_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_289_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_291_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_293_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_295_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_297_Material067_0.geometry}
+          material={materials["Material.074_36"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_299_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_301_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_303_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_305_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_307_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_309_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_311_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_313_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_315_Material005_0.geometry}
+          material={materials["Material.074_32"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_317_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_319_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_321_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_323_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_325_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_327_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_329_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_331_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_333_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_335_Material005_0.geometry}
+          material={materials["Material.074_32"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_337_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_339_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_341_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_343_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_345_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_347_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_349_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_351_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_353_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_355_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_357_Material069_0.geometry}
+          material={materials["Material.074_38"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_359_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_361_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_363_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_365_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_367_Material069_0.geometry}
+          material={materials["Material.074_38"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_369_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_371_Material070_0.geometry}
+          material={materials["Material.074_39"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_373_Material070_0.geometry}
+          material={materials["Material.074_39"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_375_Material067_0.geometry}
+          material={materials["Material.074_36"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_377_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_379_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_381_Material005_0.geometry}
+          material={materials["Material.074_32"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_383_Material005_0.geometry}
+          material={materials["Material.074_32"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_385_Material069_0.geometry}
+          material={materials["Material.074_38"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_387_Material005_0.geometry}
+          material={materials["Material.074_32"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_389_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_391_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_393_Material068_0.geometry}
+          material={materials["Material.074_37"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_395_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_397_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_399_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_401_Material070_0.geometry}
+          material={materials["Material.074_39"]}
+          position={[147.708527, 32.6011353, 289.9411]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[142.889832, 91.41490633, 91.41490633]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_403_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_405_Material060_0.geometry}
+          material={materials["Material.074_34"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_407_Material070_0.geometry}
+          material={materials["Material.074_39"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_409_Material067_0.geometry}
+          material={materials["Material.074_36"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_411_Tasten_2_0.geometry}
+          material={materials.Tasten_2}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_413_Material066_0.geometry}
+          material={materials["Material.074_35"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_415_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[147.708542, 32.6011429, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41485, 91.41489628, 91.41489628]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_418_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_420_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[164.916565, 31.1135883, 386.964355]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[67.56852, 91.41490633, 91.41490633]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_422_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_424_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_426_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[130.240814, 34.6049843, 390.576569]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[72.76605, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_428_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_430_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_432_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_434_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_436_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_438_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 402.927551]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_440_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_442_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_444_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_446_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_448_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_450_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_452_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_454_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_456_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_458_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_460_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_462_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_464_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_466_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_468_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_470_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_472_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_474_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_476_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_478_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_480_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_482_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_484_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_486_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_488_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_490_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_492_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_494_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_496_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_498_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_500_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_502_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_504_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_506_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_508_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_510_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_512_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_514_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 385.856323]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_516_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 385.856323]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_518_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 385.856323]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_520_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 385.856323]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_522_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 385.856323]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_524_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 385.856323]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_526_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_528_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 385.856323]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_530_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_532_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_534_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_536_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_538_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_540_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_542_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_544_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_546_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_548_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_550_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_552_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_554_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_556_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_558_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_560_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_562_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_564_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_566_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_568_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_570_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_572_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_574_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_576_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_578_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_580_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_582_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_584_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_586_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_588_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_590_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_592_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_594_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_596_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_598_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_600_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_602_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_604_Material071_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.5814934, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_606_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708527, 34.2964058, 259.274567]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[157.895844, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_608_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_610_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_612_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_614_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_616_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_618_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_620_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_622_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_624_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_626_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_628_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_630_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_632_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_634_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_636_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_638_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_640_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_642_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_644_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_646_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_648_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_650_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_652_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_654_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_656_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_658_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_660_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_662_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_664_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_666_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_668_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_670_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_672_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_674_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_676_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_678_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_680_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_682_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_684_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_686_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_688_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_690_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_692_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_694_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_696_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_698_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_700_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_702_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_704_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_706_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_708_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_710_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_712_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_714_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_716_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_718_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_720_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_722_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_724_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_726_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_728_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_730_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_732_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_734_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_736_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_738_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_740_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_742_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_744_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_746_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_748_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_750_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_752_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_754_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_756_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_758_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_760_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_762_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_764_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_766_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_768_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_770_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_772_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_774_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_776_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_778_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_780_Tasten_0.geometry}
+          material={materials["Material.025"]}
+          position={[147.708542, 34.6049767, 403.086426]}
+          rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
+          scale={[91.41486, 91.41488115, 91.41488115]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_784_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[174.1615, 46.9233475, 307.7135]}
+          rotation={[-Math.PI / 2, -4e-8, Math.PI / 2]}
+          scale={[49.8236122, 49.823616, 49.823616]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_786_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[191.3767, 45.22822, 324.98468]}
+          rotation={[-Math.PI / 2, 1.5e-7, -Math.PI]}
+          scale={[49.8236275, 49.8236237, 49.823616]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_790_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[191.376678, 45.22822, 290.0994]}
+          rotation={[-Math.PI / 2, 1.3e-7, -1.3e-7]}
+          scale={[49.8236275, 49.8236237, 49.823616]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_792_Material057_0.geometry}
+          material={materials["Material.074_33"]}
+          position={[190.940979, 45.22822, 307.683777]}
+          rotation={[-Math.PI / 2, 9.9e-7, -1.53752482]}
+          scale={[52.61216797, 52.61217537, 52.61216]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_794_Material070_0.geometry}
+          material={materials["Material.074_39"]}
+          position={[139.381332, 50.460083, 591.259644]}
+          rotation={[-Math.PI / 2, 1.3e-7, -Math.PI]}
+          scale={[29.2656174, 29.2656155, 29.2656174]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_796_Material070_0.geometry}
+          material={materials["Material.074_39"]}
+          position={[141.107986, 50.4600868, 586.290344]}
+          rotation={[-Math.PI / 2, 1.3e-7, -1.3e-7]}
+          scale={[29.265625, 29.2656174, 29.2656174]}
+        />
+      </group>
+    </group>
+  );
+}
 
 type GLTFResult = GLTF & {
   nodes: {
-    Cube018_Material017_0: Mesh;
-    aorus_case_fans_aorus_case_fans_0: Mesh;
-    Cube077_Material083_0: Mesh;
-    Object_784_Material057_0: Mesh;
-    Object_974_Material057_0: Mesh;
-    Object_976_Material070_0: Mesh;
     Cube_Material_0: Mesh;
     Cube011_Material010_0: Mesh;
+    Cube012_Material011_0: Mesh;
+    Cube013_Material015_0: Mesh;
+    Cube014_Material014_0: Mesh;
     Cylinder_Material009_0: Mesh;
+    Cube018_Material017_0: Mesh;
+    aorus_case_fans_aorus_case_fans_0: Mesh;
+    aorus_case_fans001_aorus_case_fans_0: Mesh;
     Cube015_Material016_0: Mesh;
+    Cube016_Material017_0: Mesh;
+    aorus_case_fans002_aorus_case_fans_0: Mesh;
+    aorus_case_fans003_aorus_case_fans_0: Mesh;
+    Cube017_Material017_0: Mesh;
+    aorus_case_fans004_aorus_case_fans_0: Mesh;
+    aorus_case_fans005_aorus_case_fans_0: Mesh;
+    Cube019_Material017_0: Mesh;
+    aorus_case_fans006_aorus_case_fans_0: Mesh;
+    aorus_case_fans007_aorus_case_fans_0: Mesh;
     Cube020_Material020_0: Mesh;
+    Cube021_Material018_0: Mesh;
+    Cube022_Material017_0: Mesh;
+    aorus_case_fans008_aorus_case_fans_0: Mesh;
+    aorus_case_fans009_aorus_case_fans_0: Mesh;
+    Sphere_Material019_0: Mesh;
+    Sphere001_Material019_0: Mesh;
     IOSHIELD_IOSHIELD_0: Mesh;
+    Cube023_Material021_0: Mesh;
+    Cube024_Material022_0: Mesh;
     MOBOAORUSORANGETRANS_MOBOAORUSORANGETRANS_0: Mesh;
     Cube025_Material023_0: Mesh;
     Cube026_Material024_0: Mesh;
     ["metal-mesh-500x500_metal-mesh-500x500_0"]: Mesh;
+    ["metal-mesh-500x500001_metal-mesh-500x500_0"]: Mesh;
+    ["metal-mesh-500x500002_metal-mesh-500x500_0"]: Mesh;
     Cube027_Material008_0: Mesh;
     Cube028_Material026_0: Mesh;
+    Cube029_Material025_0: Mesh;
+    Cube030_Material026_0: Mesh;
+    Cube031_Material008_0: Mesh;
+    Cube032_Material026_0: Mesh;
+    Cube033_Material025_0: Mesh;
+    Cube034_Material026_0: Mesh;
+    Cube035_Material008_0: Mesh;
+    Cube036_Material026_0: Mesh;
+    Cube037_Material025_0: Mesh;
+    Cube038_Material026_0: Mesh;
+    Cube039_Material008_0: Mesh;
+    Cube040_Material026_0: Mesh;
+    Cube041_Material025_0: Mesh;
+    Cube042_Material026_0: Mesh;
+    ["metal-mesh-500x500003_metal-mesh-500x500_0"]: Mesh;
+    Cube043_Material012_0: Mesh;
     Cube045_Material027_0: Mesh;
     ["rgb-hdd-cover-aorus-v1_rgb-hdd-cover-aorus-v1_0"]: Mesh;
     ["maxresdefault_(1)_maxresdefault_(1)_0"]: Mesh;
     Cylinder001_Material028_0: Mesh;
+    Cylinder002_Material029_0: Mesh;
+    Cube044_Material012_0: Mesh;
+    Cylinder003_Material031_0: Mesh;
+    Cylinder004_Material030_0: Mesh;
     NVIDIA_LOGO_NVIDIA_LOGO_0: Mesh;
     psuback_psuback_0: Mesh;
     usb_usb_0: Mesh;
+    usb001_usb_0: Mesh;
+    usb002_usb_0: Mesh;
+    Torus_Material013_0: Mesh;
+    Torus001_Material032_0: Mesh;
+    usb003_usb_0: Mesh;
+    Cube046_Material034_0: Mesh;
+    Cube047_Material033_0: Mesh;
     Cube048_Material035_0: Mesh;
     Cube049_Material040_0: Mesh;
+    Cube050_Material038_0: Mesh;
+    Cube051_Material042_0: Mesh;
     Cylinder005_Material041_0: Mesh;
+    Cylinder011_Material045_0: Mesh;
+    ["metal-mesh-500x500004_metal-mesh-500x500_0"]: Mesh;
+    Text_Material046_0: Mesh;
+    Cube052_Material047_0: Mesh;
     ["test-aorus-m2-souris-aorus-rgb2_test-aorus-m2-souris-aorus-rgb2_0"]: Mesh;
+    Cube053_Material048_0: Mesh;
+    Cube054_Material049_0: Mesh;
+    Cube055_Material054_0: Mesh;
+    Cube056_Material061_0: Mesh;
     Cylinder006_Material050_0: Mesh;
     Cylinder007_Material051_0: Mesh;
+    Cylinder008_Material052_0: Mesh;
     Plane_Material053_0: Mesh;
+    geforcertx_Material056_0: Mesh;
     Cube057_Material059_0: Mesh;
+    Cube059_Material058_0: Mesh;
+    Cube060_Material062_0: Mesh;
     Cube058_Material063_0: Mesh;
     aorus_logotranspa_aorus_logotranspa_0: Mesh;
+    Cube061_Material064_0: Mesh;
+    Cube062_Material065_0: Mesh;
     Cube064_Material074_0: Mesh;
+    Cube067_Material075_0: Mesh;
+    Cube063_Material074_0: Mesh;
+    Cube065_Material074_0: Mesh;
+    Cube066_Material076_0: Mesh;
+    Cube072_Material078_0: Mesh;
+    Cube073_Material079_0: Mesh;
+    Cube076_Material080_0: Mesh;
+    Cylinder009_Material081_0: Mesh;
+    Cylinder010_Material077_0: Mesh;
+    Cylinder012_Material082_0: Mesh;
+    BezierCurve001_Material085_0: Mesh;
+    Cube074_Material084_0: Mesh;
     Cube075_Material086_0: Mesh;
+    BezierCurve002_Material087_0: Mesh;
+    Cube077_Material083_0: Mesh;
+    Cube078_Material083_0: Mesh;
+    BezierCurve_Material088_0: Mesh;
+    Cube079_Material089_0: Mesh;
+    Cube080_Material089_0: Mesh;
+    BezierCurve003_Material091_0: Mesh;
+    Cube081_Material090_0: Mesh;
+    Cube068_Material092_0: Mesh;
     ["Color-PewDiePie-Logo_Color-PewDiePie-Logo_0"]: Mesh;
+    Cube069_Material093_0: Mesh;
+    Cylinder013_Material094_0: Mesh;
+    Cylinder014_Material095_0: Mesh;
+    Cylinder015_Material096_0: Mesh;
+    Text001_Material097_0: Mesh;
+    Cube088_Material098_0: Mesh;
+    BezierCurve004_Material099_0: Mesh;
+    Cube070_Material100_0: Mesh;
+    Cube071_Material101_0: Mesh;
+    Cube082_Material101_0: Mesh;
+    Cylinder016_Material102_0: Mesh;
+    BezierCircle_Material104_0: Mesh;
+    BezierCurve005_Material103_0: Mesh;
+    BezierCurve006_Material106_0: Mesh;
+    BezierCurve007_Material105_0: Mesh;
+    BezierCurve008_Material107_0: Mesh;
+    Cube001_Material055_0: Mesh;
+    Cube002_Material044_0: Mesh;
     gallerymodel_gallerymodel_0: Mesh;
+    Cube003_Material001_0: Mesh;
     bg2_bg2_0: Mesh;
     MY_SCREEN_MY_SCREEN_0: Mesh;
     ["gigabyte-logo_gigabyte-logo_0"]: Mesh;
+    ["gigabyte-logo001_gigabyte-logo_0"]: Mesh;
     Cube004_Material002_0: Mesh;
+    Cube005_Material003_0: Mesh;
+    Cube006_Material043_0: Mesh;
+    Cube007_Material037_0: Mesh;
+    Cube008_Material036_0: Mesh;
+    Cube009_Material039_0: Mesh;
+    Cube010_Material006_0: Mesh;
+    Object_8_Tastatur_Seite_0: Mesh;
+    Object_10_Tastatur_Unterseite_0: Mesh;
+    Object_12_Tastatur_Unterseite_0: Mesh;
+    Object_14_Material004_0: Mesh;
+    Object_16_Material004_0: Mesh;
+    Object_18_Material004_0: Mesh;
+    Object_20_Material004_0: Mesh;
+    Object_22_Material004_0: Mesh;
+    Object_24_Tastatur_Seite_0: Mesh;
+    Object_26_Material004_0: Mesh;
+    Object_28_Material004_0: Mesh;
+    Object_30_Material007_0: Mesh;
+    Object_32_Material004_0: Mesh;
+    Object_34_Material004_0: Mesh;
+    Object_36_Tastatur_Seite_0: Mesh;
+    Object_38_Tastatur_Seite_0: Mesh;
+    Object_40_Tastatur_Seite_0: Mesh;
+    Object_42_Tastatur_Seite_0: Mesh;
+    Object_44_Tastatur_Seite_0: Mesh;
     Object_47_Material005_0: Mesh;
     Object_49_Tasten_2_0: Mesh;
+    Object_51_Tasten_2_0: Mesh;
+    Object_53_Tasten_2_0: Mesh;
     Object_55_Material057_0: Mesh;
+    Object_57_Tasten_2_0: Mesh;
     Object_59_Material060_0: Mesh;
+    Object_61_Tasten_2_0: Mesh;
+    Object_63_Material060_0: Mesh;
     Object_65_Material066_0: Mesh;
     Object_67_Material067_0: Mesh;
+    Object_69_Material066_0: Mesh;
+    Object_71_Tasten_2_0: Mesh;
+    Object_73_Material057_0: Mesh;
+    Object_75_Material066_0: Mesh;
+    Object_77_Material057_0: Mesh;
+    Object_79_Material057_0: Mesh;
     Object_81_Material068_0: Mesh;
+    Object_83_Tasten_2_0: Mesh;
+    Object_85_Material068_0: Mesh;
+    Object_87_Tasten_2_0: Mesh;
+    Object_89_Material068_0: Mesh;
+    Object_91_Material067_0: Mesh;
     Object_93_Material069_0: Mesh;
+    Object_95_Tasten_2_0: Mesh;
+    Object_97_Material005_0: Mesh;
+    Object_99_Tasten_2_0: Mesh;
+    Object_101_Material067_0: Mesh;
     Object_103_Material070_0: Mesh;
+    Object_105_Tasten_2_0: Mesh;
+    Object_107_Material070_0: Mesh;
+    Object_109_Material069_0: Mesh;
+    Object_111_Material067_0: Mesh;
+    Object_113_Material068_0: Mesh;
+    Object_115_Material057_0: Mesh;
+    Object_117_Material068_0: Mesh;
+    Object_119_Material057_0: Mesh;
+    Object_121_Material066_0: Mesh;
+    Object_123_Material057_0: Mesh;
+    Object_125_Material066_0: Mesh;
+    Object_127_Material057_0: Mesh;
+    Object_129_Material066_0: Mesh;
+    Object_131_Material060_0: Mesh;
+    Object_133_Material060_0: Mesh;
+    Object_135_Material060_0: Mesh;
+    Object_137_Material005_0: Mesh;
+    Object_139_Material005_0: Mesh;
+    Object_141_Material069_0: Mesh;
+    Object_143_Material068_0: Mesh;
+    Object_145_Material066_0: Mesh;
+    Object_147_Material066_0: Mesh;
+    Object_149_Material005_0: Mesh;
+    Object_151_Material068_0: Mesh;
+    Object_153_Material066_0: Mesh;
+    Object_155_Material068_0: Mesh;
+    Object_157_Material066_0: Mesh;
+    Object_159_Material066_0: Mesh;
+    Object_161_Material066_0: Mesh;
+    Object_163_Material066_0: Mesh;
+    Object_165_Material066_0: Mesh;
+    Object_167_Material060_0: Mesh;
+    Object_169_Material060_0: Mesh;
+    Object_171_Material005_0: Mesh;
+    Object_173_Material057_0: Mesh;
+    Object_175_Material069_0: Mesh;
+    Object_177_Material068_0: Mesh;
+    Object_179_Material060_0: Mesh;
+    Object_181_Material057_0: Mesh;
+    Object_183_Material070_0: Mesh;
+    Object_185_Material057_0: Mesh;
+    Object_187_Material057_0: Mesh;
+    Object_189_Material069_0: Mesh;
+    Object_191_Material057_0: Mesh;
+    Object_193_Material057_0: Mesh;
+    Object_195_Material057_0: Mesh;
+    Object_197_Material057_0: Mesh;
+    Object_199_Material057_0: Mesh;
+    Object_201_Material057_0: Mesh;
+    Object_203_Material060_0: Mesh;
+    Object_205_Material066_0: Mesh;
+    Object_207_Material057_0: Mesh;
+    Object_209_Material070_0: Mesh;
+    Object_211_Material067_0: Mesh;
+    Object_213_Tasten_2_0: Mesh;
+    Object_215_Material057_0: Mesh;
+    Object_217_Material060_0: Mesh;
+    Object_219_Material060_0: Mesh;
+    Object_221_Material057_0: Mesh;
+    Object_223_Material005_0: Mesh;
+    Object_225_Material005_0: Mesh;
+    Object_227_Material069_0: Mesh;
+    Object_229_Material057_0: Mesh;
+    Object_231_Material068_0: Mesh;
+    Object_233_Material057_0: Mesh;
+    Object_235_Material057_0: Mesh;
+    Object_237_Material066_0: Mesh;
+    Object_239_Material066_0: Mesh;
+    Object_241_Material070_0: Mesh;
+    Object_243_Material066_0: Mesh;
+    Object_245_Material070_0: Mesh;
+    Object_247_Material066_0: Mesh;
+    Object_249_Material060_0: Mesh;
+    Object_251_Material070_0: Mesh;
+    Object_253_Material057_0: Mesh;
+    Object_255_Material057_0: Mesh;
+    Object_257_Material057_0: Mesh;
+    Object_259_Material060_0: Mesh;
+    Object_261_Material060_0: Mesh;
+    Object_263_Material060_0: Mesh;
+    Object_265_Material060_0: Mesh;
+    Object_267_Tasten_2_0: Mesh;
+    Object_269_Material070_0: Mesh;
+    Object_271_Material070_0: Mesh;
+    Object_273_Material067_0: Mesh;
+    Object_275_Material005_0: Mesh;
+    Object_277_Tasten_2_0: Mesh;
+    Object_279_Tasten_2_0: Mesh;
+    Object_281_Material069_0: Mesh;
+    Object_283_Material068_0: Mesh;
+    Object_285_Material068_0: Mesh;
+    Object_287_Tasten_2_0: Mesh;
+    Object_289_Material068_0: Mesh;
+    Object_291_Material066_0: Mesh;
+    Object_293_Material066_0: Mesh;
+    Object_295_Tasten_2_0: Mesh;
+    Object_297_Material067_0: Mesh;
+    Object_299_Material066_0: Mesh;
+    Object_301_Material060_0: Mesh;
+    Object_303_Tasten_2_0: Mesh;
+    Object_305_Material060_0: Mesh;
+    Object_307_Tasten_2_0: Mesh;
+    Object_309_Material057_0: Mesh;
+    Object_311_Tasten_2_0: Mesh;
+    Object_313_Tasten_2_0: Mesh;
+    Object_315_Material005_0: Mesh;
+    Object_317_Tasten_2_0: Mesh;
+    Object_319_Tasten_2_0: Mesh;
+    Object_321_Material068_0: Mesh;
+    Object_323_Material057_0: Mesh;
+    Object_325_Material066_0: Mesh;
+    Object_327_Material057_0: Mesh;
+    Object_329_Material066_0: Mesh;
+    Object_331_Material060_0: Mesh;
+    Object_333_Material060_0: Mesh;
+    Object_335_Material005_0: Mesh;
+    Object_337_Material068_0: Mesh;
+    Object_339_Material066_0: Mesh;
+    Object_341_Material068_0: Mesh;
+    Object_343_Material066_0: Mesh;
+    Object_345_Material066_0: Mesh;
+    Object_347_Material066_0: Mesh;
+    Object_349_Material066_0: Mesh;
+    Object_351_Material060_0: Mesh;
+    Object_353_Material060_0: Mesh;
+    Object_355_Material057_0: Mesh;
+    Object_357_Material069_0: Mesh;
+    Object_359_Material066_0: Mesh;
+    Object_361_Material057_0: Mesh;
+    Object_363_Material057_0: Mesh;
+    Object_365_Material057_0: Mesh;
+    Object_367_Material069_0: Mesh;
+    Object_369_Material060_0: Mesh;
+    Object_371_Material070_0: Mesh;
+    Object_373_Material070_0: Mesh;
+    Object_375_Material067_0: Mesh;
+    Object_377_Tasten_2_0: Mesh;
+    Object_379_Material066_0: Mesh;
+    Object_381_Material005_0: Mesh;
+    Object_383_Material005_0: Mesh;
+    Object_385_Material069_0: Mesh;
+    Object_387_Material005_0: Mesh;
+    Object_389_Material068_0: Mesh;
+    Object_391_Material057_0: Mesh;
+    Object_393_Material068_0: Mesh;
+    Object_395_Material057_0: Mesh;
+    Object_397_Material066_0: Mesh;
+    Object_399_Material066_0: Mesh;
+    Object_401_Material070_0: Mesh;
+    Object_403_Material066_0: Mesh;
+    Object_405_Material060_0: Mesh;
+    Object_407_Material070_0: Mesh;
+    Object_409_Material067_0: Mesh;
+    Object_411_Tasten_2_0: Mesh;
+    Object_413_Material066_0: Mesh;
+    Object_415_Material057_0: Mesh;
+    Object_418_Tasten_0: Mesh;
+    Object_420_Tasten_0: Mesh;
+    Object_422_Tasten_0: Mesh;
+    Object_424_Tasten_0: Mesh;
+    Object_426_Tasten_0: Mesh;
+    Object_428_Tasten_0: Mesh;
+    Object_430_Tasten_0: Mesh;
+    Object_432_Tasten_0: Mesh;
+    Object_434_Tasten_0: Mesh;
+    Object_436_Tasten_0: Mesh;
+    Object_438_Tasten_0: Mesh;
+    Object_440_Tasten_0: Mesh;
+    Object_442_Tasten_0: Mesh;
+    Object_444_Tasten_0: Mesh;
+    Object_446_Tasten_0: Mesh;
+    Object_448_Tasten_0: Mesh;
+    Object_450_Tasten_0: Mesh;
+    Object_452_Tasten_0: Mesh;
+    Object_454_Tasten_0: Mesh;
+    Object_456_Tasten_0: Mesh;
+    Object_458_Tasten_0: Mesh;
+    Object_460_Tasten_0: Mesh;
+    Object_462_Tasten_0: Mesh;
+    Object_464_Tasten_0: Mesh;
+    Object_466_Tasten_0: Mesh;
+    Object_468_Tasten_0: Mesh;
+    Object_470_Tasten_0: Mesh;
+    Object_472_Tasten_0: Mesh;
+    Object_474_Tasten_0: Mesh;
+    Object_476_Tasten_0: Mesh;
+    Object_478_Tasten_0: Mesh;
+    Object_480_Tasten_0: Mesh;
+    Object_482_Tasten_0: Mesh;
+    Object_484_Tasten_0: Mesh;
+    Object_486_Tasten_0: Mesh;
+    Object_488_Tasten_0: Mesh;
+    Object_490_Tasten_0: Mesh;
+    Object_492_Tasten_0: Mesh;
+    Object_494_Tasten_0: Mesh;
+    Object_496_Tasten_0: Mesh;
+    Object_498_Tasten_0: Mesh;
+    Object_500_Tasten_0: Mesh;
+    Object_502_Tasten_0: Mesh;
+    Object_504_Tasten_0: Mesh;
+    Object_506_Tasten_0: Mesh;
+    Object_508_Tasten_0: Mesh;
+    Object_510_Tasten_0: Mesh;
+    Object_512_Tasten_0: Mesh;
+    Object_514_Tasten_0: Mesh;
+    Object_516_Tasten_0: Mesh;
+    Object_518_Tasten_0: Mesh;
+    Object_520_Tasten_0: Mesh;
+    Object_522_Tasten_0: Mesh;
+    Object_524_Tasten_0: Mesh;
+    Object_526_Tasten_0: Mesh;
+    Object_528_Tasten_0: Mesh;
+    Object_530_Tasten_0: Mesh;
+    Object_532_Tasten_0: Mesh;
+    Object_534_Tasten_0: Mesh;
+    Object_536_Tasten_0: Mesh;
+    Object_538_Tasten_0: Mesh;
+    Object_540_Tasten_0: Mesh;
+    Object_542_Tasten_0: Mesh;
+    Object_544_Tasten_0: Mesh;
+    Object_546_Tasten_0: Mesh;
+    Object_548_Tasten_0: Mesh;
+    Object_550_Tasten_0: Mesh;
+    Object_552_Tasten_0: Mesh;
+    Object_554_Tasten_0: Mesh;
+    Object_556_Tasten_0: Mesh;
+    Object_558_Tasten_0: Mesh;
+    Object_560_Tasten_0: Mesh;
+    Object_562_Tasten_0: Mesh;
+    Object_564_Tasten_0: Mesh;
+    Object_566_Tasten_0: Mesh;
+    Object_568_Tasten_0: Mesh;
+    Object_570_Tasten_0: Mesh;
+    Object_572_Tasten_0: Mesh;
+    Object_574_Tasten_0: Mesh;
+    Object_576_Tasten_0: Mesh;
+    Object_578_Tasten_0: Mesh;
+    Object_580_Tasten_0: Mesh;
+    Object_582_Tasten_0: Mesh;
+    Object_584_Tasten_0: Mesh;
+    Object_586_Tasten_0: Mesh;
+    Object_588_Tasten_0: Mesh;
+    Object_590_Tasten_0: Mesh;
+    Object_592_Tasten_0: Mesh;
+    Object_594_Tasten_0: Mesh;
+    Object_596_Tasten_0: Mesh;
+    Object_598_Tasten_0: Mesh;
+    Object_600_Tasten_0: Mesh;
+    Object_602_Tasten_0: Mesh;
+    Object_604_Material071_0: Mesh;
+    Object_606_Tasten_0: Mesh;
+    Object_608_Tasten_0: Mesh;
+    Object_610_Tasten_0: Mesh;
+    Object_612_Tasten_0: Mesh;
+    Object_614_Tasten_0: Mesh;
+    Object_616_Tasten_0: Mesh;
+    Object_618_Tasten_0: Mesh;
+    Object_620_Tasten_0: Mesh;
+    Object_622_Tasten_0: Mesh;
+    Object_624_Tasten_0: Mesh;
+    Object_626_Tasten_0: Mesh;
+    Object_628_Tasten_0: Mesh;
+    Object_630_Tasten_0: Mesh;
+    Object_632_Tasten_0: Mesh;
+    Object_634_Tasten_0: Mesh;
+    Object_636_Tasten_0: Mesh;
+    Object_638_Tasten_0: Mesh;
+    Object_640_Tasten_0: Mesh;
+    Object_642_Tasten_0: Mesh;
+    Object_644_Tasten_0: Mesh;
+    Object_646_Tasten_0: Mesh;
+    Object_648_Tasten_0: Mesh;
+    Object_650_Tasten_0: Mesh;
+    Object_652_Tasten_0: Mesh;
+    Object_654_Tasten_0: Mesh;
+    Object_656_Tasten_0: Mesh;
+    Object_658_Tasten_0: Mesh;
+    Object_660_Tasten_0: Mesh;
+    Object_662_Tasten_0: Mesh;
+    Object_664_Tasten_0: Mesh;
+    Object_666_Tasten_0: Mesh;
+    Object_668_Tasten_0: Mesh;
+    Object_670_Tasten_0: Mesh;
+    Object_672_Tasten_0: Mesh;
+    Object_674_Tasten_0: Mesh;
+    Object_676_Tasten_0: Mesh;
+    Object_678_Tasten_0: Mesh;
+    Object_680_Tasten_0: Mesh;
+    Object_682_Tasten_0: Mesh;
+    Object_684_Tasten_0: Mesh;
+    Object_686_Tasten_0: Mesh;
+    Object_688_Tasten_0: Mesh;
+    Object_690_Tasten_0: Mesh;
+    Object_692_Tasten_0: Mesh;
+    Object_694_Tasten_0: Mesh;
+    Object_696_Tasten_0: Mesh;
+    Object_698_Tasten_0: Mesh;
+    Object_700_Tasten_0: Mesh;
+    Object_702_Tasten_0: Mesh;
+    Object_704_Tasten_0: Mesh;
+    Object_706_Tasten_0: Mesh;
+    Object_708_Tasten_0: Mesh;
+    Object_710_Tasten_0: Mesh;
+    Object_712_Tasten_0: Mesh;
+    Object_714_Tasten_0: Mesh;
+    Object_716_Tasten_0: Mesh;
+    Object_718_Tasten_0: Mesh;
+    Object_720_Tasten_0: Mesh;
+    Object_722_Tasten_0: Mesh;
+    Object_724_Tasten_0: Mesh;
+    Object_726_Tasten_0: Mesh;
+    Object_728_Tasten_0: Mesh;
+    Object_730_Tasten_0: Mesh;
+    Object_732_Tasten_0: Mesh;
+    Object_734_Tasten_0: Mesh;
+    Object_736_Tasten_0: Mesh;
+    Object_738_Tasten_0: Mesh;
+    Object_740_Tasten_0: Mesh;
+    Object_742_Tasten_0: Mesh;
+    Object_744_Tasten_0: Mesh;
+    Object_746_Tasten_0: Mesh;
+    Object_748_Tasten_0: Mesh;
+    Object_750_Tasten_0: Mesh;
+    Object_752_Tasten_0: Mesh;
+    Object_754_Tasten_0: Mesh;
+    Object_756_Tasten_0: Mesh;
+    Object_758_Tasten_0: Mesh;
+    Object_760_Tasten_0: Mesh;
+    Object_762_Tasten_0: Mesh;
+    Object_764_Tasten_0: Mesh;
+    Object_766_Tasten_0: Mesh;
+    Object_768_Tasten_0: Mesh;
+    Object_770_Tasten_0: Mesh;
+    Object_772_Tasten_0: Mesh;
+    Object_774_Tasten_0: Mesh;
+    Object_776_Tasten_0: Mesh;
+    Object_778_Tasten_0: Mesh;
+    Object_780_Tasten_0: Mesh;
     ["Object_782_OnTheFly-bg_0"]: Mesh;
+    Object_784_Material057_0: Mesh;
+    Object_786_Material057_0: Mesh;
+    Object_788_Material057_0: Mesh;
+    Object_790_Material057_0: Mesh;
+    Object_792_Material057_0: Mesh;
+    Object_794_Material070_0: Mesh;
+    Object_796_Material070_0: Mesh;
+    Object_798_Material057_0: Mesh;
+    Object_800_Material005_0: Mesh;
+    Object_802_Material005_0: Mesh;
+    Object_804_Material005_0: Mesh;
+    Object_806_Material005_0: Mesh;
+    Object_808_Material005_0: Mesh;
+    Object_810_Material005_0: Mesh;
+    Object_812_Material068_0: Mesh;
+    Object_814_Material068_0: Mesh;
+    Object_816_Material068_0: Mesh;
+    Object_818_Material066_0: Mesh;
+    Object_820_Material066_0: Mesh;
+    Object_822_Material066_0: Mesh;
+    Object_824_Material066_0: Mesh;
+    Object_826_Material060_0: Mesh;
+    Object_828_Material005_0: Mesh;
+    Object_830_Material069_0: Mesh;
+    Object_832_Material068_0: Mesh;
+    Object_834_Material068_0: Mesh;
+    Object_836_Material068_0: Mesh;
+    Object_838_Material070_0: Mesh;
+    Object_840_Material070_0: Mesh;
+    Object_842_Material066_0: Mesh;
+    Object_844_Material066_0: Mesh;
+    Object_846_Material066_0: Mesh;
+    Object_848_Material060_0: Mesh;
+    Object_850_Material070_0: Mesh;
+    Object_852_Material066_0: Mesh;
+    Object_854_Material068_0: Mesh;
+    Object_856_Material068_0: Mesh;
+    Object_858_Material069_0: Mesh;
+    Object_860_Material005_0: Mesh;
+    Object_862_Material066_0: Mesh;
+    Object_864_Material066_0: Mesh;
+    Object_866_Material070_0: Mesh;
+    Object_868_Material005_0: Mesh;
+    Object_870_Material005_0: Mesh;
+    Object_872_Material057_0: Mesh;
+    Object_874_Material057_0: Mesh;
+    Object_876_Material069_0: Mesh;
+    Object_878_Material069_0: Mesh;
+    Object_880_Material068_0: Mesh;
+    Object_882_Material068_0: Mesh;
+    Object_884_Material070_0: Mesh;
+    Object_886_Material068_0: Mesh;
+    Object_888_Material068_0: Mesh;
+    Object_890_Material066_0: Mesh;
+    Object_892_Material068_0: Mesh;
+    Object_894_Material069_0: Mesh;
+    Object_896_Material005_0: Mesh;
+    Object_898_Material005_0: Mesh;
+    Object_900_Material066_0: Mesh;
+    Object_902_Material066_0: Mesh;
+    Object_904_Material066_0: Mesh;
+    Object_906_Material060_0: Mesh;
+    Object_908_Material057_0: Mesh;
+    Object_910_Material057_0: Mesh;
+    Object_912_Material057_0: Mesh;
+    Object_914_Material068_0: Mesh;
+    Object_916_Material068_0: Mesh;
+    Object_918_Material066_0: Mesh;
+    Object_920_Material066_0: Mesh;
+    Object_922_Material066_0: Mesh;
+    Object_924_Material066_0: Mesh;
+    Object_926_Material066_0: Mesh;
+    Object_928_Material060_0: Mesh;
+    Object_930_Material066_0: Mesh;
+    Object_932_Material060_0: Mesh;
+    Object_934_Tasten_2_0: Mesh;
+    Object_936_Material070_0: Mesh;
+    Object_938_Material060_0: Mesh;
+    Object_940_Material060_0: Mesh;
+    Object_942_Material070_0: Mesh;
+    Object_944_Material060_0: Mesh;
+    Object_946_Tasten_2_0: Mesh;
+    Object_948_Material067_0: Mesh;
+    Object_950_Material067_0: Mesh;
+    Object_952_Material067_0: Mesh;
+    Object_954_Material072_0: Mesh;
+    Object_956_Material072_0: Mesh;
+    Object_958_Material066_0: Mesh;
+    Object_960_Material067_0: Mesh;
+    Object_962_Material067_0: Mesh;
+    Object_964_Tasten_2_0: Mesh;
+    Object_966_Material060_0: Mesh;
+    Object_968_Material060_0: Mesh;
+    Object_970_Tasten_2_0: Mesh;
+    Object_972_Material057_0: Mesh;
+    Object_974_Material057_0: Mesh;
+    Object_976_Material070_0: Mesh;
+    Object_978_Tasten_2_0: Mesh;
+    Object_980_Tasten_2_0: Mesh;
+    Object_982_Material057_0: Mesh;
+    Object_984_Material057_0: Mesh;
+    Object_986_Material057_0: Mesh;
+    Object_988_Material067_0: Mesh;
+    Object_990_Material067_0: Mesh;
+    Object_992_Tasten_2_0: Mesh;
+    Object_994_Tasten_2_0: Mesh;
+    Object_996_Tasten_2_0: Mesh;
+    Object_998_Tasten_2_0: Mesh;
+    Object_1000_Material070_0: Mesh;
+    Object_1002_Material070_0: Mesh;
+    Object_1004_Material070_0: Mesh;
+    Object_1006_Material057_0: Mesh;
+    Object_1008_Material057_0: Mesh;
+    Object_1010_Material060_0: Mesh;
+    Object_1012_Material070_0: Mesh;
+    Object_1014_Material070_0: Mesh;
+    Object_1016_Material070_0: Mesh;
+    Object_1018_Material070_0: Mesh;
+    Object_1020_Material057_0: Mesh;
+    Object_1022_Material057_0: Mesh;
+    Object_1024_Material057_0: Mesh;
+    Object_1026_Material057_0: Mesh;
+    Object_1028_Material057_0: Mesh;
+    Object_1030_Material057_0: Mesh;
+    Object_1032_Material057_0: Mesh;
+    Object_1034_Material057_0: Mesh;
+    Object_1036_Material057_0: Mesh;
+    Object_1038_Material057_0: Mesh;
+    Object_1040_Tasten_2_0: Mesh;
+    Object_1042_Tasten_2_0: Mesh;
+    Object_1044_Material057_0: Mesh;
+    Object_1046_Material057_0: Mesh;
+    Object_1048_Material057_0: Mesh;
+    Object_1050_Tasten_2_0: Mesh;
+    Object_1052_Material057_0: Mesh;
+    Object_1054_Material057_0: Mesh;
+    Object_1056_Material073_0: Mesh;
+    Object_1058_Material057_0: Mesh;
+    Object_1060_Material060_0: Mesh;
+    Object_1062_Tasten_2_0: Mesh;
+    Object_1064_Tasten_2_0: Mesh;
+    Object_1066_Material067_0: Mesh;
+    Object_1068_Material067_0: Mesh;
+    Object_1070_Tasten_2_0: Mesh;
+    Object_1072_Tasten_2_0: Mesh;
+    Object_1074_Material069_0: Mesh;
   };
   materials: {
-    PaletteMaterial001: MeshStandardMaterial;
-    ["Material.074_0"]: MeshStandardMaterial;
-    ["Material.074_33"]: MeshStandardMaterial;
-    ["Material.074_39"]: MeshStandardMaterial;
     Material: MeshStandardMaterial;
     ["Material.074"]: MeshStandardMaterial;
+    ["Material.025"]: MeshStandardMaterial;
+    ["Material.017"]: MeshStandardMaterial;
+    ["Material.074_0"]: MeshStandardMaterial;
     ["Material.074_1"]: MeshStandardMaterial;
     ["Material.074_2"]: MeshStandardMaterial;
     ["Material.074_3"]: MeshStandardMaterial;
@@ -93,24 +7598,60 @@ type GLTFResult = GLTF & {
     ["Material.074_12"]: MeshStandardMaterial;
     ["Material.074_13"]: MeshStandardMaterial;
     ["Material.074_14"]: MeshStandardMaterial;
+    ["Material.013"]: MeshStandardMaterial;
+    ["Material.032"]: MeshStandardMaterial;
+    ["Material.034"]: MeshStandardMaterial;
     ["Material.074_15"]: MeshStandardMaterial;
     ["Material.074_16"]: MeshStandardMaterial;
+    ["Material.042"]: MeshStandardMaterial;
     ["Material.074_17"]: MeshStandardMaterial;
+    ["Material.045"]: MeshStandardMaterial;
+    ["Material.046"]: MeshStandardMaterial;
     ["Material.074_18"]: MeshStandardMaterial;
+    ["Material.048"]: MeshStandardMaterial;
+    ["Material.049"]: MeshStandardMaterial;
+    ["Material.054"]: MeshStandardMaterial;
+    ["Material.061"]: MeshStandardMaterial;
     ["Material.074_19"]: MeshStandardMaterial;
     ["Material.074_20"]: MeshStandardMaterial;
     ["Material.074_21"]: MeshStandardMaterial;
+    ["Material.056"]: MeshStandardMaterial;
     ["Material.074_22"]: MeshStandardMaterial;
+    ["Material.058"]: MeshStandardMaterial;
+    ["Material.062"]: MeshStandardMaterial;
     ["Material.074_23"]: MeshStandardMaterial;
     ["Material.074_24"]: MeshStandardMaterial;
     ["Material.074_25"]: MeshStandardMaterial;
+    ["Material.075"]: MeshStandardMaterial;
+    ["Material.076"]: MeshStandardMaterial;
+    ["Material.077"]: MeshStandardMaterial;
+    ["Material.082"]: MeshStandardMaterial;
+    ["Material.085"]: MeshStandardMaterial;
     ["Material.074_26"]: MeshStandardMaterial;
+    ["Material.087"]: MeshStandardMaterial;
+    ["Material.088"]: MeshStandardMaterial;
+    ["Material.090"]: MeshStandardMaterial;
+    ["Material.092"]: MeshStandardMaterial;
     ["Material.074_27"]: MeshStandardMaterial;
+    ["Material.094"]: MeshStandardMaterial;
+    ["Material.098"]: MeshStandardMaterial;
+    ["Material.104"]: MeshStandardMaterial;
+    ["Material.055"]: MeshStandardMaterial;
+    ["Material.044"]: MeshStandardMaterial;
     ["Material.074_28"]: MeshStandardMaterial;
     ["Material.074_29"]: MeshStandardMaterial;
     ["Material.074_30"]: MeshStandardMaterial;
     ["Material.074_31"]: MeshStandardMaterial;
     ["Material.002"]: MeshStandardMaterial;
+    ["Material.003"]: MeshStandardMaterial;
+    ["Material.043"]: MeshStandardMaterial;
+    ["Material.037"]: MeshStandardMaterial;
+    ["Material.039"]: MeshStandardMaterial;
+    ["Material.006"]: MeshStandardMaterial;
+    Tastatur_Seite: MeshStandardMaterial;
+    Tastatur_Unterseite: MeshStandardMaterial;
+    ["Material.004"]: MeshStandardMaterial;
+    ["Material.007"]: MeshStandardMaterial;
     ["Material.074_32"]: MeshStandardMaterial;
     Tasten_2: MeshStandardMaterial;
     ["Material.074_33"]: MeshStandardMaterial;
@@ -121,481 +7662,6 @@ type GLTFResult = GLTF & {
     ["Material.074_38"]: MeshStandardMaterial;
     ["Material.074_39"]: MeshStandardMaterial;
     ["Material.074_40"]: MeshStandardMaterial;
+    ["Material.073"]: MeshStandardMaterial;
   };
 };
-
-export default function Model(props: JSX.IntrinsicElements["group"]) {
-  const { nodes, materials } = useGLTF(
-    "/desktopPcOptimized1.glb",
-  ) as GLTFResult;
-
-  // const txt = useVideoTexture("./avengersVidEdit.mp4", {
-  //   loop: true,
-  //   muted: true,
-  // });
-  // const { invalidate } = useThree();
-
-  // useFrame(() => {
-  //   invalidate();
-  // });
-
-  return (
-    <group {...props} dispose={null}>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_784_Material057_0.geometry}
-        material={materials["Material.074_33"]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_974_Material057_0.geometry}
-        material={materials["Material.074_33"]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_976_Material070_0.geometry}
-        material={materials["Material.074_39"]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube_Material_0.geometry}
-        material={materials.Material}
-        position={[-0.61023703, -0.0055571, 1.56090161]}
-        rotation={[-Math.PI / 2, -9e-8, -Math.PI]}
-        scale={[-3.68949516, 7.31636336, 0.25976097]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube011_Material010_0.geometry}
-        material={materials["Material.074"]}
-        position={[-0.85935362, 1.99699916, -3.53720207]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={[1.73489437, 0.89970602, 1.57347424]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cylinder_Material009_0.geometry}
-        material={materials.PaletteMaterial001}
-        position={[0.74209143, 0.5121781, -2.62894129]}
-        scale={[0.060775, 0.06274786, 0.02277239]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube015_Material016_0.geometry}
-        material={materials["Material.074_1"]}
-        position={[-1.65450283, 2.24122752, -4.40839559]}
-        rotation={[-Math.PI / 2, -9e-8, -Math.PI]}
-        scale={[-0.89374166, 0.00698901, 1.06434461]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube020_Material020_0.geometry}
-        material={materials["Material.074_2"]}
-        position={[-0.96106695, 0.78825499, -3.63397758]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={[1.60681088, 0.73932547, 0.34311977]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.IOSHIELD_IOSHIELD_0.geometry}
-        material={materials["Material.074_3"]}
-        position={[-2.59688623, 2.84799341, -4.22490957]}
-        rotation={[Math.PI / 2, -Math.PI / 2, 0]}
-        scale={[0.26475351, 0.30855052, 0.31832498]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.MOBOAORUSORANGETRANS_MOBOAORUSORANGETRANS_0.geometry}
-        material={materials["Material.074_4"]}
-        position={[-2.35590907, 2.87746942, -4.23919058]}
-        rotation={[-3.4e-7, 8.7e-7, 0.65059584]}
-        scale={0.06343259}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube025_Material023_0.geometry}
-        material={materials["Material.023"]}
-        position={[-1.65450283, 2.24122752, -4.40839559]}
-        rotation={[-Math.PI / 2, -9e-8, -Math.PI]}
-        scale={[-0.89374166, 0.00698901, 1.06434461]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube026_Material024_0.geometry}
-        material={materials["Material.024"]}
-        position={[-1.65450283, 2.24122752, -4.40839559]}
-        rotation={[-Math.PI / 2, -9e-8, -Math.PI]}
-        scale={[-0.89374166, 0.00698901, 1.06434461]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes["metal-mesh-500x500_metal-mesh-500x500_0"].geometry}
-        material={materials["Material.074_5"]}
-        position={[-0.42312385, 3.56983635, -3.54163505]}
-        rotation={[Math.PI / 2, -1.5e-7, Math.PI]}
-        scale={[0.99999998, 1.33704511, 0.99999998]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube027_Material008_0.geometry}
-        material={materials["Material.074_6"]}
-        position={[-0.96406477, 2.70962946, -4.30927114]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={[-0.01512891, 0.10916384, 0.44289523]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube028_Material026_0.geometry}
-        material={materials["Material.074_7"]}
-        position={[-0.95709539, 2.70962946, -4.32409048]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={[-0.01051128, 0.0973474, 0.44411036]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube045_Material027_0.geometry}
-        material={materials["Material.074_8"]}
-        position={[-2.12139537, 0.79398733, -2.9822796]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={[0.3547594, 0.05165806, 0.2056838]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={
-          nodes["rgb-hdd-cover-aorus-v1_rgb-hdd-cover-aorus-v1_0"].geometry
-        }
-        material={materials["Material.074_9"]}
-        position={[-0.93476904, 0.83167196, -2.88795831]}
-        scale={0.36942245}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes["maxresdefault_(1)_maxresdefault_(1)_0"].geometry}
-        material={materials["Material.074_10"]}
-        position={[0.87714132, 0.83614988, -3.55311546]}
-        rotation={[0, Math.PI / 2, 0]}
-        scale={0.39410709}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cylinder001_Material028_0.geometry}
-        material={materials["Material.074_11"]}
-        position={[-1.69225124, 1.1440611, -0.71644316]}
-        rotation={[-1.57079192, 1.5536567, -0.00000432]}
-        scale={[0.19399732, 0.19399732, 0.02506321]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.NVIDIA_LOGO_NVIDIA_LOGO_0.geometry}
-        material={materials["Material.074_12"]}
-        position={[0.00585914, 0.70428084, -2.89065667]}
-        scale={0.45188758}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.psuback_psuback_0.geometry}
-        material={materials["Material.074_13"]}
-        position={[-2.60266168, 0.77970015, -3.52752434]}
-        rotation={[0, Math.PI / 2, 0]}
-        scale={0.59488642}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.usb_usb_0.geometry}
-        material={materials["Material.074_14"]}
-        position={[0.70472929, 3.57149894, -2.89694726]}
-        rotation={[-Math.PI / 2, 6.7e-7, Math.PI / 2]}
-        scale={0.07342104}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube048_Material035_0.geometry}
-        material={materials["Material.074_15"]}
-        position={[-1.61353741, 2.68242059, -3.68170982]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={[0.17436283, 0.39405284, 0.40074721]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube049_Material040_0.geometry}
-        material={materials["Material.074_16"]}
-        position={[-1.61353741, 2.68242059, -3.68170982]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={[0.17436283, 0.39405284, 0.40074721]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cylinder005_Material041_0.geometry}
-        material={materials["Material.074_17"]}
-        position={[-1.61138973, 2.68657983, -3.69024375]}
-        rotation={[-Math.PI / 2, Math.PI / 2, 0]}
-        scale={[0.3271004, 0.3271004, 0.34212569]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={
-          nodes[
-            "test-aorus-m2-souris-aorus-rgb2_test-aorus-m2-souris-aorus-rgb2_0"
-          ].geometry
-        }
-        material={materials["Material.074_18"]}
-        position={[-1.15854024, 1.50748288, -4.35222677]}
-        scale={0.35193683}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cylinder006_Material050_0.geometry}
-        material={materials["Material.074_19"]}
-        position={[-2.09451427, 1.84616024, -3.70096061]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={[0.3635369, 0.38221534, 0.10574655]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cylinder007_Material051_0.geometry}
-        material={materials["Material.074_20"]}
-        position={[-1.24439107, 1.84616024, -3.70096061]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={[0.3635369, 0.38221534, 0.10574655]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Plane_Material053_0.geometry}
-        material={materials["Material.074_21"]}
-        position={[1.1718205, 0.25604879, -0.29165357]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={[1.24426717, 1.54111386, 1.19910573]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube057_Material059_0.geometry}
-        material={materials["Material.074_22"]}
-        position={[-1.27222058, 2.00080867, -3.70558585]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={[1.28058942, 0.52443248, 0.12669409]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube058_Material063_0.geometry}
-        material={materials["Material.074_23"]}
-        position={[-1.22591107, 2.13708613, -3.70429405]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={[1.3325903, 0.54503978, 0.00809464]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.aorus_logotranspa_aorus_logotranspa_0.geometry}
-        material={materials["Material.074_24"]}
-        position={[-1.82427608, 1.8169923, -3.15846642]}
-        scale={[0.08645501, 0.08645501, 0.09089705]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube064_Material074_0.geometry}
-        material={materials["Material.074_25"]}
-        position={[1.11412549, 0.32446662, -0.27405919]}
-        rotation={[Math.PI / 2, 9e-8, -Math.PI]}
-        scale={[-0.42887012, 0.42887012, 0.22902246]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube075_Material086_0.geometry}
-        material={materials["Material.074_26"]}
-        position={[-2.580068, 1.95512386, -3.71510795]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={[0.01163336, 0.5243508, 0.17742754]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes["Color-PewDiePie-Logo_Color-PewDiePie-Logo_0"].geometry}
-        material={materials["Material.074_27"]}
-        position={[1.29541196, 0.46552195, -0.27475896]}
-        rotation={[-Math.PI / 2, 0.28377552, Math.PI / 2]}
-        scale={[0.12411104, 0.12411107, 0.12411107]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.gallerymodel_gallerymodel_0.geometry}
-        material={materials["Material.074_28"]}
-        position={[-1.42040463, 1.64812649, 5.96080492]}
-        rotation={[0.44116908, -1.28418151, 0.44080623]}
-        scale={[0.80689062, 0.80689055, 0.80689062]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.bg2_bg2_0.geometry}
-        material={materials["Material.074_29"]}
-        position={[-1.53705258, 1.94916576, 0.83027334]}
-        rotation={[1.57199344, -1.44152906, 1.56678481]}
-        scale={[1.13033704, 1.13033704, 1.13033681]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.MY_SCREEN_MY_SCREEN_0.geometry}
-        material={materials["Material.074_30"]}
-        position={[-1.36176526, 3.0013247, 3.00405358]}
-        rotation={[-Math.PI / 2, 1.50098311, Math.PI / 2]}
-        scale={[3.31621178, 3.48065239, 3.31621178]}
-      />
-      {/* <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.MY_SCREEN_MY_SCREEN_0.geometry}
-          material={materials["Material.074_30"]}
-          position={[-136.17652893, 300.13247681, 300.40536499]}
-          rotation={[-Math.PI / 2, 1.50098311, Math.PI / 2]}
-          scale={[331.6211853, 348.06524658, 331.6211853]}
-        >
-          <meshBasicMaterial map={txt} />
-        </mesh> */}
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes["gigabyte-logo_gigabyte-logo_0"].geometry}
-        material={materials["Material.074_31"]}
-        position={[-1.61542645, 4.49446615, 0.82082151]}
-        rotation={[1.57078843, -1.50098319, 1.57078841]}
-        scale={[0.236886, 0.23688606, 0.23688606]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Cube004_Material002_0.geometry}
-        material={materials["Material.002"]}
-        position={[-1.48740979, 1.80969829, 2.99246118]}
-        rotation={[-Math.PI / 2, -0.06981318, Math.PI / 2]}
-        scale={[1.67598919, 0.17793279, 1.93497966]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_47_Material005_0.geometry}
-        material={materials["Material.074_32"]}
-        position={[1.47708539, 0.32601142, 4.03086417]}
-        rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
-        scale={[0.91414846, 0.91414892, 0.91414892]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_49_Tasten_2_0.geometry}
-        material={materials.Tasten_2}
-        position={[1.47708539, 0.32601142, 4.03086417]}
-        rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
-        scale={[0.91414846, 0.91414892, 0.91414892]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_55_Material057_0.geometry}
-        material={materials["Material.074_33"]}
-        position={[1.47708539, 0.32601142, 4.03086417]}
-        rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
-        scale={[0.91414846, 0.91414892, 0.91414892]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_59_Material060_0.geometry}
-        material={materials["Material.074_34"]}
-        position={[1.47708539, 0.32601142, 4.03086417]}
-        rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
-        scale={[0.91414846, 0.91414892, 0.91414892]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_65_Material066_0.geometry}
-        material={materials["Material.074_35"]}
-        position={[1.47708539, 0.32601142, 4.03086417]}
-        rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
-        scale={[0.91414846, 0.91414892, 0.91414892]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_67_Material067_0.geometry}
-        material={materials["Material.074_36"]}
-        position={[1.47708539, 0.32601142, 4.03086417]}
-        rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
-        scale={[0.91414846, 0.91414892, 0.91414892]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_81_Material068_0.geometry}
-        material={materials["Material.074_37"]}
-        position={[1.47708539, 0.32601142, 4.03086417]}
-        rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
-        scale={[0.91414846, 0.91414892, 0.91414892]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_93_Material069_0.geometry}
-        material={materials["Material.074_38"]}
-        position={[1.47708539, 0.32601142, 4.03086417]}
-        rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
-        scale={[0.91414846, 0.91414892, 0.91414892]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_103_Material070_0.geometry}
-        material={materials["Material.074_39"]}
-        position={[1.47708539, 0.32601142, 4.03086417]}
-        rotation={[-Math.PI / 2, -1.48051612, Math.PI / 2]}
-        scale={[0.91414846, 0.91414892, 0.91414892]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes["Object_782_OnTheFly-bg_0"].geometry}
-        material={materials["Material.074_40"]}
-        position={[1.01600813, 0.40622078, 2.44007441]}
-        rotation={[-Math.PI / 2, 0.0776536, Math.PI / 2]}
-        scale={[0.21892584, 0.21892586, 0.21892586]}
-      />
-    </group>
-  );
-}
-
-useGLTF.preload("/desktopPcOptimized1.glb");
