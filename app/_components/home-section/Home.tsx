@@ -38,9 +38,9 @@ function Home() {
           src={hacker}
           alt="Image of hacker on computer"
           quality={40}
-          // priority
+          priority
           className="rounded-xl xs:max-w-[80%] sm:max-w-[70%] md:max-w-[90%]"
-          sizes="(max-width: 450px) 80vw, (max-width: 768px) 40vw, 50vw"
+          sizes="(max-width: 450px) 80vw, (max-width: 768px) 40vw, 40vw"
         />
       </MotionComponent>
     </Section>
