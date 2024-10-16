@@ -1,10 +1,11 @@
 import Section from "../Section";
 import SectionHeadText from "../SectionHeadText";
 import SectionSubText from "../SectionSubText";
-import TechStack from "./TechStack";
 import SectionMini from "../SectionMini";
 import MotionComponent from "../MotionComponent";
 import { textVariant } from "@/app/_utils/motion";
+import dynamic from "next/dynamic";
+const DynamicTechStack = dynamic(() => import("./TechStack"), { ssr: false });
 
 function Skills() {
   return (
@@ -25,7 +26,7 @@ function Skills() {
         </SectionMini>
       </MotionComponent>
 
-      <TechStack />
+      <DynamicTechStack />
     </Section>
   );
 }

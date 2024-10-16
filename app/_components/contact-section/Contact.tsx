@@ -7,8 +7,12 @@ import Form from "./Form";
 import SectionHeadText from "../SectionHeadText";
 import SectionSubText from "../SectionSubText";
 import dynamic from "next/dynamic";
-const DynamicStarsCanvas = dynamic(() => import("./StarsCanvas"));
-const DynamicEarthCanvas = dynamic(() => import("./EarthCanvas"));
+const DynamicStarsCanvas = dynamic(() => import("./StarsCanvas"), {
+  ssr: false,
+});
+const DynamicEarthCanvas = dynamic(() => import("./EarthCanvas"), {
+  ssr: false,
+});
 
 function Contact() {
   return (

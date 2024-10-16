@@ -1,6 +1,5 @@
 import Section from "../Section";
 import React from "react";
-import Project from "./Project";
 import SectionHeadText from "../SectionHeadText";
 import SectionSubText from "../SectionSubText";
 import FlexBox from "../FlexBox";
@@ -8,10 +7,16 @@ import MotionComponent from "../MotionComponent";
 import { textVariant } from "@/app/_utils/motion";
 import SectionMini from "../SectionMini";
 import { projects } from "@/app/_utils/constants";
+import dynamic from "next/dynamic";
+const DynamicProject = dynamic(() => import("./Project"), { ssr: false });
 
 function Projects() {
   return (
-    <Section divClassName="overflow-hidden" idName="Projects" viewThreshold={0.2}>
+    <Section
+      divClassName="overflow-hidden"
+      idName="Projects"
+      viewThreshold={0.2}
+    >
       <MotionComponent
         initial="hidden"
         whileInView="show"
@@ -32,7 +37,7 @@ function Projects() {
       <FlexBox className="flex-col gap-10">
         {projects.map((project, index) => (
           <React.Fragment key={index}>
-            <Project {...project} index={index} />
+            <DynamicProject {...project} index={index} />
           </React.Fragment>
         ))}
       </FlexBox>
