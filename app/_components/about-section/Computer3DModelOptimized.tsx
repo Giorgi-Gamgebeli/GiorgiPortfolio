@@ -19,7 +19,7 @@ export default function Model({ ktx2Loader }: { ktx2Loader: KTX2Loader }) {
   const { gl } = useThree();
 
   const { nodes, materials } = useGLTF(
-    "/desktopPcOptimized1.glb",
+    "/desktopPcOptimized.glb",
     true,
     true,
     (loader) => {
