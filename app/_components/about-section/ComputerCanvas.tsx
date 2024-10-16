@@ -7,12 +7,9 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, Preload } from "@react-three/drei";
 import CanvasLoader from "../CanvasLoader";
 import Computer3DModelOptimized from "./Computer3DModelOptimized";
-import { REVISION } from "three";
 
 const ktx2Loader = new KTX2Loader();
-ktx2Loader.setTranscoderPath(
-  `https://unpkg.com/three@0.${REVISION}.x/examples/jsm/libs/basis/`,
-);
+ktx2Loader.setTranscoderPath(`/transcoder/`);
 
 function ComputerCanvas() {
   return (
