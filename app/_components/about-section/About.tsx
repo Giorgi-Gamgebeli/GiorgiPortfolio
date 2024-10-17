@@ -1,8 +1,7 @@
 import Section from "../Section";
 import SectionHeadText from "../SectionHeadText";
 import SectionSubText from "../SectionSubText";
-import dynamic from "next/dynamic";
-const DynamicBentoGrid = dynamic(() => import("./BentoGrid"), { ssr: false });
+import BentoGrid from "./BentoGrid";
 
 function About() {
   return (
@@ -10,7 +9,7 @@ function About() {
       <SectionSubText>INTRODUCTION</SectionSubText>
       <SectionHeadText>Who am i.</SectionHeadText>
 
-      <DynamicBentoGrid />
+      <BentoGrid />
     </Section>
   );
 }
