@@ -7,18 +7,14 @@ Title: Gaming Desktop PC
 */
 
 import { Mesh, MeshStandardMaterial } from "three";
-import {
-  useGLTF,
-  //  useVideoTexture
-} from "@react-three/drei";
-import { GLTF } from "three-stdlib";
-import { useThree } from "@react-three/fiber";
-import useKTX2LoaderContext from "@/app/_context/useKTX2LoaderContext";
-// import { useFrame, useThree } from "@react-three/fiber";
+import { useGLTF, useVideoTexture } from "@react-three/drei";
+import { GLTF, KTX2Loader } from "three-stdlib";
+import { useFrame, useThree } from "@react-three/fiber";
 
 export default function Model() {
   const { gl } = useThree();
-  const { ktx2Loader } = useKTX2LoaderContext();
+
+  const ktx2Loader = new KTX2Loader().setTranscoderPath(`/transcoder/`);
 
   const { nodes, materials } = useGLTF(
     "/desktopPcOptimized.glb",
@@ -29,16 +25,15 @@ export default function Model() {
     },
   ) as GLTFResult;
 
-  // const txt = useVideoTexture("./avengersVidEdit.mp4", {
-  //   loop: true,
-  //   muted: true,
-  // });
-  // const { invalidate } = useThree();
+  const txt = useVideoTexture("./avengersVidEdit.mp4", {
+    loop: true,
+    muted: true,
+  });
+  const { invalidate } = useThree();
 
-  // useFrame(() => {
-  //   invalidate();
-  // });
-  // KTX2
+  useFrame(() => {
+    invalidate();
+  });
 
   return (
     <group dispose={null}>
@@ -367,6 +362,15 @@ export default function Model() {
         rotation={[1.572, -1.442, 1.567]}
         scale={1.13}
       />
+      {/* <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.MY_SCREEN_MY_SCREEN_0.geometry}
+        material={materials["Material.074_30"]}
+        position={[-1.362, 3.001, 3.004]}
+        rotation={[-Math.PI / 2, 1.501, Math.PI / 2]}
+        scale={[3.316, 3.481, 3.316]}
+      /> */}
       <mesh
         castShadow
         receiveShadow
@@ -375,18 +379,9 @@ export default function Model() {
         position={[-1.362, 3.001, 3.004]}
         rotation={[-Math.PI / 2, 1.501, Math.PI / 2]}
         scale={[3.316, 3.481, 3.316]}
-      />
-      {/* <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.MY_SCREEN_MY_SCREEN_0.geometry}
-          material={materials["Material.074_30"]}
-          position={[-136.17652893, 300.13247681, 300.40536499]}
-          rotation={[-Math.PI / 2, 1.50098311, Math.PI / 2]}
-          scale={[331.6211853, 348.06524658, 331.6211853]}
-        >
-          <meshBasicMaterial map={txt} />
-        </mesh> */}
+      >
+        <meshBasicMaterial map={txt} />
+      </mesh>
       <mesh
         castShadow
         receiveShadow

@@ -1,5 +1,3 @@
-"use client";
-
 import { slideIn } from "../../_utils/motion";
 import Section from "../Section";
 import FlexBox from "../FlexBox";
@@ -8,13 +6,10 @@ import MotionComponent from "../MotionComponent";
 import Form from "./Form";
 import SectionHeadText from "../SectionHeadText";
 import SectionSubText from "../SectionSubText";
-import dynamic from "next/dynamic";
-const DynamicStarsCanvas = dynamic(() => import("./StarsCanvas"), {
-  ssr: false,
-});
-const DynamicEarthCanvas = dynamic(() => import("./EarthCanvas"), {
-  ssr: false,
-});
+import {
+  DynamicEarthCanvas,
+  DynamicStarsCanvas,
+} from "../../_utils/DynamicImporter";
 
 function Contact() {
   return (
