@@ -4,13 +4,6 @@ const nextConfig = {
     deviceSizes: [320, 420, 768, 1024, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 500],
   },
-
-  webpack(config, { isServer }) {
-    if (!isServer) {
-      config.devtool = "source-map";
-    }
-    return config;
-  },
 };
 
 export default nextConfig;
