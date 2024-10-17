@@ -5,10 +5,6 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import CanvasLoader from "../CanvasLoader";
 import Earth from "./Earth";
-import { KTX2Loader } from "three-stdlib";
-
-const ktx2Loader = new KTX2Loader();
-ktx2Loader.setTranscoderPath(`/transcoder/`);
 
 function EarthCanvas() {
   return (
@@ -27,7 +23,7 @@ function EarthCanvas() {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Earth ktx2Loader={ktx2Loader} />
+        <Earth />
       </Suspense>
     </Canvas>
   );

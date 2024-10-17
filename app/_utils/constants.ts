@@ -191,3 +191,23 @@ export const projects = [
     deploymentServiceImg: netlifyDark,
   },
 ] as const;
+
+export const bentoGridText = {
+  "cell-1-1-3":
+    "A dedicated React frontend developer with a strong background in HTML, CSS, and JavaScript. I enjoy creating responsive, interactive user interfaces that enhance the user experience. My focus is on building scalable and modern applications with the latest frontend technologies like React, Tailwind CSS, and Next.js.",
+
+  "cell-1-3-4":
+    "With no working experience yet. Learning coding and solving problems in frontend for almost a year. Continually increasing and building",
+
+  "cell-2-1-2":
+    "Building dynamic, responsive and modern single-page applications with reusable components. Using advanced features for more efficient, dry, readable code.",
+
+  "cell-2-3-4":
+    "Developing optimized, scalable web applications. Adding smooth, engaging animations to enhance user interactions with framer motion.",
+
+  "cell-3-1-2":
+    "Journey from learning the foundations of HTML, CSS, and JavaScript, to expanding into frameworks like React.",
+
+  "cell-3-2-4":
+    "I prioritize clean, maintainable code and love incorporating animations that make interactions feel more engaging. With a keen eye on performance, I work to optimize load times and responsiveness for a seamless experience. I'm always excited to learn new techniques and push the boundaries of my knowledge!",
+} as const;

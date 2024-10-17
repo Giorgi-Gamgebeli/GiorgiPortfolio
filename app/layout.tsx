@@ -8,6 +8,7 @@ import ToastProvider from "./_utils/ToastProvider";
 import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { KTX2LoaderProvider } from "./_context/KTX2LoaderContext";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -37,11 +38,13 @@ export default function RootLayout({
         <>
           <DarkModeProvider>
             <ToastProvider>
-              <ActiveSectionContextProvider>
-                <Header />
-                {children}
-                <DarkModeToggle />
-              </ActiveSectionContextProvider>
+              <KTX2LoaderProvider>
+                <ActiveSectionContextProvider>
+                  <Header />
+                  {children}
+                  <DarkModeToggle />
+                </ActiveSectionContextProvider>
+              </KTX2LoaderProvider>
             </ToastProvider>
           </DarkModeProvider>
           <Analytics />
