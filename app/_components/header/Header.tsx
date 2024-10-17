@@ -31,7 +31,7 @@ function Header() {
             className="hidden dark:block"
             priority
             height={45}
-            width={45}
+            width={48}
           />
           <Image
             src={gIconGray}
