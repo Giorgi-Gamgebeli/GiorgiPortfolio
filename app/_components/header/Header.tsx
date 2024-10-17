@@ -36,8 +36,8 @@ function Header() {
             src={gIconGray}
             alt="gray icon letter G"
             className="block dark:hidden"
-            height={48}
-            width={45}
+            height={45}
+            width={48}
           />
 
           <Nav />

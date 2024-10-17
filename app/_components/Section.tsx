@@ -32,7 +32,6 @@ function Section({
       className={`h-full min-h-[40rem] w-full overflow-hidden pb-10 ${className}`}
       ref={ref}
     >
-      {/*span is needed it wouldnt work on section or on div if i had overflow-hidden on them if i remove overflow hidden other bugs happen */}
       <span className="scroll-mt-48 opacity-0" id={idName} />
       <div
         className={`mx-auto h-full min-h-[40rem] w-full max-w-[90%] xl:max-w-[1214px] ${divClassName}`}
