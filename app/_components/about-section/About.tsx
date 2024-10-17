@@ -2,6 +2,7 @@ import Section from "../Section";
 import SectionHeadText from "../SectionHeadText";
 import SectionSubText from "../SectionSubText";
 import BentoGrid from "./BentoGrid";
+import BentoGridMobile from "./BentoGridMobile";
 
 function About() {
   return (
@@ -10,6 +11,7 @@ function About() {
       <SectionHeadText>Who am i.</SectionHeadText>
 
       <BentoGrid />
+      <BentoGridMobile />
     </Section>
   );
 }
