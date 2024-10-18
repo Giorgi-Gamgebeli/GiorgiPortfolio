@@ -24,15 +24,15 @@ function GridBox({ children, className }: GridBoxTypes) {
 
   useEffect(() => {
     if (isInView && !animationHasHappend) {
-      initialBentoGridAnimation();
+      initialBentoGridAnimation(animate);
       setAnimationHasHappend(true);
     }
 
     if (wasMobile !== isMobile) {
-      skipInitialBentoGridAnimation();
+      skipInitialBentoGridAnimation(animate);
       setWasMobile(isMobile);
     }
-  }, [animate, isInView, animationHasHappend, wasMobile, isMobile, scope]);
+  }, [animate, isInView, animationHasHappend, wasMobile, isMobile]);
 
   return (
     <div ref={scope} className={`grid ${className}`}>

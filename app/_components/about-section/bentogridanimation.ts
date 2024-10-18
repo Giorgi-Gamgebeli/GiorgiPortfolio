@@ -1,9 +1,9 @@
-"use server";
+"use client";
 
-import { animate } from "framer-motion";
 import { delay } from "../../_utils/smallUtils";
 
-export async function skipInitialBentoGridAnimation() {
+// animate has huge type instead of writing that i wrote any
+export async function skipInitialBentoGridAnimation(animate: any) {
   const animationDefenitions = { x: 0, opacity: 1, y: 0 } as const;
   const options = { delay: 0, duration: 0, type: "tween" } as const;
 
@@ -18,7 +18,7 @@ export async function skipInitialBentoGridAnimation() {
 }
 
 // bento grid animation
-export async function initialBentoGridAnimation() {
+export async function initialBentoGridAnimation(animate: any) {
   await animate("#cell-1-1-3-parent", { x: 0, opacity: 1 }, { delay: 0.5 });
   await animate("#cell-1-3-4-parent", { y: 0, opacity: 1 });
   await animate("#cell-1-3-4-parent", { y: 0, opacity: 1 });
@@ -101,11 +101,11 @@ export async function initialBentoGridAnimation() {
       duration: 1,
     },
   );
-  BentoGridCell324Animation();
+  BentoGridCell324Animation(animate);
 }
 
 // bento grid animation
-async function BentoGridCell324Animation() {
+async function BentoGridCell324Animation(animate: any) {
   await delay();
   await animate("#cell-3-2-4", {
     position: "absolute",
@@ -155,10 +155,10 @@ async function BentoGridCell324Animation() {
   await animate("#cell-3-2-4", { height: "49.1%" }, { duration: 0 });
   await animate("#cell-3-2-4", { height: "100%" }, { duration: 1 });
 
-  BentoGridCell113Animation();
+  BentoGridCell113Animation(animate);
 }
 
-async function BentoGridCell113Animation() {
+async function BentoGridCell113Animation(animate: any) {
   await delay();
   await animate("#cell-1-1-3", {
     position: "absolute",
@@ -205,10 +205,10 @@ async function BentoGridCell113Animation() {
   await animate("#cell-1-1-3", { height: "49.1%" }, { duration: 0 });
   await animate("#cell-1-1-3", { height: "100%" }, { duration: 1 });
 
-  BentoGridCell324ReverseAnimation();
+  BentoGridCell324ReverseAnimation(animate);
 }
 
-async function BentoGridCell324ReverseAnimation() {
+async function BentoGridCell324ReverseAnimation(animate: any) {
   await delay();
   animate(
     "#cell-2-3-4-parent",
@@ -248,10 +248,10 @@ async function BentoGridCell324ReverseAnimation() {
   );
   await animate("#cell-3-2-4", { width: "49.1%" }, { duration: 0 });
   await animate("#cell-3-2-4", { width: "100%" }, { duration: 1 });
-  BentoGridCell113ReverseAnimation();
+  BentoGridCell113ReverseAnimation(animate);
 }
 
-async function BentoGridCell113ReverseAnimation() {
+async function BentoGridCell113ReverseAnimation(animate: any) {
   await delay();
   animate(
     "#cell-2-1-2-parent",
@@ -291,5 +291,5 @@ async function BentoGridCell113ReverseAnimation() {
     { duration: 1 },
   );
   await animate("#cell-1-1-3", { width: "100%" }, { duration: 1 });
-  BentoGridCell324Animation();
+  BentoGridCell324Animation(animate);
 }
