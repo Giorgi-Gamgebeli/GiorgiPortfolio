@@ -9,14 +9,9 @@ function Earth() {
 
   const ktx2Loader = useKTX2Loader();
 
-  const { scene } = useGLTF(
-    "/desktopPcOptimized1.glb",
-    true,
-    true,
-    (loader) => {
-      loader.setKTX2Loader(ktx2Loader.detectSupport(gl));
-    },
-  );
+  const { scene } = useGLTF("/earthOptimized1.glb", true, true, (loader) => {
+    loader.setKTX2Loader(ktx2Loader.detectSupport(gl));
+  });
 
   // const { scene } = useGLTF("./earthOptimized.glb", true);
 
