@@ -8,13 +8,13 @@ Title: Gaming Desktop PC
 
 import { Mesh, MeshStandardMaterial } from "three";
 import { useGLTF, useVideoTexture } from "@react-three/drei";
-import { GLTF, KTX2Loader } from "three-stdlib";
+import { GLTF } from "three-stdlib";
+import useKTX2LoaderContext from "@/app/_context/useKTX2LoaderContext";
 import { useFrame, useThree } from "@react-three/fiber";
 
 export default function Model() {
   const { gl } = useThree();
-
-  const ktx2Loader = new KTX2Loader().setTranscoderPath(`/transcoder/`);
+  const { ktx2Loader } = useKTX2LoaderContext();
 
   const { nodes, materials } = useGLTF(
     "/desktopPcOptimized.glb",
@@ -382,6 +382,7 @@ export default function Model() {
       >
         <meshBasicMaterial map={txt} />
       </mesh>
+
       <mesh
         castShadow
         receiveShadow
