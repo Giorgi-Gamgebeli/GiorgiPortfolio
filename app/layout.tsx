@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <head>
-        <title>Giorgi | Portfolio</title>
+        {" "}
         <link rel="icon" href="/gFavicon.png" />
       </head>
       <body
