@@ -16,6 +16,7 @@ function Socials({ phoneSocials }: { phoneSocials?: boolean }) {
           <Icon icon={"hugeicons:linkedin-01"} />
         </Link>
       </li>
+
       <li>
         <Link
           target="_blank"
