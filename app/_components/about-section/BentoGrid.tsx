@@ -21,6 +21,8 @@ function BentoGrid() {
   const [wasMobile, setWasMobile] = useState(false);
   const { isMobile } = useIsMobile();
 
+  console.log("ree");
+
   useEffect(() => {
     if (isInView && !animationHasHappend) {
       initialBentoGridAnimation();
