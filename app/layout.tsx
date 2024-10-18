@@ -30,7 +30,6 @@ export default function RootLayout({
     <html lang="en" className="!scroll-smooth">
       <head>
         <link rel="icon" href="/gFavicon.png" />
-        <link rel="preconnect" href="https://vercel.live" />
       </head>
       <body
         className={`${poppins.className} w-full overflow-x-hidden bg-gray-100 text-gray-950 transition-all duration-300 dark:bg-darkPrimary dark:text-white`}
