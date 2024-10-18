@@ -1,3 +1,5 @@
+'use client'
+
 import MotionComponent from "../MotionComponent";
 import Nav from "./Nav";
 import Socials from "./Socials";

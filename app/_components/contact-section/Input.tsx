@@ -1,3 +1,5 @@
+'use client'
+
 import { FieldValues, UseFormRegister, Path } from "react-hook-form";
 
 type InputTypes<T extends FieldValues> = {

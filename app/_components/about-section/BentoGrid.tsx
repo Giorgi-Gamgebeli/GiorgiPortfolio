@@ -1,44 +1,13 @@
-"use client";
+"use server";
 
-import GridBox from "../GridBox";
+import GridBox from "./GridBox";
 import BentoGridCell from "./BentoGridCell";
-import { useAnimate, useInView } from "framer-motion";
-import { useEffect, useState } from "react";
-import useIsMobile from "../../_hooks/useIsMobile";
-import {
-  initialBentoGridAnimation,
-  skipInitialBentoGridAnimation,
-} from "@/app/_utils/motion";
-import dynamic from "next/dynamic";
 import { bentoGridText } from "@/app/_utils/constants";
-const DynamicComputerCanvas = dynamic(() => import("./ComputerCanvas"), {
-  ssr: false,
-});
+import { DynamicComputerCanvas } from "@/app/_utils/DynamicImporter";
 
 function BentoGrid() {
-  const [scope, animate] = useAnimate();
-  const isInView = useInView(scope);
-  const [animationHasHappend, setAnimationHasHappend] = useState(false);
-  const [wasMobile, setWasMobile] = useState(false);
-  const { isMobile } = useIsMobile();
-
-  useEffect(() => {
-    if (isInView && !animationHasHappend) {
-      initialBentoGridAnimation();
-      setAnimationHasHappend(true);
-    }
-
-    if (wasMobile !== isMobile) {
-      skipInitialBentoGridAnimation();
-      setWasMobile(isMobile);
-    }
-  }, [animate, isInView, animationHasHappend, wasMobile, isMobile, scope]);
-
   return (
-    <GridBox
-      reactRef={scope}
-      className="hidden md:mx-auto md:my-20 md:grid md:h-[700px] md:w-[700px] md:grid-cols-3 md:grid-rows-3 md:gap-2 lg:h-[800px] lg:w-[800px] lg:gap-3"
-    >
+    <GridBox className="hidden md:mx-auto md:my-20 md:grid md:h-[700px] md:w-[700px] md:grid-cols-3 md:grid-rows-3 md:gap-2 lg:h-[800px] lg:w-[800px] lg:gap-3">
       <BentoGridCell
         initial={{
           gridColumnStart: 1,

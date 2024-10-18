@@ -1,3 +1,5 @@
+"use client";
+
 type LoginFormRowTypes = {
   label?: string;
   children: React.ReactElement<HTMLInputElement>;

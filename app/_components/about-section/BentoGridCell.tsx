@@ -24,7 +24,6 @@ function BentoGridCell({
       id={`${id}-parent`}
       className="relative"
       whileInView={isMobile ? { x: 0, y: 0, opacity: 1 } : {}}
-      transition={isMobile ? { delay: 0.5 } : {}}
       {...rest}
     >
       <MotionComponent

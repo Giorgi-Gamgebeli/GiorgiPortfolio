@@ -21,7 +21,7 @@ export default nextConfig;
 //       config.plugins.push(
 //         new BundleAnalyzerPlugin({
 //           analyzerMode: "server",
-//           analyzerPort: 3333,
+//           analyzerPort: 3334,
 //           openAnalyzer: true,
 //         }),
 //       );

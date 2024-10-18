@@ -1,3 +1,5 @@
+'use client'
+
 import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
@@ -7,7 +9,7 @@ import { Points as ThreePoints } from "three";
 function Stars(props: object) {
   const ref = useRef<ThreePoints>(null);
 
-  const sphere = inSphere(new Float32Array(6000), {
+  const sphere = inSphere(new Float32Array(5001), {
     radius: 1.2,
   }) as Float32Array;
 

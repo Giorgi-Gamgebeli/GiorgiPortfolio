@@ -1,3 +1,5 @@
+'use server'
+
 import Image from "next/image";
 import Section from "../Section";
 import homebg from "@/public/homebg.png";

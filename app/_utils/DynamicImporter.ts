@@ -16,3 +16,10 @@ export const DynamicEarthCanvas = dynamic(
     ssr: false,
   },
 );
+
+export const DynamicComputerCanvas = dynamic(
+  () => import("../_components/about-section/ComputerCanvas"),
+  {
+    ssr: false,
+  },
+);

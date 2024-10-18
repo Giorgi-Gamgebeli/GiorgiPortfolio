@@ -1,3 +1,5 @@
+"use server";
+
 import toast from "react-hot-toast";
 import { OnSubmitTypes } from "../_components/contact-section/Form";
 import emailjs from "@emailjs/browser";

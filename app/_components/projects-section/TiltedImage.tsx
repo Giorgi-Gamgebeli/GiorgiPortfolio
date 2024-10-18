@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image";
 import Tilt from "react-parallax-tilt";
 import { projects } from "@/app/_utils/constants";

@@ -1,3 +1,5 @@
+'use server'
+
 import BentoGridCell from "./BentoGridCell";
 import FlexBox from "../FlexBox";
 import { bentoGridText } from "@/app/_utils/constants";

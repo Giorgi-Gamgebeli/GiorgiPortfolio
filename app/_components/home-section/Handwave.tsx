@@ -1,3 +1,5 @@
+"use server";
+
 import Image from "next/image";
 import MotionComponent from "../MotionComponent";
 import handwave from "@/public/handwave.svg";

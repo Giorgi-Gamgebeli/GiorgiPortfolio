@@ -1,3 +1,5 @@
+'use server'
+
 import Section from "../Section";
 import React from "react";
 import SectionHeadText from "../SectionHeadText";
@@ -7,8 +9,7 @@ import MotionComponent from "../MotionComponent";
 import { textVariant } from "@/app/_utils/motion";
 import SectionMini from "../SectionMini";
 import { projects } from "@/app/_utils/constants";
-import dynamic from "next/dynamic";
-const DynamicProject = dynamic(() => import("./Project"), { ssr: false });
+import Project from "./Project";
 
 function Projects() {
   return (
@@ -37,7 +38,7 @@ function Projects() {
       <FlexBox className="flex-col gap-10">
         {projects.map((project, index) => (
           <React.Fragment key={index}>
-            <DynamicProject {...project} index={index} />
+            <Project {...project} index={index} />
           </React.Fragment>
         ))}
       </FlexBox>

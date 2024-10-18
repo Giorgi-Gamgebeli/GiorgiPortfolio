@@ -1,3 +1,5 @@
+'use client'
+
 type ContactButtonTypes = {
   children: React.ReactNode;
   type: "submit" | "button";
