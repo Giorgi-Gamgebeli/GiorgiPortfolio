@@ -1,4 +1,4 @@
-'use server'
+"use server";
 
 import Image from "next/image";
 import Section from "../Section";
@@ -42,7 +42,7 @@ function Home() {
           quality={40}
           priority
           className="rounded-xl xs:max-w-[80%] sm:max-w-[70%] md:max-w-[90%]"
-          sizes="(max-width: 450px) 80vw, (max-width: 768px) 40vw, 40vw"
+          sizes="(max-width: 450px) 400px, (max-width: 768px) 300px, 430px"
         />
       </MotionComponent>
     </Section>
