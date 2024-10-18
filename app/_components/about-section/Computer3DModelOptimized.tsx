@@ -9,7 +9,7 @@ Title: Gaming Desktop PC
 import { Mesh, MeshStandardMaterial } from "three";
 import {
   useGLTF,
-  //  useVideoTexture
+  //  useVideoTexturee
 } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import useKTX2LoaderContext from "@/app/_context/useKTX2LoaderContext";
