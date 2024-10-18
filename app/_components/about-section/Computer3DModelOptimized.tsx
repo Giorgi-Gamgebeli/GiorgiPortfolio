@@ -12,7 +12,7 @@ import {
   useGLTF,
   //  useVideoTexturee
 } from "@react-three/drei";
-import { GLTF, KTX2Loader } from "three-stdlib";
+import { GLTF } from "three-stdlib";
 import {
   //  useFrame,
   useThree,
