@@ -23,6 +23,16 @@ function BentoGrid() {
   const { isMobile } = useIsMobile();
 
   useEffect(() => {
+    window.addEventListener("touchstart", () => {}, { passive: true });
+    window.addEventListener("wheel", () => {}, { passive: true });
+
+    return () => {
+      window.removeEventListener("touchstart", () => {});
+      window.removeEventListener("wheel", () => {});
+    };
+  }, []);
+
+  useEffect(() => {
     if (isInView && !animationHasHappend) {
       initialBentoGridAnimation();
       setAnimationHasHappend(true);

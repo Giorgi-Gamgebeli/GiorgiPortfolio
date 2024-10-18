@@ -30,6 +30,7 @@ export default function RootLayout({
       <head>
         <title>Giorgi | Portfolio</title>
         <link rel="icon" href="/gFavicon.png" />
+        <link rel="preconnect" href="https://vercel.live" />
       </head>
       <body
         className={`${poppins.className} w-full overflow-x-hidden bg-gray-100 text-gray-950 transition-all duration-300 dark:bg-darkPrimary dark:text-white`}
