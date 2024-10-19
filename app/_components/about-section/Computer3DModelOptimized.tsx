@@ -12,16 +12,16 @@ import {
   useGLTF,
   //  useVideoTexture
 } from "@react-three/drei";
-import { GLTF } from "three-stdlib";
+import { GLTF, KTX2Loader } from "three-stdlib";
 import {
   //  useFrame,
   useThree,
 } from "@react-three/fiber";
-import useKTX2Loader from "@/app/_hooks/useKTX2Loader";
 
 export default function Model() {
   const { gl } = useThree();
-  const ktx2Loader = useKTX2Loader();
+
+  const ktx2Loader = new KTX2Loader().setTranscoderPath("/transcoder/");
 
   const { nodes, materials } = useGLTF(
     "/desktopPcOptimized.glb",
