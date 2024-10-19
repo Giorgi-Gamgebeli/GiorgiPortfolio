@@ -3,7 +3,7 @@
 import GridBox from "./GridBox";
 import BentoGridCell from "./BentoGridCell";
 import { bentoGridText } from "@/app/_utils/constants";
-// import { DynamicComputerCanvas } from "@/app/_utils/DynamicImporter";
+import { DynamicComputerCanvas } from "@/app/_utils/DynamicImporter";
 
 function BentoGrid() {
   return (
@@ -53,8 +53,7 @@ function BentoGrid() {
         }}
         id="cell-2-2-3"
       >
-        ree
-        {/* <DynamicComputerCanvas /> */}
+        <DynamicComputerCanvas />
       </BentoGridCell>
 
       <BentoGridCell

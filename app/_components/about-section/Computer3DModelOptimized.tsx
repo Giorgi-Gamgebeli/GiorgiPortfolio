@@ -10,11 +10,11 @@ Title: Gaming Desktop PC
 import { Mesh, MeshStandardMaterial } from "three";
 import {
   useGLTF,
-  //  useVideoTexturee
+   useVideoTexture
 } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import {
-  //  useFrame,
+   useFrame,
   useThree,
 } from "@react-three/fiber";
 import useKTX2Loader from "@/app/_hooks/useKTX2Loader";
@@ -32,15 +32,15 @@ export default function Model() {
     },
   ) as GLTFResult;
 
-  // const txt = useVideoTexture("./avengersVidEdit.mp4", {
-  //   loop: true,
-  //   muted: true,
-  // });
-  // const { invalidate } = useThree();
+  const txt = useVideoTexture("./avengersVidEdit.mp4", {
+    loop: true,
+    muted: true,
+  });
+  const { invalidate } = useThree();
 
-  // useFrame(() => {
-  //   invalidate();
-  // });
+  useFrame(() => {
+    invalidate();
+  });
 
   return (
     <group dispose={null}>
@@ -369,7 +369,7 @@ export default function Model() {
         rotation={[1.572, -1.442, 1.567]}
         scale={1.13}
       />
-      <mesh
+      {/* <mesh
         castShadow
         receiveShadow
         geometry={nodes.MY_SCREEN_MY_SCREEN_0.geometry}
@@ -377,8 +377,8 @@ export default function Model() {
         position={[-1.362, 3.001, 3.004]}
         rotation={[-Math.PI / 2, 1.501, Math.PI / 2]}
         scale={[3.316, 3.481, 3.316]}
-      />
-      {/* <mesh
+      /> */}
+      <mesh
         castShadow
         receiveShadow
         geometry={nodes.MY_SCREEN_MY_SCREEN_0.geometry}
@@ -388,7 +388,7 @@ export default function Model() {
         scale={[3.316, 3.481, 3.316]}
       >
         <meshBasicMaterial map={txt} />
-      </mesh> */}
+      </mesh>
 
       <mesh
         castShadow

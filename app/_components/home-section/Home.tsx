@@ -23,7 +23,7 @@ function Home() {
           priority
           className="object-cover"
           // sizes="(max-width: 450px) 80vw, (max-width: 768px) 40vw, 50vw"
-          sizes="100vw"
+          sizes="(max-width: 768px) 768px, (max-width: 1400px) 1400px, 100vw"
           // loading="eager"
         />
       </div>
@@ -33,13 +33,13 @@ function Home() {
       <MotionComponent
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1.5 }}
+        transition={{ duration: 1, delay: 2.5 }}
         className="mx-auto w-full md:w-auto"
       >
         <Image
           src={hacker}
           alt="Image of hacker on computer"
-          quality={40}
+          quality={50}
           priority
           className="rounded-xl xs:max-w-[80%] sm:max-w-[70%] md:max-w-[90%]"
           sizes="(max-width: 450px) 400px, (max-width: 768px) 300px, 430px"

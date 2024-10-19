@@ -7,7 +7,7 @@ function Heading() {
     <MotionComponent
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 1.5 }}
+      transition={{ duration: 1, delay: 2.5 }}
       className="flex flex-col gap-6 md:gap-4 lg:gap-8 xl:gap-10"
     >
       <h1 className="text-2xl font-extrabold xs:text-4xl sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">

@@ -17,7 +17,7 @@ function Handwave() {
       <MotionComponent
         initial={{ rotate: 0 }}
         animate={{
-          rotate: [0, 15, -10, 15, -10, 15, -10, 15, -10, 15, 0],
+          rotate: [0, 20, -15, 20, -15, 20, -15, 20, -15, 20, 0],
         }}
         transition={{
           duration: 1.5,

@@ -197,7 +197,7 @@ export const bentoGridText = {
     "A dedicated React frontend developer with a strong background in HTML, CSS, and JavaScript. I enjoy creating responsive, interactive user interfaces that enhance the user experience. My focus is on building scalable and modern applications with the latest frontend technologies like React, Tailwind CSS, and Next.js.",
 
   "cell-1-3-4":
-    "With no working experience yet. Learning coding and solving problems in frontend for almost a year. Continually increasing and building",
+    "With no working experience yet. Learning coding and solving problems in frontend for almost a year. Continually increasing and building skillset.",
 
   "cell-2-1-2":
     "Building dynamic, responsive and modern single-page applications with reusable components. Using advanced features for more efficient, dry, readable code.",
