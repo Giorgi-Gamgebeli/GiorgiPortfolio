@@ -43,6 +43,7 @@ function Home() {
           priority
           className="rounded-xl xs:max-w-[80%] sm:max-w-[70%] md:max-w-[90%]"
           sizes="(max-width: 450px) 400px, (max-width: 768px) 300px, 430px"
+          loading="eager"
         />
       </MotionComponent>
     </Section>
