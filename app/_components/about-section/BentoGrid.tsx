@@ -3,7 +3,9 @@
 import GridBox from "./GridBox";
 import BentoGridCell from "./BentoGridCell";
 import { bentoGridText } from "@/app/_utils/constants";
-import { DynamicComputerCanvas } from "@/app/_utils/DynamicImporter";
+// import { DynamicComputerCanvas } from "@/app/_utils/DynamicImporter";
+import { lazy, Suspense } from "react";
+const LazyComputerCanvas = lazy(() => import("./ComputerCanvas"));
 
 function BentoGrid() {
   return (
@@ -53,7 +55,10 @@ function BentoGrid() {
         }}
         id="cell-2-2-3"
       >
-        <DynamicComputerCanvas />
+        {/* <DynamicComputerCanvas /> */}
+        <Suspense fallback={<div>Loading...</div>}>
+          <LazyComputerCanvas />
+        </Suspense>
       </BentoGridCell>
 
       <BentoGridCell
