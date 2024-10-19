@@ -7,7 +7,7 @@ import { bentoGridText } from "@/app/_utils/constants";
 import { lazy, Suspense } from "react";
 // import { DynamicComputerCanvas } from "@/app/_utils/DynamicImporter";
 
-const LazyComputerCanvas = lazy(() => import("./ComputerCanvas"));
+// const LazyComputerCanvas = lazy(() => import("./ComputerCanvas"));
 
 function BentoGrid() {
   return (
@@ -58,9 +58,10 @@ function BentoGrid() {
         id="cell-2-2-3"
       >
         {/* <DynamicComputerCanvas /> */}
-        <Suspense fallback={<div>Loading...</div>}>
-          <LazyComputerCanvas />
-        </Suspense>
+        {/* <Suspense fallback={<div>Loading...</div>}>
+          <LazyComputerCanvas /> 
+        </Suspense> */}
+        3 d models sucks
       </BentoGridCell>
 
       <BentoGridCell
