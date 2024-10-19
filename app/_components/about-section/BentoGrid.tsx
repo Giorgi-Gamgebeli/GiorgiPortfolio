@@ -1,11 +1,13 @@
-"use server";
+"use client";
 
 import GridBox from "./GridBox";
 import BentoGridCell from "./BentoGridCell";
 import { bentoGridText } from "@/app/_utils/constants";
-import { LazyComputerCanvas } from "@/app/_utils/DynamicImporter";
-import { Suspense } from "react";
+// import { LazyComputerCanvas } from "@/app/_utils/DynamicImporter";
+import { lazy, Suspense } from "react";
 // import { DynamicComputerCanvas } from "@/app/_utils/DynamicImporter";
+
+const LazyComputerCanvas = lazy(() => import("./ComputerCanvas"));
 
 function BentoGrid() {
   return (
