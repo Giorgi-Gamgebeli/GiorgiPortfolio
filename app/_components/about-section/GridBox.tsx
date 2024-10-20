@@ -26,10 +26,10 @@ function GridBox({ children, className }: GridBoxTypes) {
     window.addEventListener("scroll", () => {}, { passive: true });
     window.addEventListener("touchmove", () => {}, { passive: true });
 
-    return () => {
-      window.removeEventListener("scroll", () => {});
-      window.removeEventListener("touchmove", () => {});
-    };
+    // return () => {
+    //   window.removeEventListener("scroll", () => {});
+    //   window.removeEventListener("touchmove", () => {});
+    // };
   }, []);
 
   useEffect(() => {
