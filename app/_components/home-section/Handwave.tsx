@@ -1,7 +1,8 @@
 "use server";
 
+import Image from "next/image";
 import MotionComponent from "../MotionComponent";
-import HandwaveIcon from "@/public/handwave.svg";
+import handwave from "@/public/handwave.png";
 
 function Handwave() {
   return (
@@ -25,7 +26,14 @@ function Handwave() {
         }}
         style={{ transformOrigin: "bottom right" }}
       >
-        <HandwaveIcon height={40} width={40} area-label="hand waving" />
+        <Image
+          src={handwave}
+          alt="hand waving"
+          quality={50}
+          width={40}
+          height={40}
+          // loading="eager"
+        />
       </MotionComponent>
     </MotionComponent>
   );
