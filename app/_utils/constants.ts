@@ -200,7 +200,7 @@ export const bentoGridText = {
     "With no working experience yet. Learning coding and solving problems in frontend for almost a year. Continually increasing and building skillset.",
 
   "cell-2-1-2":
-    "Building dynamic, responsive and modern single-page applications with reusable components. Using advanced features for more efficient, dry, readable code.",
+    "Building dynamic, responsive and modern single-page applications with reusable components. Using advanced features for efficient, dry, readable code.",
 
   "cell-2-2-3":
     "Performance optimization with lazy loading dynamic imports and image optimization for seamless UX.",
