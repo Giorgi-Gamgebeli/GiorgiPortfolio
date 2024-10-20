@@ -27,10 +27,11 @@ function MotionComponent({
 }: MotionDivTypes) {
   const { isMobile } = useIsMobile();
 
-  const MotionComponent =
-    !isMobile || dontDisableFramerForMobile
-      ? (motion[component as keyof typeof motion] as React.ElementType)
-      : component;
+  const MotionComponent = motion[
+    component as keyof typeof motion
+  ] as React.ElementType;
+
+  const Component = component as React.ElementType;
 
   return (
     <>
@@ -46,9 +47,14 @@ function MotionComponent({
           {children}
         </MotionComponent>
       ) : (
-        <MotionComponent onClick={onClick} ref={reactRef} className={className}>
+        <Component
+          id={id}
+          onClick={onClick}
+          ref={reactRef}
+          className={className}
+        >
           {children}
-        </MotionComponent>
+        </Component>
       )}
     </>
   );

@@ -26,20 +26,22 @@ function GridBox({ children, className }: GridBoxTypes) {
     window.addEventListener("scroll", () => {}, { passive: true });
     window.addEventListener("touchmove", () => {}, { passive: true });
 
-    // return () => {
-    //   window.removeEventListener("scroll", () => {});
-    //   window.removeEventListener("touchmove", () => {});
-    // };
+    return () => {
+      window.removeEventListener("scroll", () => {});
+      window.removeEventListener("touchmove", () => {});
+    };
   }, []);
 
   useEffect(() => {
+    if (isMobile === null) return;
+
     if (isInView && !animationHasHappend) {
       initialBentoGridAnimation(animate);
       setAnimationHasHappend(true);
     }
 
-    if (isMobile && wasMobile !== isMobile) {
-      skipInitialBentoGridAnimation(animate);
+    if (wasMobile !== isMobile) {
+      skipInitialBentoGridAnimation(animate)
       setWasMobile(isMobile);
     }
   }, [animate, isInView, animationHasHappend, wasMobile, isMobile]);
