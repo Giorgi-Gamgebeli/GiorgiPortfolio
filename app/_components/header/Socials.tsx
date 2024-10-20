@@ -9,7 +9,7 @@ function Socials({ phoneSocials }: { phoneSocials?: boolean }) {
       className={`${phoneSocials ? "flex flex-col gap-10 text-4xl" : "hidden gap-5 text-xl md:flex"}`}
     >
       <li
-        className={` ${phoneSocials ? "inline rounded-full bg-gray-100 p-2 transition hover:scale-110 dark:bg-[#0b122cab]" : ""}`}
+        className={`hover:scale-110 ${phoneSocials ? "inline rounded-full bg-gray-100 p-2 transition dark:bg-[#0b122cab]" : ""}`}
       >
         <Link
           target="_blank"
@@ -20,7 +20,7 @@ function Socials({ phoneSocials }: { phoneSocials?: boolean }) {
         </Link>
       </li>
       <li
-        className={` ${phoneSocials ? "inline rounded-full bg-gray-100 p-2 transition hover:scale-110 dark:bg-[#0b122cab]" : ""}`}
+        className={`hover:scale-110 ${phoneSocials ? "inline rounded-full bg-gray-100 p-2 transition dark:bg-[#0b122cab]" : ""}`}
       >
         <Link
           target="_blank"
