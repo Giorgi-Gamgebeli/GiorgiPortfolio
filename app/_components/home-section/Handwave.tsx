@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import MotionComponent from "../MotionComponent";
-import handwave from "@/public/handwave.png";
+import handwave from "@/public/handwave1.png";
 
 function Handwave() {
   return (
@@ -10,7 +10,7 @@ function Handwave() {
       initial={{ x: -300 }}
       animate={{ x: 0 }}
       transition={{ delay: 0.5 }}
-      className="flex items-center gap-2"
+      className="flex items-center gap-2 pt-5"
     >
       <p>Hey, there</p>
 
@@ -31,7 +31,6 @@ function Handwave() {
           alt="hand waving"
           quality={50}
           width={40}
-          height={40}
           // loading="eager"
         />
       </MotionComponent>
