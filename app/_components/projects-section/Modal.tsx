@@ -27,7 +27,7 @@ function Modal({
   const buttonTransition = {
     delay: 0.5,
     mass: 1,
-    damping: 12,
+    damping: 10,
     type: "spring",
     stiffness: 100,
   } as const;
