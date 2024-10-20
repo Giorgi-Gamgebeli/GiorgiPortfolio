@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Section from "../Section";
 import homebg from "@/public/homebg.png";
-import hacker from "@/public/originalHacker.png";
+import hacker from "@/public/hacker.avif";
 import MotionComponent from "../MotionComponent";
 import TextSide from "./TextSide";
 
