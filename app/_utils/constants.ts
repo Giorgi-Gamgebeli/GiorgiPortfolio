@@ -202,6 +202,9 @@ export const bentoGridText = {
   "cell-2-1-2":
     "Building dynamic, responsive and modern single-page applications with reusable components. Using advanced features for more efficient, dry, readable code.",
 
+  "cell-2-2-3":
+    "Performance optimization with lazy loading dynamic imports and image optimization for seamless UX.",
+
   "cell-2-3-4":
     "Developing optimized, scalable web applications. Adding smooth, engaging animations to enhance user interactions with framer motion.",
 

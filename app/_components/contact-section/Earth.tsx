@@ -6,9 +6,8 @@ import { KTX2Loader } from "three-stdlib";
 
 function Earth() {
   const ktx2Loader = new KTX2Loader().setTranscoderPath(`/transcoder/`);
-  // const { scene } = useGLTF("./earthOptimized.glb", true);
   const { gl } = useThree();
-  const { scene } = useGLTF("/earthOptimized1.glb", true, true, (loader) =>
+  const { scene } = useGLTF("/earthOptimized.glb", true, true, (loader) =>
     loader.setKTX2Loader(ktx2Loader.detectSupport(gl)),
   );
 

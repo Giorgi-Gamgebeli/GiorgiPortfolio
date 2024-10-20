@@ -3,9 +3,6 @@
 import GridBox from "./GridBox";
 import BentoGridCell from "./BentoGridCell";
 import { bentoGridText } from "@/app/_utils/constants";
-// import MotionComponent from "../MotionComponent";
-// import Image from "next/image";
-// import desktop from "@/public/desktopOptimized.png";
 
 function BentoGrid() {
   return (
@@ -55,21 +52,7 @@ function BentoGrid() {
         }}
         id="cell-2-2-3"
       >
-        <p>
-          Performance optimization with lazy loading dynamic imports and image
-          optimization for seamless UX.
-        </p>
-        {/* <MotionComponent> */}
-        {/* <Image
-            src={desktop}
-            alt="Image of hacker on computer"
-            quality={10}
-            priority
-            className="rounded-xl xs:max-w-[80%] sm:max-w-[70%] md:max-w-[90%]"
-            sizes="(max-width: 450px) 400px, (max-width: 768px) 300px, 430px"
-            loading="eager"
-          />
-        </MotionComponent> */}
+        {bentoGridText["cell-2-2-3"]}
       </BentoGridCell>
 
       <BentoGridCell
