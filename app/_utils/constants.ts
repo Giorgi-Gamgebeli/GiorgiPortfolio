@@ -128,15 +128,15 @@ export const projects = [
     tags: [
       {
         name: "React",
-        color: "bg-blue-600",
+        color: "bg-blue-700",
       },
       {
         name: "Tailwindcss",
-        color: "bg-green-600",
+        color: "bg-green-700",
       },
       {
         name: "Redux",
-        color: "bg-red-600",
+        color: "bg-red-700",
       },
     ],
     image: pizzaPhoto,
@@ -151,15 +151,15 @@ export const projects = [
     tags: [
       {
         name: "React",
-        color: "bg-blue-600",
+        color: "bg-blue-700",
       },
       {
         name: "Styled-Components",
-        color: "bg-green-600",
+        color: "bg-green-700",
       },
       {
         name: "Supabase",
-        color: "bg-red-600",
+        color: "bg-red-700",
       },
     ],
     image: oasisPhoto,
@@ -174,15 +174,15 @@ export const projects = [
     tags: [
       {
         name: "React",
-        color: "bg-blue-600",
+        color: "bg-blue-700",
       },
       {
         name: "Tailwindcss",
-        color: "bg-green-600",
+        color: "bg-green-700",
       },
       {
         name: "Supabase",
-        color: "bg-red-600",
+        color: "bg-red-700",
       },
     ],
     image: wayBackPhoto,
