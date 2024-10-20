@@ -18,9 +18,8 @@ function Home() {
         <Image
           src={homebg}
           quality={90}
-          alt="background img of white waves"
+          alt="background img of white lines"
           fill
-          priority
           className="object-cover"
           // sizes="(max-width: 450px) 80vw, (max-width: 768px) 40vw, 50vw"
           sizes="(max-width: 768px) 768px, (max-width: 1400px) 1400px, 100vw"
