@@ -23,6 +23,16 @@ function GridBox({ children, className }: GridBoxTypes) {
   const { isMobile } = useIsMobile();
 
   useEffect(() => {
+    window.addEventListener("scroll", () => {}, { passive: true });
+    window.addEventListener("touchmove", () => {}, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", () => {});
+      window.removeEventListener("touchmove", () => {});
+    };
+  }, []);
+
+  useEffect(() => {
     if (isInView && !animationHasHappend) {
       initialBentoGridAnimation(animate);
       setAnimationHasHappend(true);
