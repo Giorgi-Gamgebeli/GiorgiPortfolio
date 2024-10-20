@@ -39,7 +39,7 @@ function Project({
         <ul className="mt-auto flex flex-wrap gap-2">
           {tags.map((tag) => (
             <li
-              className={`rounded-full px-3 py-1 text-sm font-medium uppercase tracking-wider text-white xs:text-base sm:text-lg md:text-sm lg:text-lg ${tag.color}`}
+              className={`rounded-full px-3 py-1 text-sm font-semibold uppercase tracking-wider text-white xs:text-base sm:text-lg md:text-sm lg:text-lg ${tag.color}`}
               key={tag.name}
             >
               #{tag.name}
