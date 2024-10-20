@@ -12,6 +12,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata: Metadata = {
   title: "Giorgi Gamgebeli | Portfolio",
   description: "Portfolio of front-end webdeveloper",
+  icons: {
+    icon: "/gFavicon.png",
+  },
 };
 
 const poppins = Poppins({
@@ -27,9 +30,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <head>
-        <link rel="icon" href="/gFavicon.png" />
-      </head>
       <body
         className={`${poppins.className} w-full overflow-x-hidden bg-gray-100 text-gray-950 transition-all duration-300 dark:bg-darkPrimary dark:text-white`}
       >
