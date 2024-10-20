@@ -1,13 +1,9 @@
-"use client";
+"use server";
 
 import GridBox from "./GridBox";
 import BentoGridCell from "./BentoGridCell";
 import { bentoGridText } from "@/app/_utils/constants";
-// import { LazyComputerCanvas } from "@/app/_utils/DynamicImporter";
-// import { lazy, Suspense } from "react";
-// import { DynamicComputerCanvas } from "@/app/_utils/DynamicImporter";
-
-// const LazyComputerCanvas = lazy(() => import("./ComputerCanvas"));
+import MotionComponent from "../MotionComponent";
 
 function BentoGrid() {
   return (
@@ -57,11 +53,11 @@ function BentoGrid() {
         }}
         id="cell-2-2-3"
       >
-        {/* <DynamicComputerCanvas /> */}
-        {/* <Suspense fallback={<div>Loading...</div>}>
-          <LazyComputerCanvas /> 
-        </Suspense> */}
-        3 d models sucks
+        <p>
+          Performance optimization with lazy loading dynamic imports and image
+          optimization for seamless UX.
+        </p>
+        <MotionComponent></MotionComponent>
       </BentoGridCell>
 
       <BentoGridCell

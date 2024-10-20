@@ -1,4 +1,4 @@
-'use server'
+"use server";
 
 import { slideIn } from "../../_utils/motion";
 import Section from "../Section";
