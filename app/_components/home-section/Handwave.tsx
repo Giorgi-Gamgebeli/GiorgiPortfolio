@@ -25,14 +25,6 @@ function Handwave() {
         }}
         style={{ transformOrigin: "bottom right" }}
       >
-        {/* <Image
-          src={handwave}
-          alt="hand waving"
-          quality={0}
-          width={40}
-          height={40}
-          // loading="eager"
-        /> */}
         <HandwaveIcon height={40} width={40} area-label="hand waving" />
       </MotionComponent>
     </MotionComponent>
