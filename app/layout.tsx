@@ -10,11 +10,47 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
-  title: "Giorgi Gamgebeli | Portfolio",
-  description: "Portfolio of front-end webdeveloper",
+  title: "Giorgi Gamgebeli | Front-end Developer",
+  description:
+    "A dedicated React frontend developer with a strong background in HTML, CSS, and JavaScript. I enjoy creating responsive, interactive user interfaces that enhance the user experience. My focus is on building scalable and modern applications with the latest frontend technologies like React, Tailwind CSS, and Next.js.",
   icons: {
     icon: "/gFavicon.png",
   },
+  keywords: [
+    "frontend",
+    "react",
+    "nextjs",
+    "tech",
+    "javascript",
+    "typescript",
+    "UI development",
+    "frontend engineer",
+    "frontend developer",
+    "developer portfolio",
+    "software",
+    "software developer",
+    "software engineer",
+    "portfolio",
+  ],
+  openGraph: {
+    title: "Giorgi Gamgebeli | Front-end Developer",
+    description:
+      "A dedicated React frontend developer with a strong background in HTML, CSS, and JavaScript. I enjoy creating responsive, interactive user interfaces that enhance the user experience. My focus is on building scalable and modern applications with the latest frontend technologies like React, Tailwind CSS, and Next.js.",
+    url: "https://www.giorgi-webdev-portfolio.vercel.app",
+    siteName: "giorgi gamgebeli portfolio",
+    locale: "en-US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      "max-image-preview": "large",
+    },
+  },
+  category: "technology",
 };
 
 const poppins = Poppins({
