@@ -8,6 +8,7 @@ import ToastProvider from "./_utils/ToastProvider";
 import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+
 export const metadata: Metadata = {
   title: "Giorgi Gamgebeli | Portfolio",
   description: "Portfolio of front-end webdeveloper",

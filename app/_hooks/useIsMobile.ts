@@ -3,10 +3,12 @@
 import { useEffect, useState } from "react";
 
 function useIsMobile(screenWidth?: number) {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia(`(max-width: ${screenWidth || "768"}px)`);
+    const mediaQuery = window.matchMedia(
+      `(max-width: ${screenWidth || "768"}px)`,
+    );
 
     setIsMobile(mediaQuery.matches);
 

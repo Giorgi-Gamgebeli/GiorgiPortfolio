@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import MotionComponent from "../MotionComponent";
 import Nav from "./Nav";
@@ -23,9 +23,10 @@ function PhoneNav({ isPhoneNavOpen, setIsPhoneNavOpen }: PhoneNavTypes) {
         height: isPhoneNavOpen ? "auto" : 0,
         padding: isPhoneNavOpen ? "1rem" : 0,
       }}
+      dontDisableFramerForMobile
     >
-      <Nav phoneNav={true} setIsPhoneNavOpen={setIsPhoneNavOpen} />
-      <Socials phoneSocials={true} />
+      <Nav phoneNav setIsPhoneNavOpen={setIsPhoneNavOpen} />
+      <Socials phoneSocials />
     </MotionComponent>
   );
 }
