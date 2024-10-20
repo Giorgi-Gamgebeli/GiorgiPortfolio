@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Section from "../Section";
 import homebg from "@/public/homebg.png";
-import hacker from "@/public/hacker.avif";
+// import hacker from "@/public/hacker.avif";
+import hacker from "@/public/originalHacker.png";
 import MotionComponent from "../MotionComponent";
 import TextSide from "./TextSide";
 
@@ -21,9 +22,7 @@ function Home() {
           alt="background img of white lines"
           fill
           className="object-cover"
-          // sizes="(max-width: 450px) 80vw, (max-width: 768px) 40vw, 50vw"
           sizes="(max-width: 768px) 768px, (max-width: 1400px) 1400px, 100vw"
-          // loading="eager"
         />
       </div>
 
@@ -38,7 +37,7 @@ function Home() {
         <Image
           src={hacker}
           alt="Image of hacker on computer"
-          quality={80}
+          quality={60}
           priority
           className="rounded-xl xs:max-w-[80%] sm:max-w-[70%] md:max-w-[80%]"
           sizes="(max-width: 450px) 400px, (max-width: 768px) 300px, 400px"
