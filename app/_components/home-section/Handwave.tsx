@@ -31,7 +31,8 @@ function Handwave() {
           alt="hand waving"
           quality={50}
           width={40}
-          // loading="eager"
+          priority
+          loading="eager"
         />
       </MotionComponent>
     </MotionComponent>
