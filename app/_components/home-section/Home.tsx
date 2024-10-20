@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Section from "../Section";
 import homebg from "@/public/homebg.png";
-import hacker from "@/public/hacker.webp";
+import hacker from "@/public/hacker.avif";
 import MotionComponent from "../MotionComponent";
 import TextSide from "./TextSide";
 
@@ -39,7 +39,7 @@ function Home() {
         <Image
           src={hacker}
           alt="Image of hacker on computer"
-          quality={60}
+          quality={80}
           priority
           className="rounded-xl xs:max-w-[80%] sm:max-w-[70%] md:max-w-[80%]"
           sizes="(max-width: 450px) 400px, (max-width: 768px) 300px, 400px"
