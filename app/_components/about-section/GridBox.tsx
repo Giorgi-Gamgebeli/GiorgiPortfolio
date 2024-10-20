@@ -28,7 +28,7 @@ function GridBox({ children, className }: GridBoxTypes) {
       setAnimationHasHappend(true);
     }
 
-    if (wasMobile !== isMobile) {
+    if (isMobile && wasMobile !== isMobile) {
       skipInitialBentoGridAnimation(animate);
       setWasMobile(isMobile);
     }
