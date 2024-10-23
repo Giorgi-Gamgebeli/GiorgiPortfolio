@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import MotionComponent from "../MotionComponent";
-import handwave from "@/public/handwave1.png";
+import handwave from "@/public/handwave.png";
 
 function Handwave() {
   return (
@@ -29,9 +29,10 @@ function Handwave() {
         <Image
           src={handwave}
           alt="hand waving"
-          quality={50}
-          width={40}
+          quality={70}
+          width={60}
           priority
+          sizes="60px"
           loading="eager"
         />
       </MotionComponent>
