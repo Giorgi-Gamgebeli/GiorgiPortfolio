@@ -10,7 +10,7 @@ function Handwave() {
       initial={{ x: -300 }}
       animate={{ x: 0 }}
       transition={{ delay: 0.5 }}
-      className="flex items-center gap-2 pt-5"
+      className="flex h-[4rem] items-center gap-2 pt-5"
     >
       <p>Hey, there</p>
 
