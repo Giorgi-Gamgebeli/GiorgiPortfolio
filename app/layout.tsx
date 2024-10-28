@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   },
   keywords: [
     "frontend",
+    "giorgi",
+    "gamgebeli",
+    "giorgi gamgebeli",
     "react",
     "nextjs",
     "tech",
