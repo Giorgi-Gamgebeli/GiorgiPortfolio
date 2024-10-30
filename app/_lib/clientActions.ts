@@ -1,14 +1,13 @@
-import toast from "react-hot-toast";
-import { OnSubmitTypes } from "../_components/contact-section/Form";
-import emailjs from "@emailjs/browser";
+"use client";
 
-export async function sendEmailApi({
-  email,
-  message,
-  name,
-  setLoading,
-}: OnSubmitTypes) {
+import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
+
+export async function sendEmail(formData: FormData) {
   try {
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
     const res = await emailjs.send(
       process.env.NEXT_PUBLIC_EMAILJS_SERVICE as string,
       process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE as string,
@@ -25,10 +24,8 @@ export async function sendEmailApi({
     if (res.status !== 200) throw new Error("Email was not send");
 
     toast.success("I received your message, will contact you soon!");
-    setLoading(false);
   } catch (err) {
-    toast.error("Something went wrong, please try again later");
     console.error(err);
-    setLoading(false);
+    toast.error("Something went wrong, please try again later");
   }
 }

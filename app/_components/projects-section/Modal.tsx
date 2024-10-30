@@ -34,7 +34,6 @@ function Modal({
 
   useEffect(() => {
     if (timer !== 10) return;
-    console.log(timer);
     const timeout = setTimeout(() => {
       setIsOpen(false);
     }, timer * 1000);
