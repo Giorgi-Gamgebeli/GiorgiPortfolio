@@ -1,5 +1,3 @@
-'use server'
-
 import Section from "../Section";
 import React from "react";
 import SectionHeadText from "../SectionHeadText";

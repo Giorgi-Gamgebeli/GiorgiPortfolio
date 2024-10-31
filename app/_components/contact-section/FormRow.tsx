@@ -1,5 +1,3 @@
-"use server";
-
 type LoginFormRowTypes = {
   label?: string;
   children: React.ReactElement<HTMLInputElement>;

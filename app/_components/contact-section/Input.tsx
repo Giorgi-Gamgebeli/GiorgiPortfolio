@@ -1,5 +1,3 @@
-"use server";
-
 type InputTypes = {
   name: "name" | "email";
   type: string;

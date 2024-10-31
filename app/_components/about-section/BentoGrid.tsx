@@ -1,5 +1,3 @@
-"use server";
-
 import GridBox from "./GridBox";
 import BentoGridCell from "./BentoGridCell";
 import { bentoGridText } from "@/app/_utils/constants";

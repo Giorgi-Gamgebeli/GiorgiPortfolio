@@ -1,5 +1,3 @@
-"use server";
-
 import { textVariant } from "@/app/_utils/motion";
 import Section from "../Section";
 import SectionHeadText from "../SectionHeadText";

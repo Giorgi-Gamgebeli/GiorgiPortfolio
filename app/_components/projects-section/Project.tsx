@@ -1,5 +1,3 @@
-"use server";
-
 import TiltedImage from "./TiltedImage";
 import { slideIn } from "@/app/_utils/motion";
 import MotionComponent from "../MotionComponent";

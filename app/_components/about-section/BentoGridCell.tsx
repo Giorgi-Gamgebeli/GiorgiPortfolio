@@ -1,5 +1,3 @@
-"use client";
-
 import { MotionProps } from "framer-motion";
 import MotionComponent from "../MotionComponent";
 

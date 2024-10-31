@@ -1,5 +1,3 @@
-"use server";
-
 type TextareaTypes = {
   name: "message";
   placeholder?: string;

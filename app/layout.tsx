@@ -13,9 +13,6 @@ export const metadata: Metadata = {
   title: "Giorgi Gamgebeli | Front-end Developer",
   description:
     "A dedicated React frontend developer with a strong background in HTML, CSS, and JavaScript. I enjoy creating responsive, interactive user interfaces that enhance the user experience. My focus is on building scalable and modern applications with the latest frontend technologies like React, Tailwind CSS, and Next.js.",
-  icons: {
-    icon: "/gFavicon.png",
-  },
   keywords: [
     "frontend",
     "giorgi",

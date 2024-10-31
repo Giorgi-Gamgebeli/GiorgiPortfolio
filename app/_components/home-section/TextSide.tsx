@@ -1,5 +1,3 @@
-"use server";
-
 import FlexBox from "../FlexBox";
 import Handwave from "./Handwave";
 import Heading from "./Heading";

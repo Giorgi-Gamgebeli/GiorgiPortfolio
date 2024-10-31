@@ -1,5 +1,3 @@
-'use server'
-
 import MotionComponent from "../MotionComponent";
 
 function Heading() {

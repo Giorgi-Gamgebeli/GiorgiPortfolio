@@ -1,9 +1,7 @@
-"use server";
-
 import FormRow from "./FormRow";
 import Input from "./Input";
 import Textarea from "./Textarea";
-import ContactButton from "./ContactButton";
+import Button from "../Button";
 import FlexBox from "../FlexBox";
 import { sendEmail } from "@/app/_lib/clientActions";
 
@@ -35,11 +33,11 @@ function Form() {
       </FormRow>
 
       <FlexBox className="gap-2 text-xs xss:text-sm xs:gap-5 xs:text-base">
-        <ContactButton pendingLabel="Sending" type="submit">
+        <Button pendingLabel="Sending" type="submit">
           Send
-        </ContactButton>
+        </Button>
         <a href="/GiorgiCV.pdf" download>
-          <ContactButton type="button">Download CV</ContactButton>
+          <Button type="button">Download CV</Button>
         </a>
       </FlexBox>
     </form>
