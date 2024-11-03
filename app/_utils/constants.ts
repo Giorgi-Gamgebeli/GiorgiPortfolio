@@ -124,7 +124,7 @@ export const projects = [
   {
     name: "Fast React Pizza",
     description:
-      "Web application developed during a course, allowing users to order pizzas, view their ingredients, and check the estimated delivery time.",
+      "Web application enabling users to order pizzas, view ingredients, and check estimated delivery times. A compact app with state managed by Redux.",
     tags: [
       {
         name: "React",
@@ -147,7 +147,7 @@ export const projects = [
   {
     name: "The Wild Oasis",
     description:
-      "Web application developed during a learning course, tailored for hotel staff to efficiently track customer payments, manage guest stays, and streamline overall operations.",
+      "Web application tailored for hotel staff to track customer payments and manage guest stays. Packed with advanced features, it's one of the most challenging projects I've built.",
     tags: [
       {
         name: "React",
@@ -170,14 +170,14 @@ export const projects = [
   {
     name: "Way Back",
     description:
-      "Web-app developed entirely by me that allows users to mark their favorite spots, and help them find their way back. Easily revisit the places that matter most.",
+      "Don't judge this web-app visually 😅 Though visually simple, it includes authentication, authorization, email SMTP registration confirmation and git OAuth.",
     tags: [
       {
         name: "React",
         color: "bg-blue-700",
       },
       {
-        name: "Tailwindcss",
+        name: "TypeScript",
         color: "bg-green-700",
       },
       {
