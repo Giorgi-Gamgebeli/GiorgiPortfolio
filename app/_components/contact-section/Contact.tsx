@@ -10,6 +10,10 @@ import {
   DynamicEarthCanvas,
   DynamicStarsCanvas,
 } from "../../_utils/DynamicImporter";
+import FormRow from "./FormRow";
+import Input from "./Input";
+import Textarea from "./Textarea";
+import Button from "../Button";
 
 function Contact() {
   return (
@@ -24,7 +28,32 @@ function Contact() {
           <SectionSubText>GET IN TOUCH</SectionSubText>
           <SectionHeadText>Contact.</SectionHeadText>
 
-          <Form />
+          <Form>
+            <FormRow label="Your Name">
+              <Input name="name" type="text" placeholder="What's your name?" />
+            </FormRow>
+
+            <FormRow label="Your Email">
+              <Input
+                name="email"
+                type="email"
+                placeholder="What's your email?"
+              />
+            </FormRow>
+
+            <FormRow label="Your Message">
+              <Textarea name="message" placeholder="What do you want to say?" />
+            </FormRow>
+
+            <FlexBox className="gap-2 text-xs xss:text-sm xs:gap-5 xs:text-base">
+              <Button pendingLabel="Sending" type="submit">
+                Send
+              </Button>
+              <a href="/GiorgiCV.pdf" download>
+                <Button type="button">Download CV</Button>
+              </a>
+            </FlexBox>
+          </Form>
         </MotionComponent>
 
         <MotionComponent
