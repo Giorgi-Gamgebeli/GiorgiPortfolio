@@ -27,9 +27,10 @@ function Projects() {
         <SectionMini>
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described,
-          click on image to visit code repositories and live demos. They reflect
-          my abilty to solve complex problems, work with different technologies
-          and manage projects effectively.
+          <strong> click on image </strong>
+          to visit code repositories and live demos. They reflect my abilty to
+          solve complex problems, work with different technologies and manage
+          projects effectively.
         </SectionMini>
       </MotionComponent>
 
