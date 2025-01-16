@@ -23,30 +23,30 @@ function Nav({ setIsPhoneNavOpen, phoneNav }: NavTypes) {
         {navLinks.map((link) => (
           <MotionComponent
             as="li"
-            key={link.name}
+            key={link}
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             className="relative"
           >
             <Link
-              href={`#${link.name}`}
+              href={`#${link}`}
               className={clsx(
                 `block px-3 py-2 transition hover:text-gray-950 dark:hover:text-white`,
                 {
-                  "text-gray-950 dark:text-white": activeSection === link.name,
+                  "text-gray-950 dark:text-white": activeSection === link,
                 },
               )}
               onClick={() => {
-                setActiveSection(link.name);
+                setActiveSection(link);
                 setTimeOfLastClick(Date.now());
 
                 if (!setIsPhoneNavOpen) return;
                 setIsPhoneNavOpen(false);
               }}
             >
-              {link.name}
+              {link}
 
-              {link.name === activeSection && (
+              {link === activeSection && (
                 <MotionComponent
                   as="span"
                   className="absolute inset-0 -z-10 h-full rounded-full bg-gray-100 dark:bg-[#0b122cde]"

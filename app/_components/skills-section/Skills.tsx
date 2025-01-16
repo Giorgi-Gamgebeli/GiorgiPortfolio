@@ -1,5 +1,3 @@
-"use server";
-
 import Section from "../Section";
 import SectionHeadText from "../SectionHeadText";
 import SectionSubText from "../SectionSubText";
@@ -22,8 +20,8 @@ function Skills() {
         <SectionMini>
           Following tech stack is showcasing which technologies i have used to
           create websites. While i have experience in all of them, i have
-          proficiency in HTML5, CSS3, JavaScript, TypeScript, React, Tailwind
-          CSS, Framer Motion.
+          proficiency in HTML5, CSS3, JavaScript, TypeScript, React, Next JS,
+          Tailwind CSS, Framer Motion.
         </SectionMini>
       </MotionComponent>
 

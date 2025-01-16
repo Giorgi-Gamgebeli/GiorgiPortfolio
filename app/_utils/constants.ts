@@ -6,21 +6,11 @@ import wayBack from "@/public/wayBack.png";
 import wildOasisCostumer from "@/public/wildOasisCostumer.png";
 
 export const navLinks = [
-  {
-    name: "Home",
-  },
-  {
-    name: "About",
-  },
-  {
-    name: "Skills",
-  },
-  {
-    name: "Projects",
-  },
-  {
-    name: "Contact",
-  },
+  "Home",
+  "About",
+  "Skills",
+  "Projects",
+  "Contact",
 ] as const;
 
 export const technologies = [
@@ -114,6 +104,31 @@ export const technologies = [
     iconify: "fluent-mdl2:context-menu",
     color: "hover:text-[#3B82F6]",
   },
+  {
+    name: "Zod",
+    iconify: "simple-icons:zod",
+    color: "hover:text-[#0c4a6e]",
+  },
+  {
+    name: "PrismaORM",
+    iconify: "file-icons:prisma",
+    color: "hover:text-[#0C344B]",
+  },
+  {
+    name: "PostgreSQL",
+    iconify: "simple-icons:postgresql",
+    color: "hover:text-[#336791]",
+  },
+  {
+    name: "Vercel",
+    iconify: "akar-icons:vercel-fill",
+    color: "hover:text-[#000]",
+  },
+  {
+    name: "Netlify",
+    iconify: "devicon-plain:netlify",
+    color: "hover:text-[#00C7B7]",
+  },
 ] as const;
 
 export const projects = [
@@ -189,7 +204,7 @@ export const projects = [
   {
     name: "The Wild Oasis",
     description:
-      "Admin side of application, complete Fullstack app with NextJs, Zod, SEO, SSG, ISR, server side authentiaction, optimistic UI, responsive design, PrismaORM and PostgresSQL.",
+      "Admin side of application, complete Fullstack app with NextJs, Zod, SEO, SSG, ISR, server side authentiaction, optimistic UI, responsive design, PrismaORM and PostgreSQL.",
     tags: [
       {
         name: "NextJs",
