@@ -21,7 +21,7 @@ function Heading() {
 
       <p>
         React/NextJs focused <br className="block lg:hidden" /> web developer,
-        <br /> currently learning NextJs.
+        <br /> currently learning BackEnd.
       </p>
     </MotionComponent>
   );

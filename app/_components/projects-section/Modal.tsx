@@ -26,10 +26,10 @@ function Modal({
   const isServiceNetlify = `${deploymentServiceImg.src}`.includes("netlify");
   const buttonTransition = {
     delay: 0.5,
-    mass: 1,
+    mass: 0.4,
     damping: 10,
     type: "spring",
-    stiffness: 100,
+    stiffness: 120,
   } as const;
 
   useEffect(() => {

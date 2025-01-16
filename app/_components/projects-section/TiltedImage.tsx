@@ -14,7 +14,7 @@ function TiltedImage({ image }: TiltedImageTypes) {
       <Image
         src={image}
         alt="Project I worked on"
-        quality={50}
+        quality={70}
         sizes="(max-width: 768px) 600px, 800px"
         className="cursor-pointer rounded-lg shadow-sm md:rounded-t-lg md:shadow-2xl"
       />

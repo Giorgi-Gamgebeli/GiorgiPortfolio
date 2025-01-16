@@ -23,13 +23,13 @@ function Nav({ setIsPhoneNavOpen, phoneNav }: NavTypes) {
         {navLinks.map((link) => (
           <MotionComponent
             as="li"
-            key={link.hash}
+            key={link.name}
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             className="relative"
           >
             <Link
-              href={link.hash}
+              href={`#${link.name}`}
               className={clsx(
                 `block px-3 py-2 transition hover:text-gray-950 dark:hover:text-white`,
                 {

@@ -1,29 +1,25 @@
 import netlifyDark from "@/public/netlifyDark.webp";
 import vercelDark from "@/public/vercelDark.png";
-import pizzaPhoto from "@/public/Screenshot_1.png";
-import oasisPhoto from "@/public/Screenshot_2.png";
-import wayBackPhoto from "@/public/Screenshot_3.png";
+import fastReactPizza from "@/public/fastReactPizza.png";
+import wildOasisAdmin from "@/public/wildOasisAdmin.png";
+import wayBack from "@/public/wayBack.png";
+import wildOasisCostumer from "@/public/wildOasisCostumer.png";
 
 export const navLinks = [
   {
     name: "Home",
-    hash: "#Home",
   },
   {
     name: "About",
-    hash: "#About",
   },
   {
     name: "Skills",
-    hash: "#Skills",
   },
   {
     name: "Projects",
-    hash: "#Projects",
   },
   {
     name: "Contact",
-    hash: "#Contact",
   },
 ] as const;
 
@@ -139,32 +135,9 @@ export const projects = [
         color: "bg-red-700",
       },
     ],
-    image: pizzaPhoto,
+    image: fastReactPizza,
     sourceCodeLink: "https://github.com/CodingReaper1/FastReactPizza",
     deployedWebLink: "https://george-fast-react-pizza.vercel.app",
-    deploymentServiceImg: vercelDark,
-  },
-  {
-    name: "The Wild Oasis",
-    description:
-      "Web application tailored for hotel staff to track customer payments and manage guest stays. Packed with advanced features, it's one of the most challenging projects I've built.",
-    tags: [
-      {
-        name: "React",
-        color: "bg-blue-700",
-      },
-      {
-        name: "Styled-Components",
-        color: "bg-green-700",
-      },
-      {
-        name: "Supabase",
-        color: "bg-red-700",
-      },
-    ],
-    image: oasisPhoto,
-    sourceCodeLink: "https://github.com/CodingReaper1/TheWildOasis",
-    deployedWebLink: "https://george-the-wild-oasis.vercel.app",
     deploymentServiceImg: vercelDark,
   },
   {
@@ -185,10 +158,56 @@ export const projects = [
         color: "bg-red-700",
       },
     ],
-    image: wayBackPhoto,
+    image: wayBack,
     sourceCodeLink: "https://github.com/CodingReaper1/WayBack",
     deployedWebLink: "https://waybackk.netlify.app",
     deploymentServiceImg: netlifyDark,
+  },
+  {
+    name: "The Wild Oasis",
+    description:
+      "Costumer side of application, Frontend with NextJs, simple authentication, Backend managed by supabase. Planning to improve this app in future.",
+    tags: [
+      {
+        name: "NextJs",
+        color: "bg-blue-700",
+      },
+      {
+        name: "TailwindCSS",
+        color: "bg-green-700",
+      },
+      {
+        name: "Supabase",
+        color: "bg-red-700",
+      },
+    ],
+    image: wildOasisCostumer,
+    sourceCodeLink: "https://github.com/CodingReaper1/TheWildOasisCostumerSide",
+    deployedWebLink: "https://the-wild-oasis-costumer-side.vercel.app",
+    deploymentServiceImg: vercelDark,
+  },
+  {
+    name: "The Wild Oasis",
+    description:
+      "Admin side of application, complete Fullstack app with NextJs, Zod, SEO, SSG, ISR, server side authentiaction, optimistic UI, responsive design, PrismaORM and PostgresSQL.",
+    tags: [
+      {
+        name: "NextJs",
+        color: "bg-blue-700",
+      },
+      {
+        name: "TypeScript",
+        color: "bg-green-700",
+      },
+      {
+        name: "PrismaORM",
+        color: "bg-red-700",
+      },
+    ],
+    image: wildOasisAdmin,
+    sourceCodeLink: "https://github.com/CodingReaper1/TheWildOasisAdminNextJs",
+    deployedWebLink: "https://the-wild-oasis-admin-nextjs.vercel.app",
+    deploymentServiceImg: vercelDark,
   },
 ] as const;
 
@@ -209,7 +228,7 @@ export const bentoGridText = {
     "Developing optimized, scalable web applications. Adding smooth, engaging animations to enhance user interactions with framer motion.",
 
   "cell-3-1-2":
-    "Journey from learning the foundations of HTML, CSS, and JavaScript, to expanding into frameworks like React.",
+    "Journey from learning the foundations of HTML, CSS, and JavaScript, to expanding into frameworks and libraries like React and NextJs.",
 
   "cell-3-2-4":
     "I prioritize clean, maintainable code and love incorporating animations that make interactions feel more engaging. With a keen eye on performance, I work to optimize load times and responsiveness for a seamless experience. I'm always excited to learn new techniques and push the boundaries of my knowledge!",
