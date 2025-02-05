@@ -13,7 +13,7 @@ function Projects() {
   return (
     <Section
       divClassName="overflow-hidden"
-      idName="Projects"
+      idName="projects"
       viewThreshold={0.2}
     >
       <MotionComponent

@@ -8,7 +8,7 @@ import TechStack from "./TechStack";
 
 function Skills() {
   return (
-    <Section idName="Skills">
+    <Section idName="skills">
       <MotionComponent
         initial="hidden"
         whileInView="show"

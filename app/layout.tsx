@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "./_components/header/Header";
+
 import { DarkModeProvider } from "./_context/DarkModeContext";
 import { ActiveSectionContextProvider } from "./_context/ActiveSectionContext";
-import DarkModeToggle from "./_components/DarkModeToggle";
 import ToastProvider from "./_utils/ToastProvider";
 import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
@@ -73,9 +72,7 @@ export default function RootLayout({
           <DarkModeProvider>
             <ToastProvider>
               <ActiveSectionContextProvider>
-                <Header />
                 {children}
-                <DarkModeToggle />
               </ActiveSectionContextProvider>
             </ToastProvider>
           </DarkModeProvider>

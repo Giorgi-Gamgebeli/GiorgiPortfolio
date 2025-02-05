@@ -8,7 +8,7 @@ import MotionComponent from "../MotionComponent";
 
 function About() {
   return (
-    <Section idName="About">
+    <Section idName="about">
       <MotionComponent
         initial="hidden"
         whileInView="show"

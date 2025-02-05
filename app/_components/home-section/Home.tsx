@@ -10,7 +10,7 @@ function Home() {
     <Section
       className="relative bg-gray-50 pt-44 dark:bg-transparent 2xl:pt-64"
       divClassName="grid overflow-hidden grid-cols-1 xs:gap-10 md:gap-5 lg:gap-0 md:grid-cols-[62fr_38fr] lg:grid-cols-[61fr_40fr]"
-      idName="Home"
+      idName="home"
     >
       <div className="absolute inset-0 -z-10 hidden dark:block">
         <Image

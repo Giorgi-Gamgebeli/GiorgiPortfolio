@@ -14,10 +14,11 @@ import FormRow from "./FormRow";
 import Input from "./Input";
 import Textarea from "./Textarea";
 import Button from "../Button";
+import Link from "next/link";
 
 function Contact() {
   return (
-    <Section idName="Contact" className="relative">
+    <Section idName="contact" className="relative">
       <FlexBox className="z-20 flex-col-reverse gap-10 overflow-hidden py-20 dark:text-white xl:mt-12 xl:grid xl:grid-cols-[45fr_55fr]">
         <MotionComponent
           initial="hidden"
@@ -49,9 +50,9 @@ function Contact() {
               <Button pendingLabel="Sending" type="submit">
                 Send
               </Button>
-              <a href="/GiorgiCV.pdf" download>
-                <Button type="button">Download CV</Button>
-              </a>
+              <Link href="/cv">
+                <Button type="button">Checkout CV &rarr;</Button>
+              </Link>
             </FlexBox>
           </Form>
         </MotionComponent>

@@ -44,7 +44,7 @@ function Nav({ setIsPhoneNavOpen, phoneNav }: NavTypes) {
                 setIsPhoneNavOpen(false);
               }}
             >
-              {link}
+              {link[0].toUpperCase() + link.slice(1)}
 
               {link === activeSection && (
                 <MotionComponent

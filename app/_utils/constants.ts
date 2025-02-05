@@ -6,11 +6,11 @@ import wayBack from "@/public/wayBack.png";
 import wildOasisCostumer from "@/public/wildOasisCostumer.png";
 
 export const navLinks = [
-  "Home",
-  "About",
-  "Skills",
-  "Projects",
-  "Contact",
+  "home",
+  "about",
+  "skills",
+  "projects",
+  "contact",
 ] as const;
 
 export const technologies = [
@@ -129,6 +129,11 @@ export const technologies = [
     iconify: "devicon-plain:netlify",
     color: "hover:text-[#00C7B7]",
   },
+  // {
+  //   name: "Neon",
+  //   iconify: "logos:neon-icon",
+  //   color: "hover:text-[#00C7B7]",
+  // },
 ] as const;
 
 export const projects = [

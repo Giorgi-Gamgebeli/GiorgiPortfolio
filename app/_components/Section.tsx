@@ -3,11 +3,12 @@
 import React, { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
 import useActiveSectionContext from "../_context/useActiveSectionContext";
+import { navLinks } from "../_utils/constants";
 
 type SectionTypes = {
   children: React.ReactNode;
   className?: string;
-  idName: "Home" | "About" | "Skills" | "Projects" | "Contact";
+  idName: (typeof navLinks)[number];
   viewThreshold?: number;
   divClassName?: string;
 };
