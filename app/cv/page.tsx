@@ -30,7 +30,7 @@ function page() {
         <FlexBox className="mb-8 justify-center gap-10 border-y border-white/20 py-4 text-sm">
           <p className="flex items-center gap-2">
             <Icon icon="basil:phone-in-outline" className="size-[1.4rem]" />
-            599610265
+            +995 599610265
           </p>
 
           <p className="flex items-center gap-2">
