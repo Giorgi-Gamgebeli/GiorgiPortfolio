@@ -25,7 +25,7 @@ function Socials({ phoneSocials }: { phoneSocials?: boolean }) {
         <Link
           target="_blank"
           aria-label="Github profile"
-          href="https://github.com/CodingReaper1"
+          href="https://github.com/Giorgi-Gamgebeli"
         >
           <Icon icon={"hugeicons:github"} />
         </Link>

@@ -13,7 +13,7 @@ export const navLinks = [
   "contact",
 ] as const;
 
-export const technologies = [
+export const masteredTechnologies = [
   {
     name: "HTML 5",
     iconify: "uiw:html5",
@@ -45,30 +45,11 @@ export const technologies = [
     color: "hover:text-[#000]",
   },
   {
-    name: "Three JS",
-    iconify: "tabler:brand-threejs",
-    color: "hover:text-[#000]",
-  },
-  {
     name: "Tailwind CSS",
     iconify: "simple-icons:tailwindcss",
     color: "hover:text-[#38B2AC]",
   },
-  {
-    name: "Styled Components",
-    iconify: "simple-icons:styledcomponents",
-    color: "hover:text-[#DB7093]",
-  },
-  {
-    name: "Git",
-    iconify: "cib:git",
-    color: "hover:text-[#F05033]",
-  },
-  {
-    name: "GitHub",
-    iconify: "uiw:github",
-    color: "hover:text-[#181717]",
-  },
+
   {
     name: "Vite",
     iconify: "simple-icons:vite",
@@ -89,35 +70,11 @@ export const technologies = [
     iconify: "simple-icons:reactquery",
     color: "hover:text-[#FF4154]",
   },
-  {
-    name: "Redux Toolkit",
-    iconify: "cib:redux",
-    color: "hover:text-[#764ABC]",
-  },
-  {
-    name: "React Router Dom",
-    iconify: "simple-icons:reactrouter",
-    color: "hover:text-[#CA4242]",
-  },
+
   {
     name: "Context API",
     iconify: "fluent-mdl2:context-menu",
     color: "hover:text-[#3B82F6]",
-  },
-  {
-    name: "Zod",
-    iconify: "simple-icons:zod",
-    color: "hover:text-[#0c4a6e]",
-  },
-  {
-    name: "PrismaORM",
-    iconify: "file-icons:prisma",
-    color: "hover:text-[#0C344B]",
-  },
-  {
-    name: "PostgreSQL",
-    iconify: "simple-icons:postgresql",
-    color: "hover:text-[#336791]",
   },
   {
     name: "Vercel",
@@ -129,12 +86,63 @@ export const technologies = [
     iconify: "devicon-plain:netlify",
     color: "hover:text-[#00C7B7]",
   },
+];
+
+export const advancedTechnologies = [
+  {
+    name: "Git",
+    iconify: "cib:git",
+    color: "hover:text-[#F05033]",
+  },
+  {
+    name: "GitHub",
+    iconify: "uiw:github",
+    color: "hover:text-[#181717]",
+  },
+  {
+    name: "React Router Dom",
+    iconify: "simple-icons:reactrouter",
+    color: "hover:text-[#CA4242]",
+  },
+  {
+    name: "Zod",
+    iconify: "simple-icons:zod",
+    color: "hover:text-[#0c4a6e]",
+  },
+  {
+    name: "PrismaORM",
+    iconify: "file-icons:prisma",
+    color: "hover:text-[#0C344B]",
+  },
+];
+
+export const begginerTechnologies = [
+  {
+    name: "Three JS",
+    iconify: "tabler:brand-threejs",
+    color: "hover:text-[#000]",
+  },
+  {
+    name: "Styled Components",
+    iconify: "simple-icons:styledcomponents",
+    color: "hover:text-[#DB7093]",
+  },
+  {
+    name: "Redux Toolkit",
+    iconify: "cib:redux",
+    color: "hover:text-[#764ABC]",
+  },
+  {
+    name: "PostgreSQL",
+    iconify: "simple-icons:postgresql",
+    color: "hover:text-[#336791]",
+  },
   // {
   //   name: "Neon",
   //   iconify: "logos:neon-icon",
   //   color: "hover:text-[#00C7B7]",
   // },
-] as const;
+];
 
 export const projects = [
   {
@@ -186,18 +194,18 @@ export const projects = [
   {
     name: "The Wild Oasis",
     description:
-      "Costumer side of application, Frontend with NextJs, simple authentication, Backend managed by supabase. Planning to improve this app in future.",
+      "Costumer side of application, complete Fullstack app with NextJs, simple authentication, SEO, SSG, Zod, ISR. Is in sync with admin side of application, utlizing both dynamic and static pages.",
     tags: [
       {
         name: "NextJs",
         color: "bg-blue-700",
       },
       {
-        name: "TailwindCSS",
+        name: "TypeScript",
         color: "bg-green-700",
       },
       {
-        name: "Supabase",
+        name: "Zod",
         color: "bg-red-700",
       },
     ],
@@ -233,10 +241,10 @@ export const projects = [
 
 export const bentoGridText = {
   "cell-1-1-3":
-    "A dedicated React frontend developer with a strong background in HTML, CSS, and JavaScript. I enjoy creating responsive, interactive user interfaces that enhance the user experience. My focus is on building scalable and modern applications with the latest frontend technologies like React, Tailwind CSS, and Next.js.",
+    "A ReactJS/NextJS frontend developer with a strong background in HTML, CSS, and TypeScript. I enjoy creating responsive, interactive user interfaces that enhance the user experience. My focus is on building scalable and modern applications with the latest frontend technologies like React, Tailwind CSS, and Next.js.",
 
   "cell-1-3-4":
-    "With no working experience yet. Learning coding and solving problems in frontend for almost a year. Continually increasing and building skillset.",
+    "With no working experience yet. Learning coding and solving problems in frontend for a year. Continually increasing and building skillset.",
 
   "cell-2-1-2":
     "Building dynamic, responsive and modern single-page applications with reusable components. Using advanced features for efficient, dry, readable code.",

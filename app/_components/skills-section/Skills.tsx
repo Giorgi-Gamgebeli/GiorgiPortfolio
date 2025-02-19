@@ -5,6 +5,12 @@ import SectionMini from "../SectionMini";
 import MotionComponent from "../MotionComponent";
 import { textVariant } from "@/app/_utils/motion";
 import TechStack from "./TechStack";
+import {
+  advancedTechnologies,
+  begginerTechnologies,
+  masteredTechnologies,
+} from "@/app/_utils/constants";
+import SkillsHeading from "./SkillsHeading";
 
 function Skills() {
   return (
@@ -13,19 +19,25 @@ function Skills() {
         initial="hidden"
         whileInView="show"
         variants={textVariant(0.5)}
+        className="mb-10"
       >
         <SectionSubText>SKILLS</SectionSubText>
         <SectionHeadText>What can i do.</SectionHeadText>
 
         <SectionMini>
           Following tech stack is showcasing which technologies i have used to
-          create websites. While i have experience in all of them, i have
-          proficiency in HTML5, CSS3, JavaScript, TypeScript, React, Next JS,
-          Tailwind CSS, Framer Motion.
+          create websites.
         </SectionMini>
       </MotionComponent>
 
-      <TechStack />
+      <SkillsHeading>Mastered.</SkillsHeading>
+      <TechStack technologies={masteredTechnologies} />
+
+      <SkillsHeading>Advanced.</SkillsHeading>
+      <TechStack technologies={advancedTechnologies} />
+
+      <SkillsHeading>Begginer.</SkillsHeading>
+      <TechStack technologies={begginerTechnologies} />
     </Section>
   );
 }

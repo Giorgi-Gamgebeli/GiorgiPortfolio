@@ -1,6 +1,6 @@
 "use client";
 
-import useDarkModeContext from "../_context/useDarkModeContext";
+import { useDarkModeContext } from "../_context/DarkModeContext";
 import { useEffect } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import MotionComponent from "./MotionComponent";

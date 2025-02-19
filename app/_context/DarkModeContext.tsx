@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useEffect } from "react";
+import React, { createContext, useContext, useEffect } from "react";
 import useLocalStorageState from "../_hooks/useLocalStorageState";
 
 type DarkModeContextTypes = {
@@ -41,4 +41,12 @@ function DarkModeProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
-export { DarkModeProvider, DarkModeContext };
+function useDarkModeContext() {
+  const context = useContext(DarkModeContext);
+  if (context === null)
+    throw new Error("DarkModeContext was used outside of DarkModeProvider");
+
+  return context;
+}
+
+export { DarkModeProvider, useDarkModeContext };

@@ -15,7 +15,7 @@ type MotionDivTypes = {
   ariaLabel?: string;
 } & MotionProps;
 
-// To return motion.anyHtmlTag, becouse i dont want to make something like entire home page client side + its flexible, i know it hurts your eyes but it works :D
+// To return motion.anyHtmlTag, dont want to make entire page client side + its flexible, to turn off all animations for mobile
 function MotionComponent({
   as: component = "div",
   children,

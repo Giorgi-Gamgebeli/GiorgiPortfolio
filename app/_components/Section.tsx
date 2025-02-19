@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
-import useActiveSectionContext from "../_context/useActiveSectionContext";
+import { useActiveSectionContext } from "../_context/ActiveSectionContext";
 import { navLinks } from "../_utils/constants";
 
 type SectionTypes = {

@@ -3,11 +3,18 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import MotionComponent from "../MotionComponent";
 import { useRef } from "react";
-import { technologies } from "@/app/_utils/constants";
 import { skillsFloatVariants, staggerChild } from "@/app/_utils/motion";
 import { getRandomNumber } from "@/app/_utils/smallUtils";
 
-function TechStack() {
+type TechStackProps = {
+  technologies: {
+    name: string;
+    iconify: string;
+    color: string;
+  }[];
+};
+
+function TechStack({ technologies }: TechStackProps) {
   const parentRef = useRef<HTMLDivElement | null>(null);
 
   return (

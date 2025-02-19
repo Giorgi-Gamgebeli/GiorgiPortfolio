@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { navLinks } from "../_utils/constants";
 
 type SectionNameTypes = (typeof navLinks)[number];
@@ -39,4 +39,14 @@ function ActiveSectionContextProvider({
   );
 }
 
-export { ActiveSectionContextProvider, ActiveSectionContext };
+function useActiveSectionContext() {
+  const context = useContext(ActiveSectionContext);
+  if (context === null)
+    throw new Error(
+      "ActiveSectionContext was used outside of ActiveSectionProvider",
+    );
+
+  return context;
+}
+
+export { ActiveSectionContextProvider, useActiveSectionContext };

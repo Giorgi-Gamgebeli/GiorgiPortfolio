@@ -1,7 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import useActiveSectionContext from "../../_context/useActiveSectionContext";
+import { useActiveSectionContext } from "../../_context/ActiveSectionContext";
 import Link from "next/link";
 import MotionComponent from "../MotionComponent";
 import { navLinks } from "@/app/_utils/constants";
