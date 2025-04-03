@@ -2,12 +2,12 @@
 
 import Button from "./_components/Button";
 
-type ErrorTypes = {
+type ErrorProps = {
   error: Error;
   reset: () => void;
 };
 
-function Error({ error, reset }: ErrorTypes) {
+function Error({ error, reset }: ErrorProps) {
   console.error("Error: ", error);
   return (
     <main className="mx-auto flex h-screen max-w-[30rem] flex-col justify-center gap-10">

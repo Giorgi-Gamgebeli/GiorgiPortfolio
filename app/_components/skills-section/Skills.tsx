@@ -14,7 +14,7 @@ import SkillsHeading from "./SkillsHeading";
 
 function Skills() {
   return (
-    <Section idName="skills">
+    <Section idName="skills" viewThreshold={0.3}>
       <MotionComponent
         initial="hidden"
         whileInView="show"

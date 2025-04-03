@@ -5,7 +5,7 @@ import { useInView } from "framer-motion";
 import { useActiveSectionContext } from "../_context/ActiveSectionContext";
 import { navLinks } from "../_utils/constants";
 
-type SectionTypes = {
+type SectionProps = {
   children: React.ReactNode;
   className?: string;
   idName: (typeof navLinks)[number];
@@ -19,7 +19,7 @@ function Section({
   idName,
   viewThreshold,
   divClassName,
-}: SectionTypes) {
+}: SectionProps) {
   const ref = useRef<HTMLTableSectionElement | null>(null);
   const inView = useInView(ref, { amount: viewThreshold || 0.5 });
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext();

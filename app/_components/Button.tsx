@@ -2,14 +2,14 @@
 
 import { useFormStatus } from "react-dom";
 
-type ContactButtonTypes = {
+type ContactButtonProps = {
   children: React.ReactNode;
   type: "submit" | "button";
   pendingLabel?: string;
   onClick?: () => void;
 };
 
-function Button({ children, type, pendingLabel, onClick }: ContactButtonTypes) {
+function Button({ children, type, pendingLabel, onClick }: ContactButtonProps) {
   const { pending } = useFormStatus();
 
   return (

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import FlexBox from "../../_components/FlexBox";
 
 type CVProjectProps = {
@@ -8,6 +9,7 @@ type CVProjectProps = {
 };
 
 function CVProject({ title, description, skills, liveLink }: CVProjectProps) {
+  console.log(liveLink);
   return (
     <FlexBox className="ml-4 gap-4">
       <div className="relative min-w-1 max-w-1 bg-black/10">
@@ -19,10 +21,14 @@ function CVProject({ title, description, skills, liveLink }: CVProjectProps) {
         <h6 className="text-base font-medium text-white">
           SKills displayed in this web application
         </h6>
-        <p>{skills}</p>
-        <h6 className="text-base font-medium text-white">
-          Live Link: {liveLink}
-        </h6>
+        <p className="text-sm">{skills}</p>
+        <Link
+          href={liveLink}
+          target="_blank"
+          className="text-base font-medium text-white hover:underline"
+        >
+          Live Link: {liveLink.slice(8)}
+        </Link>
       </div>
     </FlexBox>
   );

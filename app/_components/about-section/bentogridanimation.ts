@@ -2,8 +2,9 @@
 
 import { delay } from "../../_utils/smallUtils";
 
-// animate has huge type instead of writing that i wrote any
-export async function skipInitialBentoGridAnimation(animate: any) {
+type Animate = typeof import("framer-motion").animate;
+
+export async function skipInitialBentoGridAnimation(animate: Animate) {
   const animationDefenitions = { x: 0, opacity: 1, y: 0 } as const;
   const options = { delay: 0, duration: 0, type: "tween" } as const;
 
@@ -18,7 +19,7 @@ export async function skipInitialBentoGridAnimation(animate: any) {
 }
 
 // bento grid animation
-export async function initialBentoGridAnimation(animate: any) {
+export async function initialBentoGridAnimation(animate: Animate) {
   await animate("#cell-1-1-3-parent", { x: 0, opacity: 1 }, { delay: 0.5 });
   await animate("#cell-1-3-4-parent", { y: 0, opacity: 1 });
   await animate("#cell-1-3-4-parent", { y: 0, opacity: 1 });
@@ -56,56 +57,56 @@ export async function initialBentoGridAnimation(animate: any) {
     "#cell-2-2-3-parent",
     { y: "-105%", rotate: 0 },
     {
-      duration: 1,
+      duration: 0.5,
     },
   );
   await animate(
     "#cell-2-1-2-parent",
     { x: "-105%" },
     {
-      duration: 1,
+      duration: 0.5,
     },
   );
   await animate(
     "#cell-2-1-2-parent",
     { y: "103%" },
     {
-      duration: 1,
+      duration: 0.5,
     },
   );
   await animate(
     "#cell-2-2-3-parent",
     { y: 0, rotate: 0 },
     {
-      duration: 1,
+      duration: 0.5,
     },
   );
   await animate(
     "#cell-2-2-3-parent",
     { x: 0, rotate: 0 },
     {
-      duration: 1,
+      duration: 0.5,
     },
   );
   await animate(
     "#cell-2-1-2-parent",
     { y: 0 },
     {
-      duration: 1,
+      duration: 0.5,
     },
   );
   await animate(
     "#cell-2-1-2-parent",
     { x: 0 },
     {
-      duration: 1,
+      duration: 0.5,
     },
   );
   BentoGridCell324Animation(animate);
 }
 
 // bento grid animation
-async function BentoGridCell324Animation(animate: any) {
+async function BentoGridCell324Animation(animate: Animate) {
   await delay();
   await animate("#cell-3-2-4", {
     position: "absolute",
@@ -158,7 +159,7 @@ async function BentoGridCell324Animation(animate: any) {
   BentoGridCell113Animation(animate);
 }
 
-async function BentoGridCell113Animation(animate: any) {
+async function BentoGridCell113Animation(animate: Animate) {
   await delay();
   await animate("#cell-1-1-3", {
     position: "absolute",
@@ -208,7 +209,7 @@ async function BentoGridCell113Animation(animate: any) {
   BentoGridCell324ReverseAnimation(animate);
 }
 
-async function BentoGridCell324ReverseAnimation(animate: any) {
+async function BentoGridCell324ReverseAnimation(animate: Animate) {
   await delay();
   animate(
     "#cell-2-3-4-parent",
@@ -251,7 +252,7 @@ async function BentoGridCell324ReverseAnimation(animate: any) {
   BentoGridCell113ReverseAnimation(animate);
 }
 
-async function BentoGridCell113ReverseAnimation(animate: any) {
+async function BentoGridCell113ReverseAnimation(animate: Animate) {
   await delay();
   animate(
     "#cell-2-1-2-parent",

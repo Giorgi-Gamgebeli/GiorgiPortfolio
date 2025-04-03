@@ -1,7 +1,7 @@
 import { MotionProps } from "framer-motion";
 import MotionComponent from "../MotionComponent";
 
-type BentoGridCellTypes = {
+type BentoGridCellProps = {
   children: React.ReactNode;
   className?: string;
   id?: string;
@@ -12,7 +12,7 @@ function BentoGridCell({
   className,
   id,
   ...rest
-}: BentoGridCellTypes) {
+}: BentoGridCellProps) {
   return (
     // seperating them with ids is important otherwise animation wouldnt work becouse framer doesnt support grid animations
     <MotionComponent

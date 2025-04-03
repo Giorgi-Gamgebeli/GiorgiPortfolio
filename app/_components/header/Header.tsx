@@ -21,7 +21,7 @@ function Header() {
       className="fixed z-50 w-full"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ delay: 0.5 }}
+      transition={{ delay: 1 }}
     >
       <ScrollFloatingAnimation>
         <FlexBox className="items-center justify-between">

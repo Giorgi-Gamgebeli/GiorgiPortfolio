@@ -5,11 +5,11 @@ import { useEffect } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import MotionComponent from "./MotionComponent";
 
-type DarkModeToggleTypes = {
+type DarkModeToggleProps = {
   display?: boolean;
 };
 
-function DarkModeToggle({ display = true }: DarkModeToggleTypes) {
+function DarkModeToggle({ display = true }: DarkModeToggleProps) {
   const { isDarkMode, toggleDarkMode } = useDarkModeContext();
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDarkMode);
@@ -25,9 +25,9 @@ function DarkModeToggle({ display = true }: DarkModeToggleTypes) {
       onClick={toggleDarkMode}
       initial={{ x: 200 }}
       animate={{ x: 0 }}
-      transition={{ delay: 0.5 }}
+      transition={{ delay: 1.5 }}
     >
-      {isDarkMode ? (
+      {!isDarkMode ? (
         <MotionComponent
           animate={{ rotate: 360 }}
           transition={{ duration: 15, ease: "linear", repeat: Infinity }}
@@ -37,7 +37,7 @@ function DarkModeToggle({ display = true }: DarkModeToggleTypes) {
       ) : (
         <Icon
           icon="line-md:moon-filled-loop"
-          className="h-14 w-14 text-darkTertiary"
+          className="h-14 w-14 text-[#2c2845]"
         />
       )}
     </MotionComponent>

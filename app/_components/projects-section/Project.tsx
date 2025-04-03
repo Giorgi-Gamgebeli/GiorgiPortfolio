@@ -4,8 +4,9 @@ import MotionComponent from "../MotionComponent";
 import { projects } from "@/app/_utils/constants";
 import Modal from "./Modal";
 
-type ProjectTypes = (typeof projects)[number] & {
+type ProjectProps = (typeof projects)[number] & {
   index: number;
+  sourceCodeLink?: string;
 };
 
 function Project({
@@ -17,7 +18,7 @@ function Project({
   deployedWebLink,
   deploymentServiceImg,
   index,
-}: ProjectTypes) {
+}: ProjectProps) {
   return (
     <MotionComponent
       as="article"

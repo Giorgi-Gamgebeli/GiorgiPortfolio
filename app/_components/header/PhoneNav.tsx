@@ -4,12 +4,12 @@ import MotionComponent from "../MotionComponent";
 import Nav from "./Nav";
 import Socials from "./Socials";
 
-type PhoneNavTypes = {
+type PhoneNavProps = {
   isPhoneNavOpen: boolean;
   setIsPhoneNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-function PhoneNav({ isPhoneNavOpen, setIsPhoneNavOpen }: PhoneNavTypes) {
+function PhoneNav({ isPhoneNavOpen, setIsPhoneNavOpen }: PhoneNavProps) {
   return (
     <MotionComponent
       className={`flex items-center justify-between md:hidden ${isPhoneNavOpen ? "" : "pointer-events-none"}`}

@@ -1,10 +1,10 @@
-type InputTypes = {
+type InputProps = {
   name: "name" | "email";
   type: string;
   placeholder?: string;
 };
 
-function Input({ name, type, placeholder }: InputTypes) {
+function Input({ name, type, placeholder }: InputProps) {
   return (
     <input
       name={name}

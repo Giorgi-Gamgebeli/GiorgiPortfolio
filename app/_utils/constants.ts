@@ -1,8 +1,7 @@
-import netlifyDark from "@/public/netlifyDark.webp";
 import vercelDark from "@/public/vercelDark.png";
 import fastReactPizza from "@/public/fastReactPizza.png";
 import wildOasisAdmin from "@/public/wildOasisAdmin.png";
-import wayBack from "@/public/wayBack.png";
+import friendsPortfolio from "@/public/friendsPortfolio.png";
 import wildOasisCostumer from "@/public/wildOasisCostumer.png";
 
 export const navLinks = [
@@ -55,16 +54,7 @@ export const masteredTechnologies = [
     iconify: "simple-icons:vite",
     color: "hover:text-[#F24E1E]",
   },
-  {
-    name: "Framer Motion",
-    iconify: "tabler:brand-framer-motion",
-    color: "hover:text-[#EA4C89]",
-  },
-  {
-    name: "Supabase",
-    iconify: "simple-icons:supabase",
-    color: "hover:text-[#3ECF8E]",
-  },
+
   {
     name: "React Query",
     iconify: "simple-icons:reactquery",
@@ -108,6 +98,16 @@ export const advancedTechnologies = [
     name: "Zod",
     iconify: "simple-icons:zod",
     color: "hover:text-[#0c4a6e]",
+  },
+  {
+    name: "Framer Motion",
+    iconify: "tabler:brand-framer-motion",
+    color: "hover:text-[#EA4C89]",
+  },
+  {
+    name: "Supabase",
+    iconify: "simple-icons:supabase",
+    color: "hover:text-[#3ECF8E]",
   },
   {
     name: "PrismaORM",
@@ -164,17 +164,17 @@ export const projects = [
       },
     ],
     image: fastReactPizza,
-    sourceCodeLink: "https://github.com/CodingReaper1/FastReactPizza",
+    sourceCodeLink: "https://github.com/Giorgi-Gamgebeli/FastReactPizza",
     deployedWebLink: "https://george-fast-react-pizza.vercel.app",
     deploymentServiceImg: vercelDark,
   },
   {
-    name: "Way Back",
+    name: "Friend's Porfolio",
     description:
-      "Don't judge this web-app visually 😅 Though visually simple, it includes authentication, authorization, email SMTP registration confirmation and git OAuth.",
+      "Collaborated with another developer to create a friend's portfolio. Showcases my ability to handle basic web 3D modeling, 3D model optimization and teamwork.",
     tags: [
       {
-        name: "React",
+        name: "NextJs",
         color: "bg-blue-700",
       },
       {
@@ -182,14 +182,14 @@ export const projects = [
         color: "bg-green-700",
       },
       {
-        name: "Supabase",
+        name: "Tailwindcss",
         color: "bg-red-700",
       },
     ],
-    image: wayBack,
-    sourceCodeLink: "https://github.com/CodingReaper1/WayBack",
-    deployedWebLink: "https://waybackk.netlify.app",
-    deploymentServiceImg: netlifyDark,
+    image: friendsPortfolio,
+    // sourceCodeLink: "",
+    deployedWebLink: "https://uta-portfolio.vercel.app",
+    deploymentServiceImg: vercelDark,
   },
   {
     name: "The Wild Oasis",
@@ -210,7 +210,8 @@ export const projects = [
       },
     ],
     image: wildOasisCostumer,
-    sourceCodeLink: "https://github.com/CodingReaper1/TheWildOasisCostumerSide",
+    sourceCodeLink:
+      "https://github.com/Giorgi-Gamgebeli/TheWildOasisCostumerSide",
     deployedWebLink: "https://the-wild-oasis-costumer-side.vercel.app",
     deploymentServiceImg: vercelDark,
   },
@@ -233,7 +234,8 @@ export const projects = [
       },
     ],
     image: wildOasisAdmin,
-    sourceCodeLink: "https://github.com/CodingReaper1/TheWildOasisAdminNextJs",
+    sourceCodeLink:
+      "https://github.com/Giorgi-Gamgebeli/TheWildOasisAdminNextJs",
     deployedWebLink: "https://the-wild-oasis-admin-nextjs.vercel.app",
     deploymentServiceImg: vercelDark,
   },

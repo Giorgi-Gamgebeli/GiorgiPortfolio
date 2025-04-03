@@ -8,11 +8,12 @@ import FlexBox from "../FlexBox";
 import Image from "next/image";
 import { projects } from "@/app/_utils/constants";
 
-type ModalTypes = Pick<
+type ModalProps = Pick<
   (typeof projects)[number],
-  "deploymentServiceImg" | "deployedWebLink" | "sourceCodeLink"
+  "deploymentServiceImg" | "deployedWebLink"
 > & {
   children: React.ReactNode;
+  sourceCodeLink?: string;
 };
 
 function Modal({
@@ -20,10 +21,9 @@ function Modal({
   deploymentServiceImg,
   deployedWebLink,
   sourceCodeLink,
-}: ModalTypes) {
+}: ModalProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [timer, setTimer] = useState(10);
-  const isServiceNetlify = `${deploymentServiceImg.src}`.includes("netlify");
   const buttonTransition = {
     delay: 0.5,
     mass: 0.4,
@@ -49,22 +49,24 @@ function Modal({
         <div className="absolute left-0 top-0 z-10 h-full w-full bg-[rgba(229,231,235,0.3)] backdrop-blur-md dark:bg-[rgba(21,16,48,0.3)]">
           <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 gap-5">
             <FlexBox className="gap-5">
-              <MotionComponent
-                initial={{ x: -600 }}
-                animate={{ x: 0 }}
-                transition={buttonTransition}
-              >
-                <Link
-                  target="_blank"
-                  className="flex h-14 w-14 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-white transition hover:shadow-lg dark:bg-black"
-                  href={sourceCodeLink}
+              {sourceCodeLink && (
+                <MotionComponent
+                  initial={{ x: -600 }}
+                  animate={{ x: 0 }}
+                  transition={buttonTransition}
                 >
-                  <Icon
-                    icon={"hugeicons:github"}
-                    className="text-2xl dark:text-xl dark:text-white"
-                  />
-                </Link>
-              </MotionComponent>
+                  <Link
+                    target="_blank"
+                    className="flex h-14 w-14 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-white transition hover:shadow-lg dark:bg-black"
+                    href={sourceCodeLink}
+                  >
+                    <Icon
+                      icon={"hugeicons:github"}
+                      className="text-2xl dark:text-xl dark:text-white"
+                    />
+                  </Link>
+                </MotionComponent>
+              )}
 
               <MotionComponent
                 initial={{ y: -600 }}
@@ -84,10 +86,8 @@ function Modal({
                   />
 
                   <Icon
-                    icon={
-                      isServiceNetlify ? `devicon:netlify` : "logos:vercel-icon"
-                    }
-                    className={`absolute left-1/2 top-1/2 block -translate-x-1/2 -translate-y-1/2 dark:hidden ${isServiceNetlify ? "size-10" : "size-6"}`}
+                    icon="logos:vercel-icon"
+                    className="absolute left-1/2 top-1/2 block size-6 -translate-x-1/2 -translate-y-1/2 dark:hidden"
                   />
                 </Link>
               </MotionComponent>

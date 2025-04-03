@@ -1,4 +1,4 @@
-type FadeSlideInTypes = [string, string, number, number];
+type FadeSlideInProps = [string, string, number, number];
 
 export function textVariant(delay?: number) {
   return {
@@ -18,7 +18,7 @@ export function textVariant(delay?: number) {
   };
 }
 
-export function slideIn([direction, type, delay, duration]: FadeSlideInTypes) {
+export function slideIn([direction, type, delay, duration]: FadeSlideInProps) {
   return {
     hidden: {
       x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,

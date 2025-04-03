@@ -4,7 +4,7 @@ import { AnimationScope, MotionProps, motion } from "framer-motion";
 import React from "react";
 import useIsMobile from "../_hooks/useIsMobile";
 
-type MotionDivTypes = {
+type MotionDivProps = {
   as?: keyof JSX.IntrinsicElements;
   children?: React.ReactNode;
   className?: string;
@@ -26,7 +26,7 @@ function MotionComponent({
   ariaLabel,
   dontDisableFramerForMobile = false,
   ...rest
-}: MotionDivTypes) {
+}: MotionDivProps) {
   const { isMobile } = useIsMobile();
 
   const MotionComponent = motion[

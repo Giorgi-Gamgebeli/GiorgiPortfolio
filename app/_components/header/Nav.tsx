@@ -6,12 +6,12 @@ import Link from "next/link";
 import MotionComponent from "../MotionComponent";
 import { navLinks } from "@/app/_utils/constants";
 
-type NavTypes = {
+type NavProps = {
   setIsPhoneNavOpen?: React.Dispatch<React.SetStateAction<boolean>>;
   phoneNav?: boolean;
 };
 
-function Nav({ setIsPhoneNavOpen, phoneNav }: NavTypes) {
+function Nav({ setIsPhoneNavOpen, phoneNav }: NavProps) {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
 

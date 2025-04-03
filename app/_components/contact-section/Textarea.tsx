@@ -1,9 +1,9 @@
-type TextareaTypes = {
+type TextareaProps = {
   name: "message";
   placeholder?: string;
 };
 
-function Textarea({ name, placeholder }: TextareaTypes) {
+function Textarea({ name, placeholder }: TextareaProps) {
   return (
     <textarea
       name={name}

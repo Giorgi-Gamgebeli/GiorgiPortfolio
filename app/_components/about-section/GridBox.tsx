@@ -9,13 +9,13 @@ import {
   skipInitialBentoGridAnimation,
 } from "./bentogridanimation";
 
-type GridBoxTypes = {
+type GridBoxProps = {
   children: React.ReactNode;
   className?: string;
   reactRef?: MutableRefObject<HTMLDivElement | null>;
 };
 
-function GridBox({ children, className }: GridBoxTypes) {
+function GridBox({ children, className }: GridBoxProps) {
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope);
   const [animationHasHappend, setAnimationHasHappend] = useState(false);
@@ -41,7 +41,7 @@ function GridBox({ children, className }: GridBoxTypes) {
     }
 
     if (wasMobile !== isMobile) {
-      skipInitialBentoGridAnimation(animate)
+      skipInitialBentoGridAnimation(animate);
       setWasMobile(isMobile);
     }
   }, [animate, isInView, animationHasHappend, wasMobile, isMobile]);

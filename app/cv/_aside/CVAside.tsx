@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CVAsideBox from "./CVAsideBox";
 
 function CVAside() {
@@ -41,7 +42,13 @@ function CVAside() {
         <ul className="flex flex-col gap-2">
           <li>
             <span className="font-medium text-white">GitHub: </span>
-            github.com/CodingReaper1
+            <Link
+              href="https://github.com/Giorgi-Gamgebeli"
+              target="_blank"
+              className="hover:underline"
+            >
+              github.com/Giorgi-Gamgebeli
+            </Link>
           </li>
         </ul>
       </CVAsideBox>
