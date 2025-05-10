@@ -29,7 +29,7 @@ function CVProjects() {
       />
 
       <CVProject
-        title="Friends Porfolio"
+        title="Friend's Portfolio"
         description="Collaborated with another developer to create a friend's portfolio as they learn UE5 and 3D modeling. Showcases my ability to handle basic web 3D modeling, 3D model optimization and teamwork."
         skills="NextJS, Tailwind CSS,
           TypeScript, performance optimization,SEO, react three fiber, teamwork, git/github, vercel,
