@@ -48,9 +48,9 @@ function page() {
           <FlexBox className="col-start-1 col-end-2 row-start-1 row-end-2 mr-4 flex-col border-b border-white/20 pb-6">
             <CVh3 icon="mdi:person-outline" text="ABOUT ME" />
             <p>
-              I'm a junior front-end developer specializing in React and
+              I&apos;m a junior front-end developer specializing in React and
               Next.js. I have hands-on experience building modern web apps with
-              HTML, CSS, JavaScript/TypeScript, and tools like Tailwind CSS. I'm
+              HTML, CSS, JavaScript/TypeScript, and tools like Tailwind CSS. I&apos;m
               passionate about writing clean, scalable code and delivering
               polished UI experiences.
             </p>
