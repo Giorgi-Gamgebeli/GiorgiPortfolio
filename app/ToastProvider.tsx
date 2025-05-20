@@ -1,7 +1,7 @@
 "use client";
 
 import { Toaster } from "react-hot-toast";
-import { useDarkModeContext } from "../_context/DarkModeContext";
+import { useDarkModeContext } from "./_context/DarkModeContext";
 
 function ToastProvider({ children }: { children: React.ReactNode }) {
   const { isDarkMode } = useDarkModeContext();

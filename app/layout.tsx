@@ -3,7 +3,7 @@ import "./globals.css";
 
 import { DarkModeProvider } from "./_context/DarkModeContext";
 import { ActiveSectionContextProvider } from "./_context/ActiveSectionContext";
-import ToastProvider from "./_utils/ToastProvider";
+import ToastProvider from "./ToastProvider";
 import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";

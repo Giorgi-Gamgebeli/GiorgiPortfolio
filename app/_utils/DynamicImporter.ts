@@ -16,4 +16,3 @@ export const DynamicEarthCanvas = dynamic(
     ssr: false,
   },
 );
-

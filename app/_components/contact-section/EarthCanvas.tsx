@@ -9,14 +9,14 @@ import Earth from "./Earth";
 function EarthCanvas() {
   return (
     <Canvas frameloop="demand" shadows gl={{ preserveDrawingBuffer: true }}>
-      <PerspectiveCamera
-        makeDefault
-        fov={45}
-        position={[-4, 3, 6]}
-        near={0.1}
-        far={200}
-      />
       <Suspense fallback={<CanvasLoader />}>
+        <PerspectiveCamera
+          makeDefault
+          fov={45}
+          position={[-4, 3, 6]}
+          near={0.1}
+          far={200}
+        />
         <OrbitControls
           autoRotate
           enableZoom={false}

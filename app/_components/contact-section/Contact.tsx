@@ -6,15 +6,17 @@ import MotionComponent from "../MotionComponent";
 import Form from "./Form";
 import SectionHeadText from "../SectionHeadText";
 import SectionSubText from "../SectionSubText";
-import {
-  DynamicEarthCanvas,
-  DynamicStarsCanvas,
-} from "../../_utils/DynamicImporter";
+// import {
+//   DynamicEarthCanvas,
+//   DynamicStarsCanvas,
+// } from "../../_utils/DynamicImporter";
 import FormRow from "./FormRow";
 import Input from "./Input";
 import Textarea from "./Textarea";
 import Button from "../Button";
 import Link from "next/link";
+import StarsCanvas from "./StarsCanvas";
+import EarthCanvas from "./EarthCanvas";
 
 function Contact() {
   return (
@@ -63,11 +65,11 @@ function Contact() {
           variants={slideIn(["right", "tween", 0.2, 1])}
           className="z-10 h-[350px] cursor-grab md:h-[550px] xl:h-auto"
         >
-          <DynamicEarthCanvas />
+          <EarthCanvas />
         </MotionComponent>
       </FlexBox>
 
-      <DynamicStarsCanvas />
+      <StarsCanvas />
     </Section>
   );
 }

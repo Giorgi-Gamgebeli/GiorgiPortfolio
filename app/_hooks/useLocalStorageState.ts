@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
@@ -18,7 +18,6 @@ function useLocalStorageState<T>(
     setIsInitialized(true);
   }, [key]);
 
-  
   useEffect(() => {
     if (isInitialized) {
       localStorage.setItem(key, JSON.stringify(value));
