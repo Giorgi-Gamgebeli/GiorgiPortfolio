@@ -9,17 +9,16 @@ export async function sendEmail(formData: FormData) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        origin: "https://giorgi-webdev-portfolio.vercel.app",
+        origin: process.env.ORIGIN as string,
       },
       body: JSON.stringify({
-        service_id: process.env.NEXT_PUBLIC_EMAILJS_SERVICE as string,
-        template_id: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE as string,
-        user_id: process.env.NEXT_PUBLIC_EMAILJS_KEY as string,
+        service_id: process.env.EMAILJS_SERVICE as string,
+        template_id: process.env.EMAILJS_TEMPLATE as string,
+        user_id: process.env.EMAILJS_KEY as string,
         template_params: {
           from_name: name,
           to_name: "Giorgi",
           from_email: email,
-          to_email: "giorgi.gamertube@gmail.com",
           message: message,
         },
       }),
