@@ -50,22 +50,17 @@ export const masteredTechnologies = [
   },
 
   {
-    name: "Vite",
-    iconify: "simple-icons:vite",
-    color: "hover:text-[#F24E1E]",
-  },
-
-  {
     name: "React Query",
     iconify: "simple-icons:reactquery",
     color: "hover:text-[#FF4154]",
   },
 
   {
-    name: "Context API",
-    iconify: "fluent-mdl2:context-menu",
-    color: "hover:text-[#3B82F6]",
+    name: "Vite",
+    iconify: "simple-icons:vite",
+    color: "hover:text-[#F24E1E]",
   },
+
   {
     name: "Vercel",
     iconify: "akar-icons:vercel-fill",
