@@ -242,24 +242,24 @@ export const projects = [
 ] as const;
 
 export const bentoGridText = {
-  "cell-1-1-3":
+  "cell-1":
     "A ReactJS/NextJS frontend developer with a strong background in HTML, CSS, and TypeScript. I enjoy creating responsive, interactive user interfaces that enhance the user experience. My focus is on building scalable and modern applications with the latest frontend technologies like React, Tailwind CSS, and Next.js.",
 
-  "cell-1-3-4":
-    "With no working experience yet. Learning coding and solving problems in frontend for a year. Continually increasing and building skillset.",
+  "cell-2":
+    "With no work experience yet. Learning coding and solving problems in frontend for a year. Continually increasing and building skillset.",
 
-  "cell-2-1-2":
+  "cell-3":
     "Building dynamic, responsive and modern single-page applications with reusable components. Using advanced features for efficient, dry, readable code.",
 
-  "cell-2-2-3":
+  "cell-4":
     "Performance optimization with lazy loading dynamic imports and image optimization for seamless UX.",
 
-  "cell-2-3-4":
+  "cell-5":
     "Developing optimized, scalable web applications. Adding smooth, engaging animations to enhance user interactions with framer motion.",
 
-  "cell-3-1-2":
+  "cell-6":
     "Journey from learning the foundations of HTML, CSS, and JavaScript, to expanding into frameworks and libraries like React and NextJs.",
 
-  "cell-3-2-4":
+  "cell-7":
     "I prioritize clean, maintainable code and love incorporating animations that make interactions feel more engaging. With a keen eye on performance, I work to optimize load times and responsiveness for a seamless experience. I'm always excited to learn new techniques and push the boundaries of my knowledge!",
 } as const;

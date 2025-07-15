@@ -1,6 +1,5 @@
 "use client";
 
-import { MutableRefObject } from "react";
 import { useAnimate, useInView } from "framer-motion";
 import { useEffect, useState } from "react";
 import useIsMobile from "../../_hooks/useIsMobile";
@@ -11,11 +10,9 @@ import {
 
 type GridBoxProps = {
   children: React.ReactNode;
-  className?: string;
-  reactRef?: MutableRefObject<HTMLDivElement | null>;
 };
 
-function GridBox({ children, className }: GridBoxProps) {
+function GridBox({ children }: GridBoxProps) {
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope);
   const [animationHasHappend, setAnimationHasHappend] = useState(false);
@@ -47,7 +44,10 @@ function GridBox({ children, className }: GridBoxProps) {
   }, [animate, isInView, animationHasHappend, wasMobile, isMobile]);
 
   return (
-    <div ref={scope} className={`grid ${className}`}>
+    <div
+      className="hidden md:mx-auto md:my-20 md:grid md:h-[700px] md:w-[700px] md:grid-cols-3 md:grid-rows-3 md:gap-2 lg:h-[800px] lg:w-[800px] lg:gap-3"
+      ref={scope}
+    >
       {children}
     </div>
   );

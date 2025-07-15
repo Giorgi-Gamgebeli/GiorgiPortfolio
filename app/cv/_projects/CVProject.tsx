@@ -1,5 +1,4 @@
 import Link from "next/link";
-import FlexBox from "../../_components/FlexBox";
 
 type CVProjectProps = {
   title: string;
@@ -11,7 +10,7 @@ type CVProjectProps = {
 function CVProject({ title, description, skills, liveLink }: CVProjectProps) {
   console.log(liveLink);
   return (
-    <FlexBox className="ml-4 gap-4">
+    <div className="ml-4 flex gap-4">
       <div className="relative min-w-1 max-w-1 bg-black/10">
         <div className="absolute left-1/2 top-0 h-[10px] w-[10px] -translate-x-1/2 rounded-full border-2 border-[#a5b3ce] bg-[#19202e]"></div>
       </div>
@@ -30,7 +29,7 @@ function CVProject({ title, description, skills, liveLink }: CVProjectProps) {
           Live Link: {liveLink.slice(8)}
         </Link>
       </div>
-    </FlexBox>
+    </div>
   );
 }
 

@@ -6,7 +6,6 @@ import ScrollFloatingAnimation from "./ScrollFloatingEffect";
 import { useState } from "react";
 import PhoneNav from "./PhoneNav";
 import Socials from "./Socials";
-import FlexBox from "../FlexBox";
 import MotionComponent from "../MotionComponent";
 import gIcon from "@/public/gIcon.png";
 import gIconGray from "@/public/gIconGray.png";
@@ -24,7 +23,7 @@ function Header() {
       transition={{ delay: 1 }}
     >
       <ScrollFloatingAnimation>
-        <FlexBox className="items-center justify-between">
+        <div className="flex items-center justify-between">
           <Image
             src={gIcon}
             alt="icon letter G"
@@ -50,7 +49,7 @@ function Header() {
             className="size-12 md:hidden"
             onClick={() => setIsPhoneNavOpen(!isPhoneNavOpen)}
           />
-        </FlexBox>
+        </div>
 
         <PhoneNav
           isPhoneNavOpen={isPhoneNavOpen}

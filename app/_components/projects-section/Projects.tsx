@@ -2,7 +2,6 @@ import Section from "../Section";
 import React from "react";
 import SectionHeadText from "../SectionHeadText";
 import SectionSubText from "../SectionSubText";
-import FlexBox from "../FlexBox";
 import MotionComponent from "../MotionComponent";
 import { textVariant } from "@/app/_utils/motion";
 import SectionMini from "../SectionMini";
@@ -34,13 +33,13 @@ function Projects() {
         </SectionMini>
       </MotionComponent>
 
-      <FlexBox className="flex-col gap-10">
+      <div className="flex flex-col gap-10">
         {projects.map((project, index) => (
           <React.Fragment key={index}>
             <Project {...project} index={index} />
           </React.Fragment>
         ))}
-      </FlexBox>
+      </div>
     </Section>
   );
 }

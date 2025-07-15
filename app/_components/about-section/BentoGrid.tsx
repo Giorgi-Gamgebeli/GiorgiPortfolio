@@ -4,7 +4,7 @@ import { bentoGridText } from "@/app/_utils/constants";
 
 function BentoGrid() {
   return (
-    <GridBox className="hidden md:mx-auto md:my-20 md:grid md:h-[700px] md:w-[700px] md:grid-cols-3 md:grid-rows-3 md:gap-2 lg:h-[800px] lg:w-[800px] lg:gap-3">
+    <GridBox>
       <BentoGridCell
         initial={{
           gridColumnStart: 1,
@@ -12,9 +12,9 @@ function BentoGrid() {
           x: -1000,
           opacity: 0,
         }}
-        id="cell-1-1-3"
+        id="cell-1"
       >
-        {bentoGridText["cell-1-1-3"]}
+        {bentoGridText["cell-1"]}
       </BentoGridCell>
       <BentoGridCell
         initial={{
@@ -23,9 +23,9 @@ function BentoGrid() {
           gridColumnStart: 3,
           gridColumnEnd: 4,
         }}
-        id="cell-1-3-4"
+        id="cell-2"
       >
-        {bentoGridText["cell-1-3-4"]}
+        {bentoGridText["cell-2"]}
       </BentoGridCell>
       <BentoGridCell
         initial={{
@@ -34,9 +34,9 @@ function BentoGrid() {
           gridRowStart: 2,
           gridRowEnd: 3,
         }}
-        id="cell-2-1-2"
+        id="cell-3"
       >
-        {bentoGridText["cell-2-1-2"]}
+        {bentoGridText["cell-3"]}
       </BentoGridCell>
 
       <BentoGridCell
@@ -48,9 +48,9 @@ function BentoGrid() {
           gridRowStart: 2,
           gridRowEnd: 3,
         }}
-        id="cell-2-2-3"
+        id="cell-4"
       >
-        {bentoGridText["cell-2-2-3"]}
+        {bentoGridText["cell-4"]}
       </BentoGridCell>
 
       <BentoGridCell
@@ -62,15 +62,15 @@ function BentoGrid() {
           gridColumnStart: 3,
           gridColumnEnd: 4,
         }}
-        id="cell-2-3-4"
+        id="cell-5"
       >
-        {bentoGridText["cell-2-3-4"]}
+        {bentoGridText["cell-5"]}
       </BentoGridCell>
       <BentoGridCell
         initial={{ y: 700, opacity: 0, gridRowStart: 3, gridRowEnd: 4 }}
-        id="cell-3-1-2"
+        id="cell-6"
       >
-        {bentoGridText["cell-3-1-2"]}
+        {bentoGridText["cell-6"]}
       </BentoGridCell>
 
       <BentoGridCell
@@ -82,9 +82,9 @@ function BentoGrid() {
           gridRowStart: 3,
           gridRowEnd: 4,
         }}
-        id="cell-3-2-4"
+        id="cell-7"
       >
-        {bentoGridText["cell-3-2-4"]}
+        {bentoGridText["cell-7"]}
       </BentoGridCell>
     </GridBox>
   );

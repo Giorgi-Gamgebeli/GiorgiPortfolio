@@ -4,7 +4,6 @@ import MotionComponent from "../MotionComponent";
 import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
-import FlexBox from "../FlexBox";
 import Image from "next/image";
 import { projects } from "@/app/_utils/constants";
 
@@ -48,7 +47,7 @@ function Modal({
       {isOpen && (
         <div className="absolute left-0 top-0 z-10 h-full w-full bg-[rgba(229,231,235,0.3)] backdrop-blur-md dark:bg-[rgba(21,16,48,0.3)]">
           <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 gap-5">
-            <FlexBox className="gap-5">
+            <div className="flex gap-5">
               {sourceCodeLink && (
                 <MotionComponent
                   initial={{ x: -600 }}
@@ -91,7 +90,7 @@ function Modal({
                   />
                 </Link>
               </MotionComponent>
-            </FlexBox>
+            </div>
 
             <MotionComponent
               initial={{
