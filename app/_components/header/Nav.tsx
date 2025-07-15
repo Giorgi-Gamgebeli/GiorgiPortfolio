@@ -1,6 +1,5 @@
 "use client";
 
-import clsx from "clsx";
 import { useActiveSectionContext } from "../../_context/ActiveSectionContext";
 import Link from "next/link";
 import MotionComponent from "../MotionComponent";
@@ -30,12 +29,7 @@ function Nav({ setIsPhoneNavOpen, phoneNav }: NavProps) {
           >
             <Link
               href={`#${link}`}
-              className={clsx(
-                `block px-3 py-2 transition hover:text-gray-950 dark:hover:text-white`,
-                {
-                  "text-gray-950 dark:text-white": activeSection === link,
-                },
-              )}
+              className={`block px-3 py-2 transition hover:text-gray-950 dark:hover:text-white ${activeSection === link && "text-gray-950 dark:text-white"}`}
               onClick={() => {
                 setActiveSection(link);
                 setTimeOfLastClick(Date.now());

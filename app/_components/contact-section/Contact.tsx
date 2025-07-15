@@ -8,9 +8,9 @@ import FormRow from "./FormRow";
 import Input from "./Input";
 import Textarea from "./Textarea";
 import Button from "../Button";
-import Link from "next/link";
 import StarsCanvas from "./StarsCanvas";
 import EarthCanvas from "./EarthCanvas";
+import { Icon } from "@iconify/react/dist/offline.js";
 
 function Contact() {
   return (
@@ -46,9 +46,14 @@ function Contact() {
               <Button pendingLabel="Sending" type="submit">
                 Send
               </Button>
-              <Link href="/cv">
-                <Button type="button">Checkout CV &rarr;</Button>
-              </Link>
+              <a
+                href="/cv.pdf"
+                download="Giorgi-Gamgebeli-CV.pdf"
+                className="w-fit rounded-xl border border-transparent bg-gray-200 px-8 py-3 font-bold shadow-md outline-none transition hover:border-gray-400 dark:border-none dark:bg-darkTertiary dark:text-white dark:shadow-sm dark:shadow-darkPrimary dark:hover:shadow-md hover:dark:shadow-darkPrimary"
+              >
+                <Icon icon="material-symbols:download" className="text-lg" />
+                Download CV
+              </a>
             </div>
           </Form>
         </MotionComponent>

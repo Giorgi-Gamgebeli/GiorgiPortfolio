@@ -6,7 +6,7 @@ import Home from "./_components/home-section/Home";
 import Projects from "./_components/projects-section/Projects";
 import Skills from "./_components/skills-section/Skills";
 
-export const revalidate = 2 * 24 * 60 * 60; // (2 days)
+export const revalidate = 172800; // (2 days)
 
 export default function Page() {
   return (
