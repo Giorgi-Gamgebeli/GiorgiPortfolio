@@ -5,7 +5,6 @@ import { Poppins } from "next/font/google";
 import { ActiveSectionContextProvider } from "./_context/ActiveSectionContext";
 import { DarkModeProvider } from "./_context/DarkModeContext";
 import ToastProvider from "./ToastProvider";
-// @ts-expect-error: for no reason ts says file isnt detected but it is.
 import "./globals.css";
 
 export const metadata: Metadata = {
