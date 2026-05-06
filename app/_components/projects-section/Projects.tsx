@@ -20,8 +20,8 @@ function Projects() {
         whileInView="show"
         variants={textVariant(0.5)}
       >
-        <SectionSubText>MY WORK</SectionSubText>
-        <SectionHeadText>Projects.</SectionHeadText>
+        <SectionSubText>MY CREATIONS</SectionSubText>
+        <SectionHeadText>Personal Projects.</SectionHeadText>
 
         <SectionMini>
           Following projects showcases my skills and experience through
@@ -35,7 +35,7 @@ function Projects() {
 
       <div className="flex flex-col gap-10">
         {projects.map((project, index) => (
-          <React.Fragment key={index}>
+          <React.Fragment key={project.deployedWebLink}>
             <Project {...project} index={index} />
           </React.Fragment>
         ))}

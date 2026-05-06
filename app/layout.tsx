@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
-import "./globals.css";
-
-import { DarkModeProvider } from "./_context/DarkModeContext";
-import { ActiveSectionContextProvider } from "./_context/ActiveSectionContext";
-import ToastProvider from "./ToastProvider";
-import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
+import { ActiveSectionContextProvider } from "./_context/ActiveSectionContext";
+import { DarkModeProvider } from "./_context/DarkModeContext";
+import ToastProvider from "./ToastProvider";
+// @ts-expect-error: for no reason ts says file isnt detected but it is.
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Giorgi Gamgebeli | Front-end Developer",
@@ -68,17 +68,15 @@ export default function RootLayout({
       <body
         className={`${poppins.className} w-full overflow-x-hidden bg-gray-100 text-gray-950 transition-all duration-300 dark:bg-darkPrimary dark:text-white`}
       >
-        <>
-          <DarkModeProvider>
-            <ToastProvider>
-              <ActiveSectionContextProvider>
-                {children}
-              </ActiveSectionContextProvider>
-            </ToastProvider>
-          </DarkModeProvider>
-          <Analytics />
-          <SpeedInsights />
-        </>
+        <DarkModeProvider>
+          <ToastProvider>
+            <ActiveSectionContextProvider>
+              {children}
+            </ActiveSectionContextProvider>
+          </ToastProvider>
+        </DarkModeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

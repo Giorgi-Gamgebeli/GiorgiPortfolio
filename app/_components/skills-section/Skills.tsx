@@ -6,9 +6,8 @@ import MotionComponent from "../MotionComponent";
 import { textVariant } from "@/app/_utils/motion";
 import TechStack from "./TechStack";
 import {
-  advancedTechnologies,
-  begginerTechnologies,
-  masteredTechnologies,
+  experiencedTechnologies,
+  proficiencyTechnologies,
 } from "@/app/_utils/constants";
 import SkillsHeading from "./SkillsHeading";
 
@@ -30,14 +29,11 @@ function Skills() {
         </SectionMini>
       </MotionComponent>
 
-      <SkillsHeading>Mastered.</SkillsHeading>
-      <TechStack technologies={masteredTechnologies} />
+      <SkillsHeading>Proficiency.</SkillsHeading>
+      <TechStack technologies={proficiencyTechnologies} />
 
-      <SkillsHeading>Advanced.</SkillsHeading>
-      <TechStack technologies={advancedTechnologies} />
-
-      <SkillsHeading>Begginer.</SkillsHeading>
-      <TechStack technologies={begginerTechnologies} />
+      <SkillsHeading>Also Experience In.</SkillsHeading>
+      <TechStack technologies={experiencedTechnologies} />
     </Section>
   );
 }

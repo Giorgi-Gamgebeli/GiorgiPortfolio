@@ -30,7 +30,7 @@ function Section({
 
   return (
     <section
-      className={`h-full min-h-[40rem] w-full overflow-hidden pb-10 ${className}`}
+      className={`h-full min-h-[40rem] w-full overflow-hidden ${className}`}
       ref={ref}
     >
       <span className="scroll-mt-48 opacity-0" id={idName} />

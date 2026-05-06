@@ -9,7 +9,7 @@ function SkillsHeading({ children }: { children: React.ReactNode }) {
       whileInView="show"
       as="h3"
       variants={textVariant(0.5)}
-      className="text-3xl font-black sm:text-4xl"
+      className="text-xl font-black sm:text-2xl"
     >
       {children}
     </MotionComponent>

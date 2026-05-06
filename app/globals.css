@@ -49,3 +49,31 @@ html.dark {
     background: #020617;
   }
 }
+
+:root {
+  --angry-bg: #ecfeff;
+  --angry-border: rgba(6, 182, 212, 0.4);
+  --angry-text: #0891b2;
+  --angry-glow: rgba(6, 182, 212, 0.2);
+
+  /* Default Cell Styles */
+  --cell-bg: #ffffff;
+  --cell-border: rgba(226, 232, 240, 0.5); /* slate-200/50 */
+  --cell-text: #475569; /* slate-600 */
+  --cell-icon-bg: rgba(248, 250, 252, 0.5); /* slate-50/50 */
+  --cell-icon-border: #f1f5f9; /* slate-100 */
+}
+
+.dark {
+  --angry-bg: #090325;
+  --angry-border: rgba(0, 255, 255, 0.5);
+  --angry-text: #00ffff;
+  --angry-glow: rgba(0, 255, 255, 0.3);
+
+  /* Default Cell Styles */
+  --cell-bg: #100d25; /* black-100 */
+  --cell-border: rgba(255, 255, 255, 0.1); /* white/10 */
+  --cell-text: #e2e8f0; /* slate-200 */
+  --cell-icon-bg: rgba(255, 255, 255, 0.05); /* white/5 */
+  --cell-icon-border: rgba(255, 255, 255, 0.1); /* white/10 */
+}

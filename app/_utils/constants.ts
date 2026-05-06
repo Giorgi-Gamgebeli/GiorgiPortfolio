@@ -8,11 +8,12 @@ export const navLinks = [
   "home",
   "about",
   "skills",
+  "experience",
   "projects",
   "contact",
 ] as const;
 
-export const masteredTechnologies = [
+export const proficiencyTechnologies = [
   {
     name: "HTML 5",
     iconify: "uiw:html5",
@@ -41,8 +42,11 @@ export const masteredTechnologies = [
   {
     name: "Next JS",
     iconify: "devicon-plain:nextjs",
-    color: "hover:text-[#000]",
+    color: "hover:text-black dark:hover:text-white",
   },
+];
+
+export const experiencedTechnologies = [
   {
     name: "Tailwind CSS",
     iconify: "simple-icons:tailwindcss",
@@ -54,26 +58,11 @@ export const masteredTechnologies = [
     iconify: "simple-icons:reactquery",
     color: "hover:text-[#FF4154]",
   },
-
-  {
-    name: "Vite",
-    iconify: "simple-icons:vite",
-    color: "hover:text-[#F24E1E]",
-  },
-
   {
     name: "Vercel",
     iconify: "akar-icons:vercel-fill",
-    color: "hover:text-[#000]",
+    color: "hover:text-black dark:hover:text-white",
   },
-  {
-    name: "Netlify",
-    iconify: "devicon-plain:netlify",
-    color: "hover:text-[#00C7B7]",
-  },
-];
-
-export const advancedTechnologies = [
   {
     name: "Git",
     iconify: "cib:git",
@@ -82,7 +71,7 @@ export const advancedTechnologies = [
   {
     name: "GitHub",
     iconify: "uiw:github",
-    color: "hover:text-[#181717]",
+    color: "hover:text-[#181717] dark:hover:text-white",
   },
   {
     name: "React Router Dom",
@@ -109,13 +98,10 @@ export const advancedTechnologies = [
     iconify: "file-icons:prisma",
     color: "hover:text-[#0C344B]",
   },
-];
-
-export const begginerTechnologies = [
   {
     name: "Three JS",
     iconify: "tabler:brand-threejs",
-    color: "hover:text-[#000]",
+    color: "hover:text-black dark:hover:text-white",
   },
   {
     name: "Styled Components",
@@ -132,11 +118,6 @@ export const begginerTechnologies = [
     iconify: "simple-icons:postgresql",
     color: "hover:text-[#336791]",
   },
-  // {
-  //   name: "Neon",
-  //   iconify: "logos:neon-icon",
-  //   color: "hover:text-[#00C7B7]",
-  // },
 ];
 
 export const projects = [
@@ -236,12 +217,22 @@ export const projects = [
   },
 ] as const;
 
+export const experiences = [
+  {
+    title: "Javascript/React Front-end Developer",
+    company: "Argonaut Research Technologies",
+    date: "2025 August - Present",
+    description:
+      "Building a modern, high-performance web application for social research, i spent the initial months working as a Vanilla JavaScript Developer before transitioning the platform to React.js. I have since continued working as a React.js developer. Tackling complex tasks like custom word-like text-editor.",
+  },
+];
+
 export const bentoGridText = {
   "cell-1":
     "A ReactJS/NextJS frontend developer with a strong background in HTML, CSS, and TypeScript. I enjoy creating responsive, interactive user interfaces that enhance the user experience. My focus is on building scalable and modern applications with the latest frontend technologies like React, Tailwind CSS, and Next.js.",
 
   "cell-2":
-    "With no work experience yet. Learning coding and solving problems in frontend for a year. Continually increasing and building skillset.",
+    "With now work experience. Learning coding and solving problems in frontend. Continually increasing and building skillset.",
 
   "cell-3":
     "Building dynamic, responsive and modern single-page applications with reusable components. Using advanced features for efficient, dry, readable code.",

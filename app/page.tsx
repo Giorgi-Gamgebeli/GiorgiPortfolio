@@ -5,6 +5,7 @@ import Header from "./_components/header/Header";
 import Home from "./_components/home-section/Home";
 import Projects from "./_components/projects-section/Projects";
 import Skills from "./_components/skills-section/Skills";
+import Experience from "./_components/experience-section/Experience";
 
 export const revalidate = 172800; // (2 days)
 
@@ -12,10 +13,11 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main className="flex flex-col gap-20">
+      <main className="flex flex-col gap-64">
         <Home />
         <About />
         <Skills />
+        <Experience />
         <Projects />
         <Contact />
       </main>

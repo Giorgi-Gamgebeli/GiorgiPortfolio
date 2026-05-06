@@ -8,7 +8,7 @@ import TextSide from "./TextSide";
 function Home() {
   return (
     <Section
-      className="relative bg-gray-50 pt-44 dark:bg-transparent 2xl:pt-64"
+      className="relative bg-gray-50 pt-44 dark:bg-transparent 2xl:pt-72"
       divClassName="grid overflow-hidden grid-cols-1 xs:gap-10 md:gap-5 lg:gap-0 md:grid-cols-[62fr_38fr] lg:grid-cols-[61fr_40fr]"
       idName="home"
     >
@@ -22,7 +22,7 @@ function Home() {
       >
         <Image
           src={homeLight}
-          alt="Image of hacker on computer"
+          alt="Image of person building website"
           quality={90}
           priority
           className="rounded-xl dark:hidden xs:max-w-[80%] sm:max-w-[70%] md:max-w-[80%]"
@@ -31,7 +31,7 @@ function Home() {
         />
         <Image
           src={homeDark}
-          alt="Image of hacker on computer"
+          alt="Image of person building website"
           quality={90}
           priority
           className="hidden rounded-xl dark:block xs:max-w-[80%] sm:max-w-[70%] md:max-w-[80%]"

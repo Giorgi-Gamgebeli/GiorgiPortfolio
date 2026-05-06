@@ -39,22 +39,52 @@ export function slideIn([direction, type, delay, duration]: FadeSlideInProps) {
   };
 }
 
-export function staggerChild(delay: number) {
+export function staggerContainer(
+  staggerChildren: number,
+  delayChildren?: number,
+) {
   return {
-    hidden: {
-      opacity: 0,
-      y: 100,
-    },
+    hidden: {},
     show: {
-      opacity: 1,
-      y: 0,
-
       transition: {
-        delay: delay || 0,
+        staggerChildren: staggerChildren,
+        delayChildren: delayChildren || 0,
       },
     },
   };
 }
+
+export const childVariant = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      duration: 0.5,
+    },
+  },
+};
+
+// export function staggerChild(delay: number) {
+//   return {
+//     hidden: {
+//       opacity: 0,
+//       y: 100,
+//     },
+//     show: {
+//       opacity: 1,
+//       y: 0,
+
+//       transition: {
+//         delay: delay || 0,
+//       },
+//     },
+//   };
+// }
 
 export const skillsFloatVariants = [
   {
