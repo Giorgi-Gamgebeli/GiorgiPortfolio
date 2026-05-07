@@ -17,7 +17,7 @@ function Nav({ setIsPhoneNavOpen, phoneNav }: NavProps) {
   return (
     <nav>
       <ul
-        className={`items-center gap-5 text-gray-500 dark:text-gray-500 ${phoneNav ? "flex flex-col" : "hidden flex-row md:flex"}`}
+        className={`items-center gap-1 text-sm text-gray-500 dark:text-gray-500 lg:gap-5 lg:text-base ${phoneNav ? "flex flex-col" : "hidden flex-row md:flex"}`}
       >
         {navLinks.map((link) => (
           <MotionComponent

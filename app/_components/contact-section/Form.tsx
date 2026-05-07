@@ -4,14 +4,21 @@ import toast from "react-hot-toast";
 import { sendEmail } from "@/app/_lib/actions";
 import React from "react";
 
-function Form({ children }: { children: React.ReactNode }) {
-  async function clientAction(formData: FormData) {
+async function clientAction(formData: FormData) {
+  try {
     const res = await sendEmail(formData);
-    if (res.ok)
-      toast.success("I received your message, will contact you soon!");
-    if (!res.ok) toast.error("Something went wrong, please try again later");
-  }
 
+    if (res.ok) {
+      toast.success(res.message);
+    } else {
+      toast.error(res.message);
+    }
+  } catch {
+    toast.error("Something went wrong, please try again later");
+  }
+}
+
+function Form({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <form
       action={clientAction}

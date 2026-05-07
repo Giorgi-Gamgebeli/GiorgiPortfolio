@@ -45,7 +45,7 @@ function BentoGridCell({
         {icon && (
           <span
             id={`${id}-icon-container`}
-            className={`relative flex size-9 items-center justify-center rounded-lg border transition-all ${
+            className={`relative flex size-9 min-h-9 min-w-9 items-center justify-center rounded-lg border transition-all ${
               isPrimary
                 ? "border-blue-500/30 bg-blue-500/10 text-blue-500"
                 : "border-slate-100 bg-slate-50/50 text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-white/70"

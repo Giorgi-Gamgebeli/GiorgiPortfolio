@@ -5,6 +5,9 @@ export async function sendEmail(formData: FormData) {
     const name = formData.get("name");
     const email = formData.get("email");
     const message = formData.get("message");
+
+    if (!message) throw new Error("Message field should not be empty");
+
     const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
       method: "POST",
       headers: {
@@ -24,11 +27,20 @@ export async function sendEmail(formData: FormData) {
       }),
     });
 
-    if (res.status !== 200) throw new Error("Email was not send");
+    if (res.status !== 200)
+      throw new Error("Something went wrong, please try again later");
 
-    return { ok: true };
+    return {
+      ok: true,
+      message: "I received your message, will contact you soon!",
+    };
   } catch (err) {
     console.error(err);
-    return { ok: false };
+    if (err instanceof Error) return { ok: false, message: err.message };
+
+    return {
+      ok: false,
+      message: "Something went wrong, please try again later",
+    };
   }
 }
