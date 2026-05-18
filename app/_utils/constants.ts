@@ -118,6 +118,16 @@ export const experiencedTechnologies = [
     iconify: "simple-icons:postgresql",
     color: "hover:text-[#336791]",
   },
+  {
+    name: "Node JS",
+    iconify: "simple-icons:nodedotjs",
+    color: "hover:text-[#339933]",
+  },
+  {
+    name: "Nest JS",
+    iconify: "simple-icons:nestjs",
+    color: "hover:text-[#E0234E]",
+  },
 ];
 
 export const projects = [
@@ -223,7 +233,7 @@ export const experiences = [
     company: "Argonaut Research Technologies",
     date: "2025 August - Present",
     description:
-      "Building a modern, high-performance web application for social research, i spent the initial months working as a Vanilla JavaScript Developer before transitioning the platform to React.js. I have since continued working as a React.js developer. Tackling complex tasks like custom word-like text-editor.",
+      "Building a modern, high-performance web application for social research, i spent the initial months working as a Vanilla JavaScript Developer before transitioning the platform to React.js. I have since continued working as a React.js developer, utilizing Node JS and Nest JS for backend API integrations. Tackling complex tasks like custom word-like text-editor.",
   },
 ];
 
