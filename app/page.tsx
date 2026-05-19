@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <Header />
-      <main className="flex flex-col gap-64">
+      <main className="3xl:pt-32 flex flex-col gap-80">
         <Home />
         <About />
         <Skills />

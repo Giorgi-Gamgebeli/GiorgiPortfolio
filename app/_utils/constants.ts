@@ -1,7 +1,6 @@
-import vercelDark from "@/public/vercelDark.png";
 import fastReactPizza from "@/public/fastReactPizza.png";
+import vercelDark from "@/public/vercelDark.png";
 import wildOasisAdmin from "@/public/wildOasisAdmin.png";
-import friendsPortfolio from "@/public/friendsPortfolio.png";
 import wildOasisCostumer from "@/public/wildOasisCostumer.png";
 
 export const navLinks = [
@@ -152,29 +151,6 @@ export const projects = [
     image: fastReactPizza,
     sourceCodeLink: "https://github.com/Giorgi-Gamgebeli/FastReactPizza",
     deployedWebLink: "https://george-fast-react-pizza.vercel.app",
-    deploymentServiceImg: vercelDark,
-  },
-  {
-    name: "Friend's Porfolio",
-    description:
-      "Collaborated with another developer to create a friend's portfolio. Showcases my ability to handle basic web 3D modeling, 3D model optimization and teamwork.",
-    tags: [
-      {
-        name: "NextJs",
-        color: "bg-blue-700",
-      },
-      {
-        name: "TypeScript",
-        color: "bg-green-700",
-      },
-      {
-        name: "Tailwindcss",
-        color: "bg-red-700",
-      },
-    ],
-    image: friendsPortfolio,
-    // sourceCodeLink: "",
-    deployedWebLink: "https://uta-portfolio.vercel.app",
     deploymentServiceImg: vercelDark,
   },
   {
